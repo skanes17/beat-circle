@@ -1,5 +1,5 @@
 function bpmFunction() {    // function converts bpm to ms interval
-    clearInterval(displayMessage); // should stop any existing beat - but doesn't?
+    clearInterval(beatInterval); // should stop any existing beat - but doesn't?
 
     let bpm = document.getElementById("tempo").value;
     let bpmMessage = 60 / bpm * 1000;
@@ -9,7 +9,7 @@ function bpmFunction() {    // function converts bpm to ms interval
     document.getElementById("beats").innerHTML = ""; // clears the paragraph
     document.getElementById("beats").innerHTML += "Beat "; // ensures the beat starts immediately on click
     
-    setInterval(displayMessage,bpmMessage); // produces beats by running the below function at each interval
+    var beatInterval = setInterval(displayMessage,bpmMessage); // produces beats by running the below function at each interval
 
     function displayMessage() { // adds "Beat"s to the paragraph with id="beats"
         document.getElementById("beats").innerHTML += "Beat ";
@@ -18,13 +18,12 @@ function bpmFunction() {    // function converts bpm to ms interval
         let bassDrum = document.getElementById("bassDrum");
         bassDrum.play();
         */
-    
-        var stopBut = document.getElementById("stopBut");
-        stopBut.addEventListener("click", Stop);
+    }
+    var stopBut = document.getElementById("stopBut");
+    stopBut.addEventListener("click", Stop);
 
-        function Stop() {
-            console.log("Stopped");
-            clearInterval(displayMessage);
-        }
+    function Stop() {
+        clearInterval(beatInterval);
+        document.getElementById("beats").innerHTML = ""; // clears the paragraph
     }
 }
