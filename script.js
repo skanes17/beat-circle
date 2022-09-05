@@ -1,16 +1,18 @@
-const tabs = document.querySelectorAll('[data-tab-target]')
-const tabContents = document.querySelectorAll('[data-tab-content]')
-
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.tabTarget)
-        tabContents.forEach(tabContent => {
-            tabContent.classList.remove('active')
-        })
-        tabs.forEach(tab => {
-            tab.classList.remove('active')
-        })
-        target.classList.add('active')
-        tab.classList.add('active')
-    })
-})
+function bpmFunction() {    // function converts bpm to ms interval
+    let bpm = document.getElementById("tempo").value;
+    let bpmMessage = 60 / bpm * 1000;
+    
+    document.getElementById("currentTempo").innerHTML = "Your current tempo is: " + bpm + " BPM.";
+    document.getElementById("beats").innerHTML += "Beat "; // this ensures the beat starts as soon as the button is clicked
+    
+    setInterval(displayMessage,bpmMessage); // produces the beats by running the below function at each interval
+    
+    function displayMessage() { // adds "Beat"s to the paragraph with id="beats"
+        document.getElementById("beats").innerHTML += "Beat ";
+        
+        /* experimenting with adding audio
+        let bassDrum = document.getElementById("bassDrum");
+        bassDrum.play();
+        */
+    }
+}
