@@ -27,13 +27,11 @@
         <form id="tempoForm">
             <label form="tempo"><b>Desired Tempo (BPM):</b></label>
             <input type="number" placeholder="120" id="tempo" name="tempoForm" min="1" max="300">
-            <button type="button" onclick="bpmFunction()">Make a beat!</button>
+            <button type="button" onclick="bpmFunction()">Start / Stop</button>
         </form>
 
         <p>For now, beats display below at the tempo you set!</p>
         <p id="currentTempo">Your current tempo is: 0 BPM.</p>
-        <!-- <p><button type="button" onclick="bpmReset()">RESET</button></p> -->
-        <p><button type="button" id="stopBut">STOP</button></p>
 
         <div id="beatSpace">
             <p id="beats"></p>
