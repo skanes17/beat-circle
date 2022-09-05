@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <title>Project 01 - Rhythm Generator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<!-- for when audio is incorporated
+    <audio id="bassDrum" src="bassdrum.mp3"></audio>
+-->
+
+<div id="container">
+
+    <body>
+
+    <h1>Rhythm Generator</h1>
+    <p>
+        The current version of this tool will take a tempo and perform events at that tempo.<br>
+        Eventually, this tool should allow you to make interesting rhythms!
+    </p>
+
+    <!-- work with this to produce input box for tempo -->
+        <form id="tempoForm">
+            <label form="tempo"><b>Desired Tempo (BPM):</b></label>
+            <input type="number" placeholder="120" id="tempo" name="tempoForm" min="1" max="300">
+            <button type="button" onclick="bpmFunction()">Make a beat!</button>
+        </form>
+
+        <p>For now, beats display below at the tempo you set!</p>
+        <p id="currentTempo">Your current tempo is: 0 BPM</p>
+        
+        <div id="beatSpace">
+            <p id="beats"></p>
+        </div>
+
+<script>
+    function bpmFunction() {    // function converts bpm to ms interval
+        let bpm = document.getElementById("tempo").value;
+        let bpmMessage = 60 / bpm * 1000;
+        
+        document.getElementById("currentTempo").innerHTML = "Your current tempo is: " + bpm + " BPM.";
+        document.getElementById("beats").innerHTML += "Beat "; // this ensures the beat starts as soon as the button is clicked
+        
+        setInterval(displayMessage,bpmMessage); // produces the beats by running the below function at each interval
+        
+        function displayMessage() { // adds "Beat"s to the paragraph with id="beats"
+            document.getElementById("beats").innerHTML += "Beat ";
+            
+            /* experimenting with adding audio
+            let bassDrum = document.getElementById("bassDrum");
+            bassDrum.play();
+            */
+        }
+    }
+</script>
+
+
+
+    </body>
+
+</div>
+
+</html>
