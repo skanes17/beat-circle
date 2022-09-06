@@ -32,9 +32,8 @@
      -->
 
     <p>
-        <b>Desired Tempo:</b>
-        <input type="number" placeholder="120 bpm" id="tempo" name="tempoForm" min="1" max="300">
-        <button type="button" onclick="bpmFunction()">Start / Stop</button>
+        <b>Desired Tempo (bpm):</b>
+        <input type="number" value="120" id="tempo" name="tempoForm" min="1" max="300">
     </p>
 
     <p>
@@ -43,7 +42,7 @@
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
-            <option value="4">4</option>
+            <option value="4" selected>4</option>
             <option value="5">5</option>
             <option value="6">6</option>
             <option value="7">7</option>
@@ -62,15 +61,18 @@
         <select type="number" id="botNumber" name="botNumberForm">
             <option value="1">1</option>
             <option value="2">2</option>     
-            <option value="4">4</option>
+            <option value="4" selected>4</option>
             <option value="8">8</option>
         </select>
     </p>
 
-    <button onclick="getTimeSig()">Check Time Signature</button>
-    <span class="timeSigOutput"></span>
+    <button onclick="checkInputs()">Check Tempo and Time Signature</button>
+    <span class="tempoTimeSigOutput"></span>
 
-    <p>For now, beats display below at the tempo you set!</p>
+    <p>
+        <button type="button" onclick="bpmFunction()">Start / Stop</button>
+    </p>
+
     <p id="currentTempo">Your current tempo is: 0 BPM.</p>
 
     <div id="beatSpace">
