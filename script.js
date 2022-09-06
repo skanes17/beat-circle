@@ -6,6 +6,7 @@ function bpmFunction() {    // function converts bpm to ms interval
         document.getElementById("currentTempo").innerHTML = `You stopped the beat!`;
         clearInterval(myInterval); // should stop any existing beat - but doesn't?
         document.getElementById("beats").innerHTML = ""; // clears the paragraph
+        document.getElementById("startStopBut").innerHTML = "Start the Beat!"; 
         toggle = true;
     } else {    // main beat production
         let bpm = document.getElementById("tempo").value;
@@ -16,6 +17,7 @@ function bpmFunction() {    // function converts bpm to ms interval
         function displayMessage() { // adds "Beat"s to the paragraph with id="beats"
             document.getElementById("beats").innerHTML += "Beat ";
         }
+        document.getElementById("startStopBut").innerHTML = "Stop the Beat!"; 
         toggle = false;
     }
 }
