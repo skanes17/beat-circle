@@ -12,10 +12,21 @@ function bpmFunction() {    // function converts bpm to ms interval
         let bpm = document.getElementById("tempo").value;
         let bpmMessage = (60 / bpm) * 1000;
         document.getElementById("currentTempo").innerHTML = `Your current tempo is: ${bpm} BPM.`;
-        document.getElementById("beats").innerHTML += "Beat "; // ensures the beat starts immediately on click
+        document.getElementById("beats").innerHTML += "BEAT "; // ensures the beat starts immediately on click
         myInterval = setInterval(displayMessage,bpmMessage); // produces beats by running the below function at each interval
-        function displayMessage() { // adds "Beat"s to the paragraph with id="beats"
-            document.getElementById("beats").innerHTML += "Beat ";
+        
+        let i = 1;
+        function displayMessage() { // adds strong and weak beats to the paragraph with id="beats"
+            selectElement = document.querySelector('#topNumber');
+            output2 = selectElement.value;
+    
+            if(i % output2 === 0) {
+                document.getElementById("beats").innerHTML += "BEAT ";
+                i += 1;
+            } else {
+                document.getElementById("beats").innerHTML += "Beat ";
+                i += 1;
+            }      
         }
         document.getElementById("startStopBut").innerHTML = "Stop the Beat!"; 
         toggle = false;
