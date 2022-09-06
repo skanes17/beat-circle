@@ -24,22 +24,56 @@
     </p>
 
     <!-- work with this to produce input box for tempo -->
-        <form id="tempoForm">
-            <label form="tempo"><b>Desired Tempo (BPM):</b></label>
-            <input type="number" placeholder="120" id="tempo" name="tempoForm" min="1" max="300">
-            <button type="button" onclick="bpmFunction()">Start / Stop</button>
-        </form>
+    <form id="tempoForm">
+        <label form="tempo"><b>Desired Tempo (BPM):</b></label>
+        <input type="number" placeholder="120" id="tempo" name="tempoForm" min="1" max="300">
+        <button type="button" onclick="bpmFunction()">Start / Stop</button>
+    </form>
 
-        <p>For now, beats display below at the tempo you set!</p>
-        <p id="currentTempo">Your current tempo is: 0 BPM.</p>
+    <!-- for selection of Top Number 
+    <form id="topNumberForm">
+        <label form="topNumber"><b>Top Number (beats per measure):</b></label>
+        <select type="number" id="topNumber" name="topNumberForm">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+    </form>
+    -->
 
-        <div id="beatSpace">
-            <p id="beats"></p>
-        </div>
+    <!-- for selection of Bottom Number; won't show up correctly
+    <form id="botNumberForm">   
+        <label form="botNumber"><b>Bottom Number (type of note getting the beat):</b></label>
+        <select type="number" id="botNumber" name="botNumberForm">
+            <option value="1">1</option>
+            <option value="2">2</option>     
+            <option value="4">4</option>
+            <option value="8">8</option>
+    </form>
+    -->
 
-        <div id="beatAnimation">    <!-- this div will hold a simple beat animation -->
-            <span class="beatAnimation"></span>
-        </div>
+    <p>For now, beats display below at the tempo you set!</p>
+    <p id="currentTempo">Your current tempo is: 0 BPM.</p>
+
+    <div id="beatSpace">
+        <p id="beats"></p>
+    </div>
+
+    <div id="beatAnimation">    <!-- this div will hold a simple beat animation -->
+        <span class="beatAnimation"></span>
+    </div>
 
 
     </body>
