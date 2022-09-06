@@ -19,3 +19,15 @@ function bpmFunction() {    // function converts bpm to ms interval
         toggle = false;
     }
 }
+
+// I found a similar code on w3schools
+// need more practice to pick it apart and build it from scratch
+// plan to replace outputs with beat manipulation
+function getTimeSig() {
+        selectElement = document.querySelector('#topNumber');
+        output1 = selectElement.value;
+    
+        selectElement = document.querySelector('#botNumber');
+        output2 = selectElement.value;
+        document.querySelector('.timeSigOutput').textContent = `Your chosen time signature is ${output1}/${output2}`;
+}
