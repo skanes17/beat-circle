@@ -17,9 +17,12 @@ function bpmFunction() {    // function converts bpm to ms interval
         document.querySelector("#currentTempo").innerHTML = `Your current tempo is: ${bpm} BPM.`;
         document.querySelector("#beats").innerHTML += "BEAT "; // ensures the beat starts immediately on click
 
-        let woodblock = new Audio("woodblock.mp3");
-        woodblock.volume = 0.5;
-        woodblock.play();
+        soundState = document.querySelector("#volumeToggle");
+        if (soundState.checked == true){
+            let woodblock = new Audio("woodblock.mp3");            
+            woodblock.volume = 0.5;
+            woodblock.play();
+        }
 
         myInterval = setInterval(displayMessage,bpmMessage); // produces beats by running the below function at each interval
         
@@ -30,15 +33,19 @@ function bpmFunction() {    // function converts bpm to ms interval
     
             if(i % output2 === 0) {
                 document.querySelector("#beats").innerHTML += "BEAT ";
-                let woodblock = new Audio("woodblock.mp3");
-                woodblock.volume = 0.5;
-                woodblock.play();
+                if (soundState.checked == true){
+                    let woodblock = new Audio("woodblock.mp3");
+                    woodblock.volume = 0.5;
+                    woodblock.play();
+                }
                 i += 1;
             } else {
                 document.querySelector("#beats").innerHTML += "Beat ";
-                let korgClick = new Audio("korgClick.mp3");
-                korgClick.volume = 0.2;
-                korgClick.play();
+                if (soundState.checked == true){
+                    let korgClick = new Audio("korgClick.mp3");
+                    korgClick.volume = 0.2;
+                    korgClick.play();
+                }
                 i += 1;
             }      
         }
