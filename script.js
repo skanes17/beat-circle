@@ -3,16 +3,16 @@ let myInterval;
 
 function bpmFunction() {    // function converts bpm to ms interval
     if (toggle === false) { // stop button
-        document.getElementById("currentTempo").innerHTML = `You stopped the beat!`;
+        document.querySelector("#currentTempo").innerHTML = `You stopped the beat!`;
         clearInterval(myInterval); // should stop any existing beat - but doesn't?
-        document.getElementById("beats").innerHTML = ""; // clears the paragraph
-        document.getElementById("startStopBut").innerHTML = "Start the Beat!"; 
+        document.querySelector("#beats").innerHTML = ""; // clears the paragraph
+        document.querySelector("#startStopBut").innerHTML = "Start the Beat!"; 
         toggle = true;
     } else {    // main beat production
-        let bpm = document.getElementById("tempo").value;
+        let bpm = document.querySelector("#tempo").value;
         let bpmMessage = (60 / bpm) * 1000;
-        document.getElementById("currentTempo").innerHTML = `Your current tempo is: ${bpm} BPM.`;
-        document.getElementById("beats").innerHTML += "BEAT "; // ensures the beat starts immediately on click
+        document.querySelector("#currentTempo").innerHTML = `Your current tempo is: ${bpm} BPM.`;
+        document.querySelector("#beats").innerHTML += "BEAT "; // ensures the beat starts immediately on click
         myInterval = setInterval(displayMessage,bpmMessage); // produces beats by running the below function at each interval
         
         let i = 1;
@@ -21,14 +21,14 @@ function bpmFunction() {    // function converts bpm to ms interval
             output2 = selectElement.value;
     
             if(i % output2 === 0) {
-                document.getElementById("beats").innerHTML += "BEAT ";
+                document.querySelector("#beats").innerHTML += "BEAT ";
                 i += 1;
             } else {
-                document.getElementById("beats").innerHTML += "Beat ";
+                document.querySelector("#beats").innerHTML += "Beat ";
                 i += 1;
             }      
         }
-        document.getElementById("startStopBut").innerHTML = "Stop the Beat!"; 
+        document.querySelector("#startStopBut").innerHTML = "Stop the Beat!"; 
         toggle = false;
     }
 }
