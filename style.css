@@ -1,188 +1,148 @@
 body {
-    font-family:Arial, Helvetica, sans-serif;
-    color:#CED5DB;
-    background-color: #30415e;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ced5db;
+  background-color: #30415e;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-    font-size:300%;
-    color:#ffe5df;
-    margin: 0;
-    padding: 1%;
-    display:inline;
-    /*display:inline is like a text wrap*/
-    border-width: 2px;
-    border-style: solid;
-    /*border-color:#ffe5df; clear comment to reintroduce border*/
-    border-color: transparent;
-    background-color: #26344e;
-    border-radius: 5px;
+  font-size: 300%;
+  color: #ffe5df;
+  margin: 0;
+  padding: 1%;
+  display: inline;
+  /*display:inline is like a text wrap*/
+  border-width: 2px;
+  border-style: solid;
+  /*border-color:#ffe5df; clear comment to reintroduce border*/
+  border-color: transparent;
+  background-color: #26344e;
+  border-radius: 5px;
 }
 
 h2 {
-    font-size:150%;
-    color:#d4a99b;
-    /*text-transform: lowercase;*/
+  font-size: 150%;
+  color: #d4a99b;
+  /*text-transform: lowercase;*/
 }
 
 p {
-    font-size:110%;
-    line-height: 1.25;
+  font-size: 110%;
+  line-height: 1.25;
 }
 
 ul {
-    font-size:110%;
-    color:white;
+  font-size: 110%;
+  color: white;
 }
 
 a {
-    color:#f3aca1;
-    font-weight: bold;
-    text-decoration: none;
-    
+  color: #f3aca1;
+  font-weight: bold;
+  text-decoration: none;
 }
-    
+
 div {
-    padding: 1%;
-    border-width: 2px;
-    border-style: dashed;
-    border-color:transparent;
-    background-color: #26344e;
-    border-radius: 10px;
+  padding: 1%;
+  border-width: 2px;
+  border-style: dashed;
+  border-color: transparent;
+  background-color: #26344e;
+  border-radius: 10px;
 }
 
 #container {
-    width: 90%;
-    margin: auto;
-    margin-top: 20px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5)
-}
-
-#hello {
-    border-style: solid;
-}
-
-#pic {
-    background-color: #eb8f73;
-    border-color: #CED5DB;
-    border-style: solid;
-    border-radius: 5px;
-    color:#0F0F0F;
-    width: 20%;
-    font-size: 85%;
-    text-align: center;
-    padding: 0;
-    margin: 0px 20px 0px 30px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-    clear: both;
-    /*clear is used to prevent overlaps*/
-    transform:rotate(2deg)
-}
-
-#caption {
-    padding-left: 5px;
-    padding-right: 5px;
-    }
-
-#social {
-    width: 75%;
-    margin: auto;
-    text-align: center;
-}
-
-#social img {
-    margin: 5px;
-}
-
-#social a:hover {
-    color:#e64717
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .lowercase {
-    text-transform: lowercase;
+  text-transform: lowercase;
 }
 
 .right {
-    float: right;
+  float: right;
 }
-
-[data-tab-content]{
-    display: none;
-}
-
-.active[data-tab-content]{
-    display: block;
-}
-
-/*the following is for styling the tabs*/
-.tabs {
-    width: 90%;
-    margin: auto;
-    padding: 0;
-    font-size: 200%;
-    font-weight: bold;
-    background-color: #33425C;
-    border-bottom-style: solid;
-    border-bottom-color:#C7ADA5;
-    display: flex;
-    list-style-type: none;
-}
-
-.tab {
-    cursor: pointer;
-    padding: 2% 4% 2% 4%;
-    background-color: #33425C;
-}
-
-.tab.active {
-    background-color: #C7ADA5;
-    color: #0F0F0F;
-}
-
-.tab:hover {
-    background-color: #8CBBED;
-    color: #0F0F0F;
-}
-
-/*unused snapshot format code
-img.snapshot{
-    border-width: 10px;
-    border-style: solid;
-    border-color: #ffffff;
-}
-*/
-
 
 .button {
-    background-color: #CED5DB;
-    border: none;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
-  }
-  
-  .button1 {
-    background-color: #CED5DB; 
-    color: black; 
-    border: 2px solid #e64717;
+  background-color: #ced5db;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #ced5db;
+  color: black;
+  border: 2px solid #e64717;
+}
+
+.button1:hover {
+  background-color: #e64717;
+  color: #ced5db;
+  border: 2px solid #e64717;
+}
+
+#tempo {
+  margin: 5px 0 5px 0;
+}
+
+#beatSpace {
+  border-color: #f3aca1;
+  border-style: ridge;
+}
+
+/* the code below should animation a circle which should eventually pulse for each beat */
+#beatAnimation {
+  padding: 50px;
+  background-color: #cfd9df;
+  border-radius: 5px;
+  margin: 0;
+  height: 25px;
+  display: flex; /* still learning what flex is */
+  align-items: center; /* aligns vertically */
+  justify-content: center; /* aligns horizontally */
+}
+
+.beatAnimation {
+  animation: pulse 5s infinite; /* makes the animation - infinite is how many iterations */
+  background-color: rgba(108, 92, 231, 1);
+  border-radius: 50%; /* makes it a circle */
+  height: 75px;
+  width: 75px;
+}
+
+@keyframes pulse {
+  /* note the reference to pulse above */
+  0% {
+    transform: scale(1); /* baseline */
   }
 
-  .button1:hover {
-    background-color: #e64717; 
-    color: #CED5DB; 
-    border: 2px solid #e64717;
+  5% {
+    transform: scale(1.2); /* pulses out */
+    box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.5); /* pulse wave starts */
   }
 
-  #tempo {
-    margin: 5px 0 5px 0;
+  90% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 15px rgba(108, 92, 231, 0); /* pulse wave fades */
   }
 
-  #beatSpace {
-    border-color: #f3aca1;
-    border-style: ridge;
+  100% {
+    transform: scale(1); /* shrinks back to starting size */
   }
+}
+
+.floatRight {
+  float: right;
+}
+.floatLeft {
+  float: left;
+}

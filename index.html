@@ -1,85 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
     <title>Project 01 - Rhythm Generator</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
-<div id="container">
-
+  <div id="container">
     <body>
-
-    <h1>Rhythm Generator</h1>
-    <p>
-        The current version of this tool will take a tempo and perform events at that tempo.<br>
+      <h1>Rhythm Generator</h1>
+      <p>
+        The current version of this tool will take a tempo and perform events at
+        that tempo.<br />
         Eventually, this tool should allow you to make interesting rhythms!
-    </p>
+      </p>
 
-    <p>
+      <p>
         <b>Desired Tempo (bpm):</b>
-        <input type="number" value="120" id="tempo" name="tempoForm" min="1" max="300">
-    </p>
+        <input
+          type="number"
+          value="120"
+          id="tempo"
+          name="tempoForm"
+          min="1"
+          max="300"
+        />
+      </p>
 
-    <p>
+      <p>
         <b>Top Number:</b>
         <select type="number" id="topNumber" name="topNumberForm">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4" selected>4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="15">15</option>
-            <option value="16">16</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
         </select>
         <!-- what's a more economical way to generate this list? yes; javascript using const array; const topNumbers = array etc-->
 
         <b>Bottom Number:</b>
         <select type="number" id="botNumber" name="botNumberForm">
-            <option value="1">1</option>
-            <option value="2">2</option>     
-            <option value="4" selected>4</option>
-            <option value="8">8</option>
-            <option value="16">16</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="4" selected>4</option>
+          <option value="8">8</option>
+          <option value="16">16</option>
         </select>
-    </p>
+      </p>
 
-    <button onclick="checkInputs()">Check Tempo and Time Signature</button>
-    <span class="tempoTimeSigOutput"></span>
+      <button onclick="checkInputs()">Check Tempo and Time Signature</button>
+      <span class="tempoTimeSigOutput"></span>
 
-    <p>
-        <input type="checkbox" id="volumeToggle" name="volume" value="volume">
-        <label for="volume">Sound On</label><br>
-    </p>
+      <p>
+        <input type="checkbox" id="volumeToggle" name="volume" value="volume" />
+        <label for="volume">Sound On</label><br />
+      </p>
 
-    <p>
-        <button id="startStopBut" type="button" onclick="bpmFunction()">Start the Beat!</button>
-    </p>
+      <p>
+        <button id="startStopBut" type="button" onclick="bpmFunction()">
+          Start the Beat!
+        </button>
+      </p>
 
-    <p id="currentTempo">Your current tempo is: 0 BPM.</p>
+      <p id="currentTempo">Your current tempo is: 0 BPM.</p>
 
-    <div id="beatSpace">
+      <div id="beatSpace">
         <p id="beats"></p>
-    </div>
+      </div>
 
-    <div id="beatAnimation">    <!-- this div will hold a simple beat animation -->
+      <div id="beatAnimation">
+        <!-- this div will hold a simple beat animation -->
         <span class="beatAnimation"></span>
-    </div>
-
+      </div>
     </body>
-
-</div>
-
+  </div>
 </html>
