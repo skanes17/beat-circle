@@ -9,10 +9,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<!-- for when audio is incorporated
-    <audio id="bassDrum" src="bassdrum.mp3"></audio>
--->
-
 <div id="container">
 
     <body>
@@ -48,7 +44,7 @@
             <option value="15">15</option>
             <option value="16">16</option>
         </select>
-        <!-- what's a more economical way to generate this list? -->
+        <!-- what's a more economical way to generate this list? yes; javascript using const array; const topNumbers = array etc-->
 
         <b>Bottom Number:</b>
         <select type="number" id="botNumber" name="botNumberForm">
@@ -71,7 +67,6 @@
     <p>
         <button id="startStopBut" type="button" onclick="bpmFunction()">Start the Beat!</button>
     </p>
-
 
     <p id="currentTempo">Your current tempo is: 0 BPM.</p>
 
