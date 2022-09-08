@@ -146,3 +146,15 @@ div {
 .floatLeft {
   float: left;
 }
+
+.emphasisContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.emphasisBoxes {
+  flex-shrink: 2; /* review this */
+}

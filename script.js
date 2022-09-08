@@ -1,3 +1,23 @@
+/* const beatArray = []; // generates the beat options (top number)
+let beatArrayLength = 16;
+for (let i = 0; i < beatArrayLength; i++) {
+  beatArray[i] = `${i + 1}`;
+}
+console.log(beatArray);
+
+let select = document.querySelector("#topNumber");
+
+for (let i = 0; i < 16; i++) {
+  var option = document.createElement("OPTION"),
+    txt = document.createTextNode(beatArray[i]);
+  option.appendChild(txt);
+  option.setAttribute("value", "beatArray[i]");
+  if (i == 3) {
+    option.setAttribute("selected", true);
+  }
+  select.insertBefore(option, select.lastChild);
+}
+*/
 let toggle;
 let myInterval;
 
