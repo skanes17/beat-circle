@@ -187,3 +187,10 @@ a {
   border-color: #997154;
   background-color: #997154;
 }
+
+.beatEmphasisText {
+  width: 50px;
+  height: 25px;
+  background-color: transparent;
+  text-align: center;
+}

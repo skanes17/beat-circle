@@ -100,3 +100,26 @@ function fillIn() {
       "purple";
   }
 }
+
+let rows = 4; // determines the number of boxes
+boxes = document.querySelector("#test");
+for (let i = 0; i < rows; i++) {
+  let beatColumn = document.createElement("div");
+  beatColumn.classList.add("beatEmphasisStack"); // adds a class to the element
+  beatColumn.style.backgroundColor = "red"; // adds bkgd color
+  boxes.appendChild(beatColumn);
+}
+
+let columns = 16; // determines the number of beats
+boxes = document.querySelector("#test2");
+for (let i = 0; i < columns; i++) {
+  let beatColumn = document.createElement("div");
+  beatColumn.classList.add("beatEmphasisBoxes");
+  beatColumn.style.flexDirection = "column";
+  beatColumn.style.width = "50px";
+  beatColumn.style.borderStyle = "dashed";
+  beatColumn.style.borderColor = "gray";
+  beatColumn.style.alignItems = "flex-end";
+  beatColumn.style.justifyContent = "end";
+  boxes.appendChild(beatColumn);
+}
