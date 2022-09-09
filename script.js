@@ -88,3 +88,15 @@ function checkInputs() {
     ".tempoTimeSigOutput"
   ).textContent = `You've chosen a tempo of ${output1} bpm with a time signature of ${output2}/${output3}.`;
 }
+
+function fillIn() {
+  var backgroundColor = document.querySelector("#beatEmphasisContainer").style
+    .backgroundColor;
+  if (backgroundColor === "purple") {
+    document.querySelector("#beatEmphasisContainer").style.backgroundColor =
+      "blue";
+  } else {
+    document.querySelector("#beatEmphasisContainer").style.backgroundColor =
+      "purple";
+  }
+}

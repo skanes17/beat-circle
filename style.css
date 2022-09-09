@@ -43,12 +43,15 @@ a {
   text-decoration: none;
 }
 
-div {
+.divStyle {
   padding: 1%;
   border-width: 2px;
   border-style: dashed;
   border-color: transparent;
   background-color: #26344e;
+}
+
+.roundBorder {
   border-radius: 10px;
 }
 
@@ -147,14 +150,40 @@ div {
   float: left;
 }
 
-.emphasisContainer {
+.beatEmphasisContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
   gap: 10px;
+  padding: 20px;
+  border-color: black;
+  border-style: solid;
+  background-color: purple;
 }
 
-.emphasisBoxes {
-  flex-shrink: 2; /* review this */
+.beatEmphasisBoxes {
+  flex-direction: column;
+  width: 50px;
+  border-style: dashed;
+  border-color: gray;
+  align-items: flex-end;
+  justify-content: end;
+}
+
+.beatEmphasisStack {
+  width: 50px;
+  height: 25px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #997154;
+  background-color: #c0997c;
+}
+
+.beatEmphasisStack:hover {
+  width: 50px;
+  height: 25px;
+  border-style: solid;
+  border-color: #997154;
+  background-color: #997154;
 }

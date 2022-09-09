@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
-  <div id="container">
+  <div class="divStyle" id="container">
     <body>
       <h1>Rhythm Generator</h1>
       <p>
@@ -82,12 +82,39 @@
 
       <p id="currentTempo">Your current tempo is: 0 BPM.</p>
 
-      <div id="beatSpace">
+      <div
+        id="beatEmphasisContainer"
+        class="beatEmphasisContainer"
+        onclick="fillIn()"
+      >
+        <div class="beatEmphasisBoxes">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+        </div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes"></div>
+      </div>
+
+      <div id="beatSpace" class="roundBorder divStyle">
         <p id="beats"></p>
       </div>
 
-      <div id="beatAnimation">
-        <!-- this div will hold a simple beat animation -->
+      <div id="beatAnimation" class="divStyle">
         <span class="beatAnimation"></span>
       </div>
     </body>
