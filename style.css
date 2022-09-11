@@ -156,23 +156,28 @@ a {
   justify-content: center;
   align-items: flex-end;
   gap: 10px;
-  padding: 20px;
+  padding: 10px;
+  margin: 10px;
   border-color: black;
   border-style: solid;
   background-color: purple;
 }
 
 .beatEmphasisBoxes {
+  /* they're not expanding as expected */
+  display: flex;
+  flex: 1 1;
+  gap: 1px;
   flex-direction: column;
-  width: 50px;
+  min-width: 20px;
   border-style: dashed;
   border-color: transparent;
-  align-items: flex-end;
+  align-items: center;
   justify-content: end;
 }
 
 .beatEmphasisStack {
-  width: 50px;
+  min-width: 20px;
   height: 25px;
   border: 1px solid #997154;
   background-color: #c0997c;
@@ -185,8 +190,7 @@ a {
 }
 
 .beatEmphasisText {
-  width: 50px;
-  height: 25px;
+  width: 20px;
   background-color: transparent;
   text-align: center;
 }
