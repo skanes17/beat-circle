@@ -176,11 +176,12 @@ a {
   height: 25px;
   border: 1px solid #997154;
   background-color: #c0997c;
-  /* transition: ease-in-out;  how to make this work? */
+  transition: 150ms ease-in-out;
 }
 
 .beatEmphasisStack:hover {
   background-color: #997154;
+  transform: scale(1.05);
 }
 
 .beatEmphasisText {
