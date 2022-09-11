@@ -82,37 +82,129 @@
 
       <p id="currentTempo">Your current tempo is: 0 BPM.</p>
 
+      <button type="button" onclick="showBeats()">click to hide beats</button>
       <div
         id="beatEmphasisContainer"
         class="beatEmphasisContainer"
         onclick="fillIn()"
       >
-        <div class="beatEmphasisBoxes">
+        <div class="beatEmphasisBoxes" id="box1">
           <div class="beatEmphasisStack"></div>
           <div class="beatEmphasisStack"></div>
           <div class="beatEmphasisStack"></div>
           <div class="beatEmphasisStack"></div>
           <div class="beatEmphasisText">1</div>
         </div>
-        <div id="test" class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
-        <div class="beatEmphasisBoxes"></div>
+        <div class="beatEmphasisBoxes" id="box2">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">2</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box3">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">3</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box4">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">4</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box5">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">5</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box6">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">6</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box7">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">7</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box8">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">8</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box9">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">9</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box10">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">10</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box11">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">11</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box12">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">12</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box13">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">13</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box14">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">14</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box15">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">15</div>
+        </div>
+        <div class="beatEmphasisBoxes" id="box16">
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisStack"></div>
+          <div class="beatEmphasisText">16</div>
+        </div>
       </div>
 
-      <!-- practicing generating boxes by JavaScript -->
+      <!-- practicing generating boxes by JavaScript 
       <div id="test2" class="beatEmphasisContainer"></div>
+      -->
 
       <div id="beatSpace" class="roundBorder divStyle">
         <p id="beats"></p>

@@ -166,7 +166,7 @@ a {
   flex-direction: column;
   width: 50px;
   border-style: dashed;
-  border-color: gray;
+  border-color: transparent;
   align-items: flex-end;
   justify-content: end;
 }
@@ -174,17 +174,12 @@ a {
 .beatEmphasisStack {
   width: 50px;
   height: 25px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: #997154;
+  border: 1px solid #997154;
   background-color: #c0997c;
+  /* transition: ease-in-out;  how to make this work? */
 }
 
 .beatEmphasisStack:hover {
-  width: 50px;
-  height: 25px;
-  border-style: solid;
-  border-color: #997154;
   background-color: #997154;
 }
 

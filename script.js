@@ -101,6 +101,7 @@ function fillIn() {
   }
 }
 
+/* practice generating boxes with JS
 let rows = 4; // determines the number of boxes
 boxes = document.querySelector("#test");
 for (let i = 0; i < rows; i++) {
@@ -122,4 +123,17 @@ for (let i = 0; i < columns; i++) {
   beatColumn.style.alignItems = "flex-end";
   beatColumn.style.justifyContent = "end";
   boxes.appendChild(beatColumn);
+}
+*/
+
+function showBeats() {
+  let output2 = document.querySelector("#topNumber").value;
+  for (i = 16; i > output2; i--) {
+    let x = document.getElementById(`box${i}`);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
 }
