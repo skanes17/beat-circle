@@ -194,3 +194,68 @@ a {
   background-color: transparent;
   text-align: center;
 }
+
+article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  position: relative;
+  border-color: transparent;
+  border-style: solid;
+  margin: 10px;
+}
+
+.outer-circle {
+  background-color: rgba(108, 92, 231, 1);
+  border-radius: 50%; /* makes it a circle */
+  height: 220px;
+  width: 220px;
+  position: absolute; 
+  box-shadow: 5px 5px 10px 2px rgba(108, 92, 231, 0.3); /* pulse wave starts */
+
+}
+
+.inner-circle {
+  background-color: white;
+  border-radius: 50%; /* makes it a circle */
+  height: 210px;
+  width: 210px;
+  position: absolute;
+}
+
+.center-dot {
+  background-color: black;
+  border-radius: 50%; /* makes it a circle */
+  height: 15px;
+  width: 15px;
+  position: absolute;
+}
+
+.hand {
+  background: black;
+  height: 125px;
+  width: 5px;
+  top: 0%;
+  position: absolute;
+  transform-origin: bottom;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.handAnimate {
+  background: black;
+  height: 125px;
+  width: 5px;
+  top: 0%;
+  position: absolute;
+  transform-origin: bottom;
+  animation: rotate 2s infinite linear;
+}
+/* will calculate length based on bpm
+

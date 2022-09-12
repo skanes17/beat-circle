@@ -75,7 +75,11 @@
       </p>
 
       <p>
-        <button id="startStopBut" type="button" onclick="bpmFunction()">
+        <button
+          id="startStopBut"
+          type="button"
+          onclick="bpmFunction(); circleAnimation()"
+        >
           Start the Beat!
         </button>
       </p>
@@ -210,9 +214,12 @@
         <p id="beats"></p>
       </div>
 
-      <div id="beatAnimation" class="divStyle">
-        <span class="beatAnimation"></span>
-      </div>
+      <article class="container">
+        <div class="outer-circle"></div>
+        <div class="inner-circle"></div>
+        <div class="center-dot"></div>
+        <div id="hand" class="hand"></div>
+      </article>
     </body>
   </div>
 </html>

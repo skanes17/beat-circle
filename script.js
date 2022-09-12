@@ -80,6 +80,14 @@ function bpmFunction() {
   toggle = false;
 }
 
+// this took me absolutely ages to trial and error
+// had to make an ID instead of a class to make it work properly
+// now need to figure out how to make it dynamic
+function circleAnimation() {
+  let x = document.getElementById("hand");
+  x.classList.toggle("handAnimate");
+}
+
 function checkInputs() {
   let output1 = document.querySelector("#tempo").value;
   let output2 = document.querySelector("#topNumber").value;
