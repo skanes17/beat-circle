@@ -32,7 +32,12 @@
 
       <p>
         <b>Top Number:</b>
-        <select type="number" id="topNumber" name="topNumberForm">
+        <select
+          type="number"
+          id="topNumber"
+          name="topNumberForm"
+          onchange="showBeats()"
+        >
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -71,7 +76,7 @@
 
       <p>
         <input type="checkbox" id="volumeToggle" name="volume" value="volume" />
-        <label for="volume">Sound On</label><br />
+        <label for="volumeToggle">Sound On</label><br />
       </p>
 
       <p>

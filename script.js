@@ -127,7 +127,13 @@ for (let i = 0; i < columns; i++) {
 
 function showBeats() {
   let topNumber = document.querySelector("#topNumber").value;
-  for (i = 16; i > topNumber; i--) {
+  // hides all beat containers
+  for (i = 1; i <= 16; i++) {
+    let x = document.getElementById(`box${i}`);
+    x.style.display = "none";
+  }
+  // shows only as many beat containers as the top number
+  for (i = 1; i <= topNumber; i++) {
     let x = document.getElementById(`box${i}`);
     if (x.style.display === "none") {
       x.style.display = "block";
@@ -136,6 +142,11 @@ function showBeats() {
     }
   }
 }
+
+// this runs the showBeats function on page load
+document.addEventListener("DOMContentLoaded", function () {
+  showBeats();
+});
 
 // script to run animation for the metronome hand and beat waves
 // need to add functionality to stop the animations!
