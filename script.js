@@ -34,13 +34,13 @@ function bpmFunction() {
   }
 
   // main beat production
-  let output3 = document.querySelector("#botNumber").value;
+  let botNumber = document.querySelector("#botNumber").value;
 
-  let bpm = document.querySelector("#tempo").value;
-  let bpmMessage = (60 / (bpm * (output3 / 4))) * 1000; // changes beat feel based on bottom number
+  let tempo = document.querySelector("#tempo").value;
+  let bpmMessage = (60 / (tempo * (botNumber / 4))) * 1000; // changes beat feel based on bottom number
   document.querySelector(
     "#currentTempo"
-  ).innerHTML = `Your current tempo is: ${bpm} BPM.`;
+  ).innerHTML = `Your current tempo is: ${tempo} BPM.`;
   document.querySelector("#beats").innerHTML += "BEAT "; // ensures the beat starts immediately on click
 
   soundState = document.querySelector("#volumeToggle");
@@ -55,10 +55,9 @@ function bpmFunction() {
   let i = 1;
   function displayMessage() {
     // adds strong and weak beats to the paragraph with id="beats"
-    selectElement = document.querySelector("#topNumber");
-    output2 = selectElement.value;
+    topNumber = document.querySelector("#topNumber").value;
 
-    if (i % output2 === 0) {
+    if (i % topNumber === 0) {
       document.querySelector("#beats").innerHTML += "BEAT ";
       if (soundState.checked == true) {
         let woodblock = new Audio("woodblock.mp3");
@@ -89,12 +88,12 @@ function circleAnimation() {
 }
 
 function checkInputs() {
-  let output1 = document.querySelector("#tempo").value;
-  let output2 = document.querySelector("#topNumber").value;
-  let output3 = document.querySelector("#botNumber").value;
+  let tempo = document.querySelector("#tempo").value;
+  let topNumber = document.querySelector("#topNumber").value;
+  let botNumber = document.querySelector("#botNumber").value;
   document.querySelector(
     ".tempoTimeSigOutput"
-  ).textContent = `You've chosen a tempo of ${output1} bpm with a time signature of ${output2}/${output3}.`;
+  ).textContent = `You've chosen a tempo of ${tempo} bpm with a time signature of ${topNumber}/${botNumber}.`;
 }
 
 function fillIn() {
@@ -135,8 +134,8 @@ for (let i = 0; i < columns; i++) {
 */
 
 function showBeats() {
-  let output2 = document.querySelector("#topNumber").value;
-  for (i = 16; i > output2; i--) {
+  let topNumber = document.querySelector("#topNumber").value;
+  for (i = 16; i > topNumber; i--) {
     let x = document.getElementById(`box${i}`);
     if (x.style.display === "none") {
       x.style.display = "block";
@@ -145,3 +144,28 @@ function showBeats() {
     }
   }
 }
+
+// script to run an animation for the metronome hand
+
+// need to pick this one apart to better understand
+const handAnimation = document.querySelector(".hand");
+
+handAnimation.addEventListener("click", () => {
+  // I guess this is filling an array? Need to learn more.
+  let topNumber = document.querySelector("#topNumber").value;
+  let botNumber = document.querySelector("#botNumber").value;
+  let tempo = document.querySelector("#tempo").value;
+  let bpmMessage = (60 / tempo) * topNumber * (4 / botNumber) * 1000; //
+
+  const rotateHand = [
+    { transform: "rotate(0)" },
+    { transform: "rotate(360deg)" },
+  ];
+
+  const rotateTiming = {
+    duration: bpmMessage,
+    iterations: Infinity,
+  };
+
+  handAnimation.animate(rotateHand, rotateTiming);
+});
