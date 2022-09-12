@@ -167,11 +167,10 @@ a {
   /* they're not expanding as expected */
   display: flex;
   flex: 1 1;
-  gap: 1px;
   flex-direction: column;
   min-width: 20px;
   border-style: dashed;
-  border-color: transparent;
+  border-color: #4e3a2b;
   align-items: center;
   justify-content: end;
 }
@@ -179,18 +178,18 @@ a {
 .beatEmphasisStack {
   min-width: 20px;
   height: 25px;
-  border: 1px solid #997154;
+  border: 1px solid #4e3a2b;
   background-color: #c0997c;
   transition: 150ms ease-in-out;
 }
 
 .beatEmphasisStack:hover {
   background-color: #997154;
-  transform: scale(1.05);
+  transform: scale(1); /* experimented with scaling on hover */
 }
 
 .beatEmphasisText {
-  width: 20px;
+  min-width: 20px;
   background-color: transparent;
   text-align: center;
 }
@@ -227,9 +226,9 @@ article {
 
 .center-dot {
   background-color: black;
-  border-radius: 50%; /* makes it a circle */
-  height: 15px;
-  width: 15px;
+  border-radius: 35%; /* makes it a circle */
+  height: 7px;
+  width: 7px;
   position: absolute;
 }
 
@@ -239,6 +238,7 @@ article {
   width: 5px;
   top: 0%;
   position: absolute;
+  border-radius: 40%;
   transform-origin: bottom;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2); /* pulse wave starts */
 }
