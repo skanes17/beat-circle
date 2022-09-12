@@ -79,15 +79,6 @@ function bpmFunction() {
   toggle = false;
 }
 
-function checkInputs() {
-  let tempo = document.querySelector("#tempo").value;
-  let topNumber = document.querySelector("#topNumber").value;
-  let botNumber = document.querySelector("#botNumber").value;
-  document.querySelector(
-    ".tempoTimeSigOutput"
-  ).textContent = `You've chosen a tempo of ${tempo} bpm with a time signature of ${topNumber}/${botNumber}.`;
-}
-
 function fillIn() {
   var backgroundColor = document.querySelector("#beatEmphasisContainer").style
     .backgroundColor;

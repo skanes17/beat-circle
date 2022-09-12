@@ -11,15 +11,10 @@
 
   <div class="divStyle" id="container">
     <body>
-      <h1>Rhythm Generator</h1>
-      <p>
-        The current version of this tool will take a tempo and perform events at
-        that tempo.<br />
-        Eventually, this tool should allow you to make interesting rhythms!
-      </p>
+      <h1>Circular Metronome</h1>
 
       <p>
-        <b>Desired Tempo (bpm):</b>
+        <b>Tempo</b>
         <input
           type="number"
           value="120"
@@ -31,7 +26,7 @@
       </p>
 
       <p>
-        <b>Top Number:</b>
+        <b>Beats</b>
         <select
           type="number"
           id="topNumber"
@@ -62,17 +57,13 @@
         </select>
         -->
 
-        <b>Bottom Number:</b>
+        <b>Groove</b>
         <select type="number" id="botNumber" name="botNumberForm">
-          <option value="2">2</option>
-          <option value="4" selected>4</option>
-          <option value="8">8</option>
-          <option value="16">16</option>
+          <option value="2">Half Time</option>
+          <option value="4" selected>Regular Time</option>
+          <option value="8">Double Time</option>
         </select>
       </p>
-
-      <button onclick="checkInputs()">Check Tempo and Time Signature</button>
-      <span class="tempoTimeSigOutput"></span>
 
       <p>
         <input
