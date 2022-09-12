@@ -183,9 +183,11 @@ a {
   transition: 150ms ease-in-out;
 }
 
-.beatEmphasisStack:hover {
+/* experimented with scaling on hover */
+/* this method styles all children */
+.beatEmphasisBoxes:hover .beatEmphasisStack {
   background-color: #997154;
-  transform: scale(1); /* experimented with scaling on hover */
+  transform: scale(1);
 }
 
 .beatEmphasisText {
