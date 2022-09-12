@@ -7,12 +7,11 @@ body {
 }
 
 h1 {
-  font-size: 300%;
+  font-size: 250%;
   color: #ffe5df;
   margin: 0;
   padding: 1%;
-  display: inline;
-  /*display:inline is like a text wrap*/
+  text-align: center;
   border-width: 2px;
   border-style: solid;
   /*border-color:#ffe5df; clear comment to reintroduce border*/
@@ -25,11 +24,6 @@ h2 {
   font-size: 150%;
   color: #d4a99b;
   /*text-transform: lowercase;*/
-}
-
-p {
-  font-size: 110%;
-  line-height: 1.25;
 }
 
 ul {
@@ -93,8 +87,50 @@ a {
   border: 2px solid #e64717;
 }
 
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: dashed;
+  border-color: rgb(88, 81, 81);
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  border-style: dashed;
+  border-color: rgb(88, 81, 81);
+}
+
+.inputsParent {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+  border-style: dashed;
+  border-color: rgb(105, 104, 104);
+}
+
+.inputsChild {
+  border-style: dashed;
+  border-color: rgb(230, 140, 140);
+}
+
+.inputs {
+  text-align: center;
+}
+
 #tempo {
   margin: 5px 0 5px 0;
+}
+
+#startStopBut {
+  width: 300px;
+  height: 100px;
+  font-size: x-large;
+  font-weight: lighter;
 }
 
 #beatSpace {
@@ -158,15 +194,15 @@ a {
   gap: 2px;
   padding: 10px;
   margin: 10px;
-  border-color: black;
+  border-color: transparent;
   border-style: solid;
-  background-color: purple;
+  background-color: transparent;
 }
 
 .beatEmphasisBoxes {
   /* they're not expanding as expected */
   display: flex;
-  flex: 1 1;
+  flex: 1 1 0;
   flex-direction: column;
   min-width: 20px;
   border-style: dashed;

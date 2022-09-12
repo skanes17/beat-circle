@@ -79,18 +79,6 @@ function bpmFunction() {
   toggle = false;
 }
 
-function fillIn() {
-  var backgroundColor = document.querySelector("#beatEmphasisContainer").style
-    .backgroundColor;
-  if (backgroundColor === "purple") {
-    document.querySelector("#beatEmphasisContainer").style.backgroundColor =
-      "blue";
-  } else {
-    document.querySelector("#beatEmphasisContainer").style.backgroundColor =
-      "purple";
-  }
-}
-
 /* practice generating boxes with JS
 let rows = 4; // determines the number of boxes
 boxes = document.querySelector("#test");

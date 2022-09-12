@@ -9,90 +9,101 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
-  <div class="divStyle" id="container">
-    <body>
+  <body>
+    <div class="divStyle" id="container">
       <h1>Circular Metronome</h1>
 
-      <p>
-        <b>Tempo</b>
-        <input
-          type="number"
-          value="120"
-          id="tempo"
-          name="tempoForm"
-          min="1"
-          max="300"
-        />
-      </p>
+      <div class="centered">
+        <p>
+          <b>Tempo</b>
+          <input
+            type="number"
+            value="120"
+            id="tempo"
+            name="tempoForm"
+            min="1"
+            max="300"
+            class="inputs"
+          />
+        </p>
+      </div>
+      <div class="inputsParent">
+        <div class="inputsChild">
+          <p>
+            <b>Beats</b>
+            <select
+              type="number"
+              id="topNumber"
+              name="topNumberForm"
+              onchange="showBeats()"
+              class="inputs"
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4" selected>4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+            </select>
+          </p>
+        </div>
 
-      <p>
-        <b>Beats</b>
-        <select
-          type="number"
-          id="topNumber"
-          name="topNumberForm"
-          onchange="showBeats()"
-        >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4" selected>4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16">16</option>
-        </select>
-        <!-- dropdown list generates correctly but values aren't called correctly later
-        <select type="number" id="topNumber" name="topNumberForm">
-          <option></option>
-           would be nice to remove the blank at top of dropdown list
-        </select>
-        -->
+        <div class="inputsChild">
+          <p>
+            <b>Groove</b>
+            <select
+              type="number"
+              id="botNumber"
+              name="botNumberForm"
+              class="inputCenter"
+            >
+              <option value="2">Half Time</option>
+              <option value="4" selected>Regular Time</option>
+              <option value="8">Double Time</option>
+            </select>
+          </p>
+        </div>
 
-        <b>Groove</b>
-        <select type="number" id="botNumber" name="botNumberForm">
-          <option value="2">Half Time</option>
-          <option value="4" selected>Regular Time</option>
-          <option value="8">Double Time</option>
-        </select>
-      </p>
+        <div class="inputsChild">
+          <p>
+            <input
+              type="checkbox"
+              id="volumeToggle"
+              name="volume"
+              value="volume"
+              checked="true"
+            />
+            <label for="volumeToggle">Sound On</label><br />
+          </p>
+        </div>
+      </div>
 
-      <p>
-        <input
-          type="checkbox"
-          id="volumeToggle"
-          name="volume"
-          value="volume"
-          checked="true"
-        />
-        <label for="volumeToggle">Sound On</label><br />
-      </p>
-
-      <p>
-        <button
-          id="startStopBut"
-          type="button"
-          onclick="bpmFunction(); circleAnimation()"
-        >
-          Start the Beat!
-        </button>
-      </p>
+      <div class="centered">
+        <p>
+          <button
+            id="startStopBut"
+            type="button"
+            onclick="bpmFunction(); circleAnimation()"
+          >
+            Start the Beat!
+          </button>
+        </p>
+      </div>
 
       <p id="currentTempo">Your current tempo is: 0 BPM.</p>
+      <!-- should align this to the right of the button maybe -->
 
-      <div
-        id="beatEmphasisContainer"
-        class="beatEmphasisContainer"
-        onclick="fillIn()"
-      >
+      <div id="beatEmphasisContainer" class="beatEmphasisContainer">
         <div class="beatEmphasisBoxes" id="box1">
           <div class="beatEmphasisStack"></div>
           <div class="beatEmphasisStack"></div>
@@ -221,6 +232,6 @@
         <div class="center-dot"></div>
         <div id="hand" class="hand"></div>
       </article>
-    </body>
-  </div>
+    </div>
+  </body>
 </html>
