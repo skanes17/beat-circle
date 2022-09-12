@@ -170,7 +170,7 @@ a {
   flex-direction: column;
   min-width: 20px;
   border-style: dashed;
-  border-color: #4e3a2b;
+  border-color: transparent;
   align-items: stretch;
   justify-content: end;
 }
