@@ -145,27 +145,59 @@ function showBeats() {
   }
 }
 
-// script to run an animation for the metronome hand
+// script to run animation for the metronome hand and beat waves
+// need to add functionality to stop the animations!
+const handAnimation = document.querySelector(".hand"); // allows easy modifying of this div later
+const startStopBut = document.querySelector("#startStopBut");
+const waveAnimation = document.querySelector(".outer-circle");
+const pulseAnimation = document.querySelector(".outer-circle");
 
-// need to pick this one apart to better understand
-const handAnimation = document.querySelector(".hand");
-
-handAnimation.addEventListener("click", () => {
-  // I guess this is filling an array? Need to learn more.
+// the listener is on the button, which triggers the animation on the hand
+startStopBut.addEventListener("click", () => {
   let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
   let tempo = document.querySelector("#tempo").value;
   let bpmMessage = (60 / tempo) * topNumber * (4 / botNumber) * 1000; //
 
+  // this process fills an array which sets up keyframes
+  // need to learn more about this to be able to make from scratch!
   const rotateHand = [
     { transform: "rotate(0)" },
     { transform: "rotate(360deg)" },
   ];
 
+  // sets the timing for how quickly to run through the keyframes
   const rotateTiming = {
     duration: bpmMessage,
     iterations: Infinity,
   };
 
   handAnimation.animate(rotateHand, rotateTiming);
+
+  // to make waves on beat
+  const wave = [
+    { boxShadow: "0 0 0 0px rgba(108, 92, 231, 1)" },
+    { boxShadow: "0 0 0 10px rgba(108, 92, 231, 0)" },
+  ];
+
+  const waveTiming = {
+    duration: bpmMessage / topNumber,
+    iterations: Infinity,
+  };
+
+  waveAnimation.animate(wave, waveTiming);
+
+  // makes the circle pulse slightly on beat
+  const pulse = [
+    { transform: "scale(1)" },
+    { transform: "scale(1.02)", offset: 0.2 }, // offset works like keyframe percentage in CSS
+    { transform: "scale(1)", offset: 0.4 },
+  ];
+
+  const pulseTiming = {
+    duration: bpmMessage / topNumber,
+    iterations: Infinity,
+  };
+
+  pulseAnimation.animate(pulse, pulseTiming);
 });
