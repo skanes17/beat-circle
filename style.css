@@ -155,7 +155,7 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  gap: 10px;
+  gap: 2px;
   padding: 10px;
   margin: 10px;
   border-color: black;
@@ -170,8 +170,8 @@ a {
   flex-direction: column;
   min-width: 20px;
   border-style: dashed;
-  border-color: transparent;
-  align-items: center;
+  border-color: #4e3a2b;
+  align-items: stretch;
   justify-content: end;
 }
 
@@ -192,6 +192,7 @@ a {
   min-width: 20px;
   background-color: transparent;
   text-align: center;
+  font-family: "Courier New", Courier, monospace;
 }
 
 article {
