@@ -41,7 +41,8 @@ a {
 #container {
   border-style: dashed;
   border-color: lightgray;
-  width: 90%;
+  border-radius: 8px;
+  width: 70%;
   margin: auto;
   margin-top: 20px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
@@ -195,9 +196,8 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  gap: 2px;
   padding: 10px;
-  margin: 10px;
+  margin: 5px 0 5px 0;
   border-color: darkorchid;
   border-style: dashed;
   background-color: transparent;
@@ -229,7 +229,9 @@ a {
 }
 
 .beatEmphasisText {
-  min-width: 20px;
+  /* need more practice with vmin concept */
+  font-size: 2vmin;
+  min-width: 5px;
   background-color: transparent;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
