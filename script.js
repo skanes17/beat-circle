@@ -26,11 +26,11 @@ function bpmFunction() {
   if (toggle === false) {
     // stop button
     document.querySelector("#currentTempo").innerHTML = `You stopped the beat!`;
-    clearInterval(myInterval); // should stop any existing beat - but doesn't?
+    clearInterval(myInterval);
     document.querySelector("#beats").innerHTML = ""; // clears the paragraph
     document.querySelector("#startStopBut").innerHTML = "Start the Beat!";
     toggle = true;
-    return; // read up on return a little more; helped remove the else statement
+    return;
   }
 
   // main beat production

@@ -27,8 +27,8 @@
           />
         </p>
       </div>
-      <div class="inputsParent">
-        <div class="inputsChild">
+      <div class="divParent">
+        <div class="divChild">
           <p>
             <b>Beats</b>
             <select
@@ -58,7 +58,7 @@
           </p>
         </div>
 
-        <div class="inputsChild">
+        <div class="divChild">
           <p>
             <b>Groove</b>
             <select
@@ -74,7 +74,7 @@
           </p>
         </div>
 
-        <div class="inputsChild">
+        <div class="divChild">
           <p>
             <input
               type="checkbox"
@@ -88,20 +88,25 @@
         </div>
       </div>
 
-      <div class="centered">
-        <p>
-          <button
-            id="startStopBut"
-            type="button"
-            onclick="bpmFunction(); circleAnimation()"
-          >
-            Start the Beat!
-          </button>
-        </p>
-      </div>
+      <div class="divParent">
+        <div class="divChild">
+          <p>
+            <button
+              id="startStopBut"
+              type="button"
+              onclick="bpmFunction(); circleAnimation()"
+            >
+              Start the Beat!
+            </button>
+          </p>
+        </div>
 
-      <p id="currentTempo">Your current tempo is: 0 BPM.</p>
-      <!-- should align this to the right of the button maybe -->
+        <!-- now lives in animation space
+        <div child="divChild">
+          <p id="currentTempo">Your current tempo is: 0 BPM.</p>
+        </div>
+         -->
+      </div>
 
       <div id="beatEmphasisContainer" class="beatEmphasisContainer">
         <div class="beatEmphasisBoxes" id="box1">
@@ -227,6 +232,9 @@
       </div>
 
       <article class="container">
+        <div class="tempoDisplay">
+          <p id="currentTempo">Your current tempo is: 0 BPM.</p>
+        </div>
         <div class="outer-circle"></div>
         <div class="inner-circle"></div>
         <div class="center-dot"></div>

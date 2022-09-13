@@ -72,7 +72,7 @@ a {
   border-color: rgb(88, 81, 81);
 }
 
-.inputsParent {
+.divParent {
   display: flex;
   flex-flow: row;
   justify-content: center;
@@ -82,7 +82,7 @@ a {
   border-color: rgb(105, 104, 104);
 }
 
-.inputsChild {
+.divChild {
   border-style: dashed;
   border-color: rgb(230, 140, 140);
 }
@@ -166,13 +166,12 @@ a {
   gap: 2px;
   padding: 10px;
   margin: 10px;
-  border-color: transparent;
-  border-style: solid;
+  border-color: darkorchid;
+  border-style: dashed;
   background-color: transparent;
 }
 
 .beatEmphasisBoxes {
-  /* they're not expanding as expected */
   display: flex;
   flex-direction: column;
   flex: 1 1 10px;
@@ -215,6 +214,16 @@ article {
   border-color: transparent;
   border-style: solid;
   margin: 10px;
+}
+
+.tempoDisplay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: black;
+  padding: 1%;
+  font-size: large;
 }
 
 .outer-circle {
