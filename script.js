@@ -38,9 +38,7 @@ function bpmFunction() {
 
   let tempo = document.querySelector("#tempo").value;
   let bpmMessage = (60 / (tempo * (botNumber / 4))) * 1000; // changes beat feel based on bottom number
-  document.querySelector(
-    "#currentTempo"
-  ).innerHTML = `Your current tempo is: ${tempo} BPM.`;
+  document.querySelector("#currentTempo").innerHTML = `Tempo: ${tempo} BPM`;
   document.querySelector("#beats").innerHTML += "BEAT "; // ensures the beat starts immediately on click
 
   soundState = document.querySelector("#volumeToggle");
