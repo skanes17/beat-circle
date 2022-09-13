@@ -90,26 +90,6 @@
         </div>
       </div>
 
-      <div class="divParent">
-        <div class="divChild">
-          <p>
-            <button
-              id="startStopBut"
-              type="button"
-              onclick="bpmFunction(); circleAnimation()"
-            >
-              Start the Beat!
-            </button>
-          </p>
-        </div>
-
-        <!-- now lives in animation space
-        <div child="divChild">
-          <p id="currentTempo">Your current tempo is: 0 BPM.</p>
-        </div>
-         -->
-      </div>
-
       <div id="beatEmphasisContainer" class="beatEmphasisContainer">
         <div class="beatEmphasisBoxes" id="box1">
           <div class="beatEmphasisStack"></div>
@@ -228,6 +208,20 @@
       <!-- practicing generating boxes by JavaScript 
       <div id="test2" class="beatEmphasisContainer"></div>
       -->
+
+      <div class="divParent">
+        <div class="divChild">
+          <p>
+            <button
+              id="startStopBut"
+              type="button"
+              onclick="bpmFunction(); circleAnimation()"
+            >
+              Start the Beat!
+            </button>
+          </p>
+        </div>
+      </div>
 
       <div id="beatSpace" class="roundBorder divStyle">
         <p id="beats"></p>
