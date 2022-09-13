@@ -152,6 +152,11 @@ startStopBut.addEventListener("click", () => {
     iterations: Infinity,
   };
 
+  // syntax is animate(keyframes, options)
+  // keyframes can be  an array of keyframe objects...
+  // or a keyframe object whose properties are arrays of values to iterate over
+  // options are the animation duration in ms...
+  // or an object containing one or more timing properties
   handAnimation.animate(rotateHand, rotateTiming);
 
   // to make waves on beat
