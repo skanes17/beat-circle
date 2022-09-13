@@ -139,6 +139,7 @@ a {
 #beatSpace {
   border-color: #f3aca1;
   border-style: ridge;
+  display: none;
 }
 
 /* the code below should animation a circle which should eventually pulse for each beat */
