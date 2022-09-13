@@ -11,8 +11,23 @@
 
   <body>
     <div class="divStyle" id="container">
-      <h1>Circular Metronome</h1>
-
+      <div class="divParent">
+        <div class="divChildHeader">
+          <h1>Circular Metronome</h1>
+        </div>
+        <div class="divChild2">
+          <p>
+            <input
+              type="checkbox"
+              id="volumeToggle"
+              name="volume"
+              value="volume"
+              checked="true"
+            />
+            <label for="volumeToggle">Sound On</label><br />
+          </p>
+        </div>
+      </div>
       <div class="centered">
         <p>
           <b>Tempo</b>
@@ -71,19 +86,6 @@
               <option value="4" selected>Regular Time</option>
               <option value="8">Double Time</option>
             </select>
-          </p>
-        </div>
-
-        <div class="divChild">
-          <p>
-            <input
-              type="checkbox"
-              id="volumeToggle"
-              name="volume"
-              value="volume"
-              checked="true"
-            />
-            <label for="volumeToggle">Sound On</label><br />
           </p>
         </div>
       </div>
