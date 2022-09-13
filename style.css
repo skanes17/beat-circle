@@ -20,17 +20,6 @@ h1 {
   border-radius: 5px;
 }
 
-h2 {
-  font-size: 150%;
-  color: #d4a99b;
-  /*text-transform: lowercase;*/
-}
-
-ul {
-  font-size: 110%;
-  color: white;
-}
-
 a {
   color: #f3aca1;
   font-weight: bold;
@@ -56,14 +45,6 @@ a {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.lowercase {
-  text-transform: lowercase;
-}
-
-.right {
-  float: right;
-}
-
 .button {
   background-color: #ced5db;
   border: none;
@@ -75,24 +56,12 @@ a {
   cursor: pointer;
 }
 
-.button1 {
-  background-color: #ced5db;
-  color: black;
-  border: 2px solid #e64717;
-}
-
-.button1:hover {
-  background-color: #e64717;
-  color: #ced5db;
-  border: 2px solid #e64717;
-}
-
 .centered {
   display: flex;
   justify-content: center;
   align-items: center;
   border-style: dashed;
-  border-color: rgb(88, 81, 81);
+  border-color: rgb(88, 87, 81);
 }
 
 .right {
@@ -127,10 +96,13 @@ a {
 }
 
 #startStopBut {
-  width: 300px;
-  height: 100px;
-  font-size: x-large;
-  font-weight: lighter;
+  padding: 15px;
+  font-size: larger;
+  transition: 50ms ease-in-out;
+}
+
+#startStopBut:hover {
+  color: rgba(108, 92, 231, 1);
 }
 
 #beatSpace {
@@ -202,9 +174,9 @@ a {
 .beatEmphasisBoxes {
   /* they're not expanding as expected */
   display: flex;
-  flex: 1 1 0;
   flex-direction: column;
-  min-width: 20px;
+  flex: 1 1 10px;
+  max-width: 100px;
   border-style: dashed;
   border-color: transparent;
   align-items: stretch;
@@ -212,7 +184,6 @@ a {
 }
 
 .beatEmphasisStack {
-  min-width: 20px;
   height: 25px;
   border: 1px solid #4e3a2b;
   background-color: #c0997c;
