@@ -233,7 +233,7 @@ a {
   height: 25px;
   border: 1px solid rgba(95, 39, 205, 1);
   background-color: rgba(95, 39, 205, 0.25);
-  transition: 150ms ease-in-out;
+  transition: 125ms ease-in-out;
   border-radius: 3px;
 }
 

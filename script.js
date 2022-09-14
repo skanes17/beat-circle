@@ -18,6 +18,58 @@ for (let i = 0; i < 16; i++) {
   select.insertBefore(option, select.lastChild);
 }
 */
+
+// this function will style the beat volumes
+// I expect could be automated efficiently with loops
+function changeVolume() {
+  let vol25 = document.querySelector(".vol25").style.backgroundColor;
+  let vol50 = document.querySelector(".vol50").style.backgroundColor;
+  let vol75 = document.querySelector(".vol75").style.backgroundColor;
+  let vol100 = document.querySelector(".vol100").style.backgroundColor;
+
+  const volArray = [vol25, vol50, vol75, vol100];
+
+  // if top box is full, clear all boxes
+  if (volArray[3] == "rgba(95, 39, 205, 0.75)") {
+    document.querySelector(".vol25").style.backgroundColor =
+      "rgba(95, 39, 205, 0.25)";
+    document.querySelector(".vol50").style.backgroundColor =
+      "rgba(95, 39, 205, 0.25)";
+    document.querySelector(".vol75").style.backgroundColor =
+      "rgba(95, 39, 205, 0.25)";
+    document.querySelector(".vol100").style.backgroundColor =
+      "rgba(95, 39, 205, 0.25)";
+    console.log("4 boxes");
+    // if third box is full, fill top box
+  } else if (volArray[2] == "rgba(95, 39, 205, 0.75)") {
+    document.querySelector(".vol100").style.backgroundColor =
+      "rgba(95, 39, 205, 0.75)";
+    console.log("3 boxes");
+    // if second box is full, fill third box
+  } else if (volArray[1] == "rgba(95, 39, 205, 0.75)") {
+    document.querySelector(".vol75").style.backgroundColor =
+      "rgba(95, 39, 205, 0.75)";
+    console.log("2 boxes");
+    // if first box is full, fill second box
+  } else if (volArray[0] == "rgba(95, 39, 205, 0.75)") {
+    document.querySelector(".vol50").style.backgroundColor =
+      "rgba(95, 39, 205, 0.75)";
+    console.log("1 box");
+  } else {
+    document.querySelector(".vol25").style.backgroundColor =
+      "rgba(95, 39, 205, 0.75)";
+    console.log("all clear");
+  }
+
+  //let currentVolume = document.querySelector(".vol25").style.backgroundColor; // checks current color
+  //let activeColor = "rgba(95, 39, 205, 0.75)"; // compares it against expected color
+
+  //if (currentVolume != activeColor) {
+  //    document.querySelector(".vol25").style.backgroundColor =
+  //"rgba(95, 39, 205, 0.75)";
+  //}
+  //}
+}
 let toggle;
 let myInterval;
 
