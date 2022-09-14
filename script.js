@@ -19,16 +19,6 @@ for (let i = 0; i < 16; i++) {
 }
 */
 
-/* 
---------------------------
-CONCEPT FOR VOLUME CHANGES
-logic to figure out which box was clicked (listener?)
-set a number based on that (box = somethin?)
-the function checks the number and formats accordingly
-may want to run the function as an eventListener instead of onclick
---------------------------
-*/
-
 // loop to generate event listeners for each box/stack
 // these determine which box was clicked, and the function runs accordingly
 for (let i = 1; i < 17; i++) {
@@ -59,26 +49,26 @@ function changeVolume(box) {
       "rgba(95, 39, 205, 0.25)";
     document.querySelector(`.vol100-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.25)";
-    console.log("4 boxes");
+    console.log("all clear");
     // if third box is full, fill top box
   } else if (volArray[2] == "rgba(95, 39, 205, 0.75)") {
     document.querySelector(`.vol100-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
-    console.log("3 boxes");
+    console.log("4 boxes");
     // if second box is full, fill third box
   } else if (volArray[1] == "rgba(95, 39, 205, 0.75)") {
     document.querySelector(`.vol75-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
-    console.log("2 boxes");
+    console.log("3 boxes");
     // if first box is full, fill second box
   } else if (volArray[0] == "rgba(95, 39, 205, 0.75)") {
     document.querySelector(`.vol50-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
-    console.log("1 box");
+    console.log("2 boxes");
   } else {
     document.querySelector(`.vol25-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
-    console.log("all clear");
+    console.log("1 box");
   }
 }
 
