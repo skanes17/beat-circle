@@ -19,14 +19,34 @@ for (let i = 0; i < 16; i++) {
 }
 */
 
+/* 
+--------------------------
+CONCEPT FOR VOLUME CHANGES
+logic to figure out which box was clicked (listener?)
+set a number based on that (box = somethin?)
+the function checks the number and formats accordingly
+may want to run the function as an eventListener instead of onclick
+--------------------------
+*/
+
+const boxNumber = document.getElementById("box1");
+boxNumber.addEventListener("click", () => {
+  let box = 1;
+  console.log(box);
+});
+// put the function inside this?? with an if statement?
+// so the box is chosen, then it runs?
+
 // this function will style the beat volumes
-// I expect could be automated efficiently with loops
+// I expect it could be automated efficiently with loops
 function changeVolume() {
+  // grab all styles
   let vol25 = document.querySelector(".vol25").style.backgroundColor;
   let vol50 = document.querySelector(".vol50").style.backgroundColor;
   let vol75 = document.querySelector(".vol75").style.backgroundColor;
   let vol100 = document.querySelector(".vol100").style.backgroundColor;
 
+  // toss the styles in an array
   const volArray = [vol25, vol50, vol75, vol100];
 
   // if top box is full, clear all boxes
@@ -60,15 +80,6 @@ function changeVolume() {
       "rgba(95, 39, 205, 0.75)";
     console.log("all clear");
   }
-
-  //let currentVolume = document.querySelector(".vol25").style.backgroundColor; // checks current color
-  //let activeColor = "rgba(95, 39, 205, 0.75)"; // compares it against expected color
-
-  //if (currentVolume != activeColor) {
-  //    document.querySelector(".vol25").style.backgroundColor =
-  //"rgba(95, 39, 205, 0.75)";
-  //}
-  //}
 }
 let toggle;
 let myInterval;
