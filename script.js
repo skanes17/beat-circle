@@ -29,26 +29,16 @@ may want to run the function as an eventListener instead of onclick
 --------------------------
 */
 
-// these event listeners determine which div was clicked and run the function accordingly
-document.getElementById("box1").addEventListener("click", () => {
-  let box = 1;
-  changeVolume(box);
-});
-document.getElementById("box2").addEventListener("click", () => {
-  let box = 2;
-  changeVolume(box);
-});
-document.getElementById("box3").addEventListener("click", () => {
-  let box = 3;
-  changeVolume(box);
-});
-document.getElementById("box4").addEventListener("click", () => {
-  let box = 4;
-  changeVolume(box);
-});
+// loop to generate event listeners for each box/stack
+// these determine which box was clicked, and the function runs accordingly
+for (let i = 1; i < 17; i++) {
+  document.getElementById(`box${i}`).addEventListener("click", () => {
+    let box = i;
+    changeVolume(box);
+  });
+}
 
-// this function will style the beat volumes
-// I expect it could be automated efficiently with loops
+// this function styles the beat volumes
 function changeVolume(box) {
   // grab all styles
   let vol25 = document.querySelector(`.vol25-${box}`).style.backgroundColor;
