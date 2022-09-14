@@ -29,58 +29,69 @@ may want to run the function as an eventListener instead of onclick
 --------------------------
 */
 
-const boxNumber = document.getElementById("box1");
-boxNumber.addEventListener("click", () => {
+// these event listeners determine which div was clicked and run the function accordingly
+document.getElementById("box1").addEventListener("click", () => {
   let box = 1;
-  console.log(box);
+  changeVolume(box);
 });
-// put the function inside this?? with an if statement?
-// so the box is chosen, then it runs?
+document.getElementById("box2").addEventListener("click", () => {
+  let box = 2;
+  changeVolume(box);
+});
+document.getElementById("box3").addEventListener("click", () => {
+  let box = 3;
+  changeVolume(box);
+});
+document.getElementById("box4").addEventListener("click", () => {
+  let box = 4;
+  changeVolume(box);
+});
 
 // this function will style the beat volumes
 // I expect it could be automated efficiently with loops
-function changeVolume() {
+function changeVolume(box) {
   // grab all styles
-  let vol25 = document.querySelector(".vol25").style.backgroundColor;
-  let vol50 = document.querySelector(".vol50").style.backgroundColor;
-  let vol75 = document.querySelector(".vol75").style.backgroundColor;
-  let vol100 = document.querySelector(".vol100").style.backgroundColor;
+  let vol25 = document.querySelector(`.vol25-${box}`).style.backgroundColor;
+  let vol50 = document.querySelector(`.vol50-${box}`).style.backgroundColor;
+  let vol75 = document.querySelector(`.vol75-${box}`).style.backgroundColor;
+  let vol100 = document.querySelector(`.vol100-${box}`).style.backgroundColor;
 
   // toss the styles in an array
   const volArray = [vol25, vol50, vol75, vol100];
 
   // if top box is full, clear all boxes
   if (volArray[3] == "rgba(95, 39, 205, 0.75)") {
-    document.querySelector(".vol25").style.backgroundColor =
+    document.querySelector(`.vol25-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.25)";
-    document.querySelector(".vol50").style.backgroundColor =
+    document.querySelector(`.vol50-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.25)";
-    document.querySelector(".vol75").style.backgroundColor =
+    document.querySelector(`.vol75-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.25)";
-    document.querySelector(".vol100").style.backgroundColor =
+    document.querySelector(`.vol100-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.25)";
     console.log("4 boxes");
     // if third box is full, fill top box
   } else if (volArray[2] == "rgba(95, 39, 205, 0.75)") {
-    document.querySelector(".vol100").style.backgroundColor =
+    document.querySelector(`.vol100-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
     console.log("3 boxes");
     // if second box is full, fill third box
   } else if (volArray[1] == "rgba(95, 39, 205, 0.75)") {
-    document.querySelector(".vol75").style.backgroundColor =
+    document.querySelector(`.vol75-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
     console.log("2 boxes");
     // if first box is full, fill second box
   } else if (volArray[0] == "rgba(95, 39, 205, 0.75)") {
-    document.querySelector(".vol50").style.backgroundColor =
+    document.querySelector(`.vol50-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
     console.log("1 box");
   } else {
-    document.querySelector(".vol25").style.backgroundColor =
+    document.querySelector(`.vol25-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
     console.log("all clear");
   }
 }
+
 let toggle;
 let myInterval;
 
