@@ -1,4 +1,5 @@
-/* const beatArray = []; // generates the beat options (top number)
+/*
+const beatArray = []; // generates the beat options (top number)
 let beatArrayLength = 16;
 for (let i = 0; i < beatArrayLength; i++) {
   beatArray[i] = `${i + 1}`;
