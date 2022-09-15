@@ -82,6 +82,7 @@ a {
 }
 
 #sliderOutput {
+  font-size: 300%;
   font-weight: bold;
   margin: 5px 0 5px 0;
 }
@@ -113,6 +114,7 @@ a {
 }
 
 .divChild {
+  font-size: 125%;
   border-style: dashed;
   border-color: transparent;
 }
@@ -147,11 +149,13 @@ a {
 }
 
 .inputs {
+  font-size: 100%;
   text-align: center;
 }
 
 #tempo {
   margin: 5px 0 5px 0;
+  width: 75%;
 }
 
 #startStopBut {
