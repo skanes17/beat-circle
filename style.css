@@ -74,6 +74,18 @@ a {
   border-color: rgb(88, 81, 81);
 }
 
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sliderOutput {
+  font-weight: bold;
+  margin: 5px 0 5px 0;
+}
+
 .divParent {
   display: flex;
   flex-flow: row;
@@ -212,7 +224,6 @@ a {
   justify-content: center;
   align-items: flex-end;
   padding: 10px;
-  margin: 5px 0 5px 0;
   border-color: transparent;
   border-style: dashed;
   background-color: transparent;

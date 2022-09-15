@@ -20,6 +20,14 @@ for (let i = 0; i < 16; i++) {
 }
 */
 
+let slider = document.querySelector("#tempo");
+let sliderOutput = document.querySelector("#sliderOutput");
+sliderOutput.innerHTML = `${slider.value} bpm`;
+
+slider.oninput = function () {
+  sliderOutput.innerHTML = `${this.value} bpm`;
+};
+
 // loop to generate event listeners for each box/stack
 // these determine which box was clicked, and the function runs accordingly
 for (let i = 1; i < 17; i++) {
