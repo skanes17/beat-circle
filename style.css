@@ -176,6 +176,7 @@ a {
 .playCircle {
   height: 72px;
   width: 72px;
+  margin: 2% 0 2% 0;
   border-radius: 50%;
   background-color: white;
   display: grid;
@@ -262,9 +263,11 @@ a {
   justify-content: center;
   align-items: flex-end;
   padding: 10px;
-  border-color: transparent;
-  border-style: dashed;
   background-color: transparent;
+  border-style: solid;
+  border-radius: 8px;
+  /* border-color: rgb(117 117 117 / 51%); */
+  border-color: transparent;
 }
 
 .beatEmphasisBoxes {

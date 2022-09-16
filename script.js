@@ -97,12 +97,16 @@ function bpmFunction() {
   }
 
   // main beat production
+  let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
-
   let tempo = document.querySelector("#tempoSlider").value;
   let bpmMessage = (60 / (tempo * (botNumber / 4))) * 1000; // changes beat feel based on bottom number
+  let animationLength = bpmMessage * topNumber;
+
   document.querySelector("#currentTempo").innerHTML = `Tempo: ${tempo} BPM`;
   document.querySelector("#beats").innerHTML += "BEAT "; // ensures the beat starts immediately on click
+
+  playAnimations(); // plays animation on click
 
   soundState = document.querySelector("#volumeToggle");
   if (soundState.checked == true) {
@@ -112,6 +116,7 @@ function bpmFunction() {
   }
 
   myInterval = setInterval(displayMessage, bpmMessage); // produces beats by running the below function at each interval
+  myAnimations = setInterval(playAnimations, animationLength);
 
   let i = 1;
   function displayMessage() {
@@ -196,8 +201,7 @@ const playButton = document.querySelector(".playButton");
 const waveAnimation = document.querySelector(".outer-circle");
 const pulseAnimation = document.querySelector(".outer-circle");
 
-// the listener is on the button, which triggers the animation on the hand
-playButton.addEventListener("click", () => {
+function playAnimations() {
   let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
   let tempo = document.querySelector("#tempoSlider").value;
@@ -213,7 +217,7 @@ playButton.addEventListener("click", () => {
   // sets the timing for how quickly to run through the keyframes
   const rotateTiming = {
     duration: bpmMessage,
-    iterations: Infinity,
+    iterations: 1,
   };
 
   // syntax is animate(keyframes, options)
@@ -231,7 +235,7 @@ playButton.addEventListener("click", () => {
 
   const waveTiming = {
     duration: bpmMessage / topNumber,
-    iterations: Infinity,
+    iterations: topNumber,
   };
 
   waveAnimation.animate(wave, waveTiming);
@@ -245,8 +249,8 @@ playButton.addEventListener("click", () => {
 
   const pulseTiming = {
     duration: bpmMessage / topNumber,
-    iterations: Infinity,
+    iterations: topNumber,
   };
 
   pulseAnimation.animate(pulse, pulseTiming);
-});
+}
