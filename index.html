@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
     <title>Project 01 - Rhythm Generator</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
@@ -205,18 +209,19 @@
       <div id="test2" class="beatEmphasisContainer"></div>
       -->
 
-      <div class="divParent">
-        <div class="divChild">
-          <p>
-            <button id="startStopBut" type="button" onclick="bpmFunction()">
-              Start the Beat!
-            </button>
-          </p>
-        </div>
-      </div>
-
       <div id="beatSpace" class="roundBorder divStyle">
         <p id="beats"></p>
+      </div>
+
+      <div class="divParent">
+        <div class="playCircle">
+          <span
+            class="playButton material-icons md-48 md-dark"
+            onclick="bpmFunction()"
+          >
+            play_circle
+          </span>
+        </div>
       </div>
 
       <article class="container">

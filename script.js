@@ -91,7 +91,7 @@ function bpmFunction() {
     document.querySelector("#currentTempo").innerHTML = `Tempo: 0 BPM`;
     clearInterval(myInterval);
     document.querySelector("#beats").innerHTML = ""; // clears the paragraph
-    document.querySelector("#startStopBut").innerHTML = "Start the Beat!";
+    document.querySelector(".playButton").innerHTML = "play_circle";
     toggle = true;
     return;
   }
@@ -136,7 +136,8 @@ function bpmFunction() {
       i += 1;
     }
   }
-  document.querySelector("#startStopBut").innerHTML = "Stop the Beat!";
+
+  document.querySelector(".playButton").innerHTML = "stop_circle";
   toggle = false;
 }
 
@@ -191,12 +192,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // script to run animation for the metronome hand and beat waves
 // need to add functionality to stop the animations!
 const handAnimation = document.querySelector(".hand"); // allows easy modifying of this div later
-const startStopBut = document.querySelector("#startStopBut");
+const playButton = document.querySelector(".playButton");
 const waveAnimation = document.querySelector(".outer-circle");
 const pulseAnimation = document.querySelector(".outer-circle");
 
 // the listener is on the button, which triggers the animation on the hand
-startStopBut.addEventListener("click", () => {
+playButton.addEventListener("click", () => {
   let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
   let tempo = document.querySelector("#tempoSlider").value;
