@@ -151,16 +151,19 @@ a {
 .inputs {
   font-size: 100%;
   text-align: center;
+  cursor: pointer;
 }
 
 #tempo {
   margin: 5px 0 5px 0;
   width: 75%;
+  cursor: pointer;
 }
 
 #startStopBut {
   padding: 15px;
   font-size: larger;
+  cursor: pointer;
   transition: 50ms ease-in-out;
 }
 
@@ -242,6 +245,7 @@ a {
   border-color: transparent;
   align-items: stretch;
   justify-content: end;
+  cursor: pointer;
 }
 
 .beatEmphasisStack {
