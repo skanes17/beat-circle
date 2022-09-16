@@ -20,7 +20,7 @@ for (let i = 0; i < 16; i++) {
 }
 */
 
-let slider = document.querySelector("#tempo");
+let slider = document.querySelector("#tempoSlider");
 let sliderOutput = document.querySelector("#sliderOutput");
 sliderOutput.innerHTML = `${slider.value} bpm`;
 
@@ -99,7 +99,7 @@ function bpmFunction() {
   // main beat production
   let botNumber = document.querySelector("#botNumber").value;
 
-  let tempo = document.querySelector("#tempo").value;
+  let tempo = document.querySelector("#tempoSlider").value;
   let bpmMessage = (60 / (tempo * (botNumber / 4))) * 1000; // changes beat feel based on bottom number
   document.querySelector("#currentTempo").innerHTML = `Tempo: ${tempo} BPM`;
   document.querySelector("#beats").innerHTML += "BEAT "; // ensures the beat starts immediately on click
@@ -199,7 +199,7 @@ const pulseAnimation = document.querySelector(".outer-circle");
 startStopBut.addEventListener("click", () => {
   let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
-  let tempo = document.querySelector("#tempo").value;
+  let tempo = document.querySelector("#tempoSlider").value;
   let bpmMessage = (60 / tempo) * topNumber * (4 / botNumber) * 1000; //
 
   // this process fills an array which sets up keyframes
