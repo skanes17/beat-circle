@@ -83,6 +83,8 @@ a {
 
 #sliderOutput {
   font-size: 300%;
+  /* added shadow while experimenting */
+  text-shadow: 2px 2px 3px whitesmoke;
   font-weight: bold;
   margin: 5px 0 5px 0;
 }
@@ -355,6 +357,11 @@ article {
   border-radius: 50%;
   transform-origin: bottom;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* attempting to pause animations */
+.hide {
+  display: none;
 }
 
 /* use this if toggling class for the hand to animate
