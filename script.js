@@ -88,7 +88,7 @@ function bpmFunction() {
   // function converts bpm to ms interval
   if (toggle === false) {
     // stop button
-    document.querySelector("#currentTempo").innerHTML = `You stopped the beat!`;
+    document.querySelector("#currentTempo").innerHTML = `Tempo: 0 BPM`;
     clearInterval(myInterval);
     document.querySelector("#beats").innerHTML = ""; // clears the paragraph
     document.querySelector("#startStopBut").innerHTML = "Start the Beat!";
