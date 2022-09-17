@@ -90,6 +90,8 @@ function bpmFunction() {
     // stop button
     document.querySelector("#currentTempo").innerHTML = `Tempo: 0 BPM`;
     clearInterval(myInterval);
+    clearInterval(myAnimations);
+    playAnimations2();
     document.querySelector("#beats").innerHTML = ""; // clears the paragraph
     document.querySelector(".playButton").innerHTML = "play_circle";
     toggle = true;
@@ -250,6 +252,59 @@ function playAnimations() {
   const pulseTiming = {
     duration: bpmMessage / topNumber,
     iterations: topNumber,
+  };
+
+  pulseAnimation.animate(pulse, pulseTiming);
+}
+function playAnimations2() {
+  let topNumber = document.querySelector("#topNumber").value;
+  let botNumber = document.querySelector("#botNumber").value;
+  let tempo = document.querySelector("#tempoSlider").value;
+  let bpmMessage = (60 / tempo) * topNumber * (4 / botNumber) * 1000; //
+
+  // this process fills an array which sets up keyframes
+  // need to learn more about this to be able to make from scratch!
+  const rotateHand = [
+    { transform: "rotate(0)" },
+    { transform: "rotate(360deg)" },
+  ];
+
+  // sets the timing for how quickly to run through the keyframes
+  const rotateTiming = {
+    duration: bpmMessage,
+    iterations: 0,
+  };
+
+  // syntax is animate(keyframes, options)
+  // keyframes can be  an array of keyframe objects...
+  // or a keyframe object whose properties are arrays of values to iterate over
+  // options are the animation duration in ms...
+  // or an object containing one or more timing properties
+  handAnimation.animate(rotateHand, rotateTiming);
+
+  // to make waves on beat
+  const wave = [
+    { boxShadow: "0 0 0 0px rgba(108, 92, 231, 1)" },
+    { boxShadow: "0 0 0 10px rgba(108, 92, 231, 0)" },
+  ];
+
+  const waveTiming = {
+    duration: bpmMessage / topNumber,
+    iterations: 0,
+  };
+
+  waveAnimation.animate(wave, waveTiming);
+
+  // makes the circle pulse slightly on beat
+  const pulse = [
+    { transform: "scale(1)" },
+    { transform: "scale(1.02)", offset: 0.2 }, // offset works like keyframe percentage in CSS
+    { transform: "scale(1)", offset: 0.4 },
+  ];
+
+  const pulseTiming = {
+    duration: bpmMessage / topNumber,
+    iterations: 0,
   };
 
   pulseAnimation.animate(pulse, pulseTiming);
