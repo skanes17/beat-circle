@@ -271,16 +271,22 @@ function playAnimations() {
 
 // fill an array with sound files
 const soundsArray = [];
+for (let i = 0; i < 16; i++) {
+  // by default first beat is strong, rest weak
+  if (i == 0) {
+    soundsArray[i] = new Audio("sounds/strong.mp3");
+  } else {
+    soundsArray[i] = new Audio("sounds/weak.mp3");
+    console.log(soundsArray);
+  }
+}
 
+// this only exists to allow quick testing on-click; will remove later
 document.querySelector(".divChildHeader").addEventListener("click", () => {
-  const beat1 = new Audio("sounds/strong.mp3");
-  soundsArray[0] = beat1;
-  const beat2 = new Audio("sounds/weak.mp3");
-  soundsArray[1] = beat2;
+  soundsArray[0].currentTime = 0;
   soundsArray[0].play();
 });
 document.querySelector(".divChild").addEventListener("click", () => {
-  const beat2 = new Audio("sounds/weak.mp3");
-  soundsArray[1] = beat2;
+  soundsArray[1].currentTime = 0;
   soundsArray[1].play();
 });
