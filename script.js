@@ -28,6 +28,23 @@ slider.oninput = function () {
   sliderOutput.innerHTML = `${this.value} bpm`;
 };
 
+// sets default styles/volumes to 75% for first beat, 50% for the rest
+for (let i = 1; i < 17; i++) {
+  if (i == 1) {
+    document.querySelector(`.vol25-${i}`).style.backgroundColor =
+      "rgba(95, 39, 205, 0.75)";
+    document.querySelector(`.vol50-${i}`).style.backgroundColor =
+      "rgba(95, 39, 205, 0.75)";
+    document.querySelector(`.vol75-${i}`).style.backgroundColor =
+      "rgba(95, 39, 205, 0.75)";
+  } else {
+    document.querySelector(`.vol25-${i}`).style.backgroundColor =
+      "rgba(95, 39, 205, 0.75)";
+    document.querySelector(`.vol50-${i}`).style.backgroundColor =
+      "rgba(95, 39, 205, 0.75)";
+  }
+}
+
 // loop to generate event listeners for each box/stack
 // these determine which box was clicked, and the function runs accordingly
 for (let i = 1; i < 17; i++) {
@@ -37,10 +54,10 @@ for (let i = 1; i < 17; i++) {
   });
 }
 
-// experimenting with the idea of using a volume array, used later
+// volume array is used to set volume of beats, used in changeVolume function
 const volArray = [];
 
-// this function styles the beat volumes
+// this function activates on click to style the boxes and set volume of individual beats
 function changeVolume(box) {
   // grab all styles
   let vol25 = document.querySelector(`.vol25-${box}`).style.backgroundColor;
@@ -50,6 +67,7 @@ function changeVolume(box) {
 
   // toss the styles in an array
   const beatStyleArray = [vol25, vol50, vol75, vol100];
+  console.log(beatStyleArray);
 
   // if top box is full, clear all boxes
   if (beatStyleArray[3] == "rgba(95, 39, 205, 0.75)") {
@@ -121,10 +139,9 @@ function bpmFunction() {
   let animationLength = bpmMessage * topNumber;
 
   soundsArray[0].play(); // plays first beat immediately on click
-
   playAnimations(); // plays animations once immediately on click
 
-  myInterval = setInterval(displayMessage, bpmMessage); // produces beats by running the below function at each interval
+  myInterval = setInterval(displayMessage, bpmMessage); // produces beats by running the displayMessage function at each interval
   myAnimations = setInterval(playAnimations, animationLength);
 
   let i = 1;
@@ -136,13 +153,17 @@ function bpmFunction() {
       soundsArray[beatNumber].currentTime = 0; // reset sound timer
       soundsArray[beatNumber].play(); // plays given beat
     }
-    console.log(`beat number ${beatNumber}`);
     i += 1;
   }
 
   document.querySelector(".playButton").innerHTML = "stop_circle";
   toggle = false;
 }
+
+// this runs the showBeats function on page load
+document.addEventListener("DOMContentLoaded", function () {
+  showBeats();
+});
 
 function showBeats() {
   let topNumber = document.querySelector("#topNumber").value;
@@ -161,11 +182,6 @@ function showBeats() {
     }
   }
 }
-
-// this runs the showBeats function on page load
-document.addEventListener("DOMContentLoaded", function () {
-  showBeats();
-});
 
 // script to run animation for the metronome hand and beat waves
 // need to add functionality to stop the animations!
