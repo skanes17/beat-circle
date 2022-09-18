@@ -258,13 +258,3 @@ for (let i = 0; i < 16; i++) {
     console.log(soundsArray);
   }
 }
-
-// this only exists to allow quick testing on-click; will remove later
-document.querySelector(".divChildHeader").addEventListener("click", () => {
-  soundsArray[0].currentTime = 0;
-  soundsArray[0].play();
-});
-document.querySelector(".divChild").addEventListener("click", () => {
-  soundsArray[1].currentTime = 0;
-  soundsArray[1].play();
-});
