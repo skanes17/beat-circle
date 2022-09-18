@@ -61,7 +61,8 @@ function changeVolume(box) {
       "rgba(95, 39, 205, 0.25)";
     document.querySelector(`.vol100-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.25)";
-    volArray[`${box - 1}`] = 0; // sets volume of beat according to which box was clicked
+    volArray[`${box - 1}`] = 0; // sets desired volume of beat according to which box was clicked
+    soundsArray[box - 1].volume = 0; // sets the volume of that beat in the soundsArray
     console.log(volArray[0]);
     console.log("all clear");
     // if third box is full, fill top box
@@ -69,6 +70,7 @@ function changeVolume(box) {
     document.querySelector(`.vol100-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
     volArray[`${box - 1}`] = 1;
+    soundsArray[box - 1].volume = 1;
     console.log(volArray[0]);
     console.log("4 boxes");
     // if second box is full, fill third box
@@ -76,6 +78,7 @@ function changeVolume(box) {
     document.querySelector(`.vol75-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
     volArray[`${box - 1}`] = 0.75;
+    soundsArray[box - 1].volume = 0.75;
     console.log(volArray[0]);
     console.log("3 boxes");
     // if first box is full, fill second box
@@ -83,12 +86,14 @@ function changeVolume(box) {
     document.querySelector(`.vol50-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
     volArray[`${box - 1}`] = 0.5;
+    soundsArray[box - 1].volume = 0.5;
     console.log(volArray[0]);
     console.log("2 boxes");
   } else {
     document.querySelector(`.vol25-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
     volArray[`${box - 1}`] = 0.25;
+    soundsArray[box - 1].volume = 0.25;
     console.log(volArray[0]);
     console.log("1 box");
   }
@@ -101,10 +106,8 @@ function bpmFunction() {
   // function converts bpm to ms interval
   if (toggle === false) {
     // stop button
-    document.querySelector("#currentTempo").innerHTML = `Tempo: 0 BPM`;
     clearInterval(myInterval);
     clearInterval(myAnimations);
-    document.querySelector("#beats").innerHTML = ""; // clears the paragraph
     document.querySelector(".playButton").innerHTML = "play_circle";
     toggle = true;
     return;
@@ -117,73 +120,29 @@ function bpmFunction() {
   let bpmMessage = (60 / (tempo * (botNumber / 4))) * 1000; // changes beat feel based on bottom number
   let animationLength = bpmMessage * topNumber;
 
-  document.querySelector("#currentTempo").innerHTML = `Tempo: ${tempo} BPM`;
-  document.querySelector("#beats").innerHTML += "BEAT "; // ensures the beat starts immediately on click
+  soundsArray[0].play(); // plays first beat immediately on click
 
-  playAnimations(); // plays animation on click
-
-  soundState = document.querySelector("#volumeToggle");
-  if (soundState.checked == true) {
-    let woodblock = new Audio("sounds/weak.mp3");
-    woodblock.volume = 0.5;
-    woodblock.play();
-  }
+  playAnimations(); // plays animations once immediately on click
 
   myInterval = setInterval(displayMessage, bpmMessage); // produces beats by running the below function at each interval
   myAnimations = setInterval(playAnimations, animationLength);
 
   let i = 1;
   function displayMessage() {
-    // adds strong and weak beats to the paragraph with id="beats"
-    topNumber = document.querySelector("#topNumber").value;
-
-    if (i % topNumber === 0) {
-      document.querySelector("#beats").innerHTML += "BEAT ";
-      if (soundState.checked == true) {
-        let woodblock = new Audio("sounds/weak.mp3");
-        woodblock.volume = 0.5;
-        woodblock.play();
-      }
-      i += 1;
-    } else {
-      document.querySelector("#beats").innerHTML += "Beat ";
-      if (soundState.checked == true) {
-        let korgClick = new Audio("sounds/strong.mp3");
-        korgClick.volume = 0.2;
-        korgClick.play();
-      }
-      i += 1;
+    topNumber = document.querySelector("#topNumber").value; // grab number of beats
+    let beatNumber = i % topNumber; // keeps the range within the sounds array
+    soundState = document.querySelector("#volumeToggle"); // plays audio if volume set to on
+    if (soundState.checked == true) {
+      soundsArray[beatNumber].currentTime = 0; // reset sound timer
+      soundsArray[beatNumber].play(); // plays given beat
     }
+    console.log(`beat number ${beatNumber}`);
+    i += 1;
   }
 
   document.querySelector(".playButton").innerHTML = "stop_circle";
   toggle = false;
 }
-
-/* practice generating boxes with JS
-let rows = 4; // determines the number of boxes
-boxes = document.querySelector("#test");
-for (let i = 0; i < rows; i++) {
-  let beatColumn = document.createElement("div");
-  beatColumn.classList.add("beatEmphasisStack"); // adds a class to the element
-  beatColumn.style.backgroundColor = "red"; // adds bkgd color
-  boxes.appendChild(beatColumn);
-}
-
-let columns = 16; // determines the number of beats
-boxes = document.querySelector("#test2");
-for (let i = 0; i < columns; i++) {
-  let beatColumn = document.createElement("div");
-  beatColumn.classList.add("beatEmphasisBoxes");
-  beatColumn.style.flexDirection = "column";
-  beatColumn.style.width = "50px";
-  beatColumn.style.borderStyle = "dashed";
-  beatColumn.style.borderColor = "gray";
-  beatColumn.style.alignItems = "flex-end";
-  beatColumn.style.justifyContent = "end";
-  boxes.appendChild(beatColumn);
-}
-*/
 
 function showBeats() {
   let topNumber = document.querySelector("#topNumber").value;
@@ -273,10 +232,13 @@ function playAnimations() {
 const soundsArray = [];
 for (let i = 0; i < 16; i++) {
   // by default first beat is strong, rest weak
+  // all volumes default to 75%
   if (i == 0) {
     soundsArray[i] = new Audio("sounds/strong.mp3");
+    soundsArray[i].volume = 0.75;
   } else {
     soundsArray[i] = new Audio("sounds/weak.mp3");
+    soundsArray[i].volume = 0.75;
     console.log(soundsArray);
   }
 }
