@@ -37,6 +37,9 @@ for (let i = 1; i < 17; i++) {
   });
 }
 
+// experimenting with the idea of using a volume array, used later
+const volArray = [];
+
 // this function styles the beat volumes
 function changeVolume(box) {
   // grab all styles
@@ -58,7 +61,7 @@ function changeVolume(box) {
       "rgba(95, 39, 205, 0.25)";
     document.querySelector(`.vol100-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.25)";
-    volArray[`${box - 1}`] = 0; // sets beat volume according to which box was clicked
+    volArray[`${box - 1}`] = 0; // sets volume of beat according to which box was clicked
     console.log(volArray[0]);
     console.log("all clear");
     // if third box is full, fill top box
@@ -91,9 +94,6 @@ function changeVolume(box) {
   }
 }
 
-// experimenting with the idea of using a volume array
-const volArray = [];
-
 let toggle;
 let myInterval;
 
@@ -124,7 +124,7 @@ function bpmFunction() {
 
   soundState = document.querySelector("#volumeToggle");
   if (soundState.checked == true) {
-    let woodblock = new Audio("woodblock.mp3");
+    let woodblock = new Audio("sounds/weak.mp3");
     woodblock.volume = 0.5;
     woodblock.play();
   }
@@ -140,7 +140,7 @@ function bpmFunction() {
     if (i % topNumber === 0) {
       document.querySelector("#beats").innerHTML += "BEAT ";
       if (soundState.checked == true) {
-        let woodblock = new Audio("woodblock.mp3");
+        let woodblock = new Audio("sounds/weak.mp3");
         woodblock.volume = 0.5;
         woodblock.play();
       }
@@ -148,7 +148,7 @@ function bpmFunction() {
     } else {
       document.querySelector("#beats").innerHTML += "Beat ";
       if (soundState.checked == true) {
-        let korgClick = new Audio("korgClick.mp3");
+        let korgClick = new Audio("sounds/strong.mp3");
         korgClick.volume = 0.2;
         korgClick.play();
       }
@@ -268,3 +268,19 @@ function playAnimations() {
 
   pulseAnimation.animate(pulse, pulseTiming);
 }
+
+// fill an array with sound files
+const soundsArray = [];
+
+document.querySelector(".divChildHeader").addEventListener("click", () => {
+  const beat1 = new Audio("sounds/strong.mp3");
+  soundsArray[0] = beat1;
+  const beat2 = new Audio("sounds/weak.mp3");
+  soundsArray[1] = beat2;
+  soundsArray[0].play();
+});
+document.querySelector(".divChild").addEventListener("click", () => {
+  const beat2 = new Audio("sounds/weak.mp3");
+  soundsArray[1] = beat2;
+  soundsArray[1].play();
+});
