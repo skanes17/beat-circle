@@ -133,7 +133,12 @@ function bpmFunction() {
     }
   }
 
-  soundsArray[0].play(); // plays first beat immediately on click
+  // plays audio if volume set to on
+  let soundState = document.querySelector("#volumeToggle");
+  if (soundState.checked == true) {
+    soundsArray[0].currentTime = 0; // reset sound timer
+    soundsArray[0].play(); // plays first beat immediately on click
+  }
   playAnimations(); // plays animations once immediately on click
 
   myInterval = setInterval(playBeats, beatLength); // produces beats by running the playBeats function at each interval
