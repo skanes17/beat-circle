@@ -184,7 +184,6 @@ function showBeats() {
 }
 
 // script to run animation for the metronome hand and beat waves
-// need to add functionality to stop the animations!
 const handAnimation = document.querySelector(".hand"); // allows easy modifying of this div later
 const playButton = document.querySelector(".playButton");
 const waveAnimation = document.querySelector(".outer-circle");
