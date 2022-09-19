@@ -167,18 +167,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function showBeats() {
   let topNumber = document.querySelector("#topNumber").value;
-  // hides all beat containers
+  // hides all beat containers and toggles
   for (i = 1; i <= 16; i++) {
     let x = document.getElementById(`box${i}`);
+    let y = document.getElementById(`toggle${i}`);
     x.style.display = "none";
+    y.style.display = "none";
   }
-  // shows only as many beat containers as the top number
+  // shows only as many beat containers and toggles as the top number
   for (i = 1; i <= topNumber; i++) {
     let x = document.getElementById(`box${i}`);
+    let y = document.getElementById(`toggle${i}`);
     if (x.style.display === "none") {
       x.style.display = "block";
+      y.style.display = "block";
     } else {
       x.style.display = "none";
+      y.style.display = "none";
     }
   }
 }
