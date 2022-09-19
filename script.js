@@ -106,12 +106,12 @@ function bpmFunction() {
     clearInterval(myInterval);
     clearInterval(myAnimations);
     document.querySelector(".playButton").innerHTML = "play_circle";
-    enableSlider();
+    enableInputs();
     toggle = true;
     return;
   }
 
-  disableSlider();
+  disableInputs();
 
   // main beat production
   let topNumber = document.querySelector("#topNumber").value;
@@ -241,9 +241,13 @@ for (let i = 0; i < 16; i++) {
   }
 }
 
-function disableSlider() {
+function disableInputs() {
   document.querySelector("#tempoSlider").disabled = true;
+  document.querySelector("#topNumber").disabled = true;
+  document.querySelector("#botNumber").disabled = true;
 }
-function enableSlider() {
+function enableInputs() {
   document.querySelector("#tempoSlider").disabled = false;
+  document.querySelector("#topNumber").disabled = false;
+  document.querySelector("#botNumber").disabled = false;
 }
