@@ -308,9 +308,21 @@ a {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.emphasisToggle {
+  min-width: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
 /* input[type="checkbox"] means only that input type is styled */
-/* this makes the checkbox itself disappear, I think */
+/* this makes the checkbox itself disappear, I think
 input[type="checkbox"] {
+  display: none;
+}
+ */
+
+/* replaced code above with this class */
+.hidden {
   display: none;
 }
 

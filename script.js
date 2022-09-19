@@ -241,6 +241,13 @@ for (let i = 0; i < 16; i++) {
   }
 }
 
+// need some code which checks the state of the checkboxes for strong or weak
+// it checked, fill the slot with strong
+// if not checked, fill it with weak
+// maybe use if statement to replace or not depending on what's already there
+// then make a listener for each box so that if it's checked it toggles?
+
+// functions to enable/diable inputs while beat is playing
 function disableInputs() {
   document.querySelector("#tempoSlider").disabled = true;
   document.querySelector("#topNumber").disabled = true;
