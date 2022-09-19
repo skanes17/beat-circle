@@ -162,17 +162,6 @@ a {
   cursor: pointer;
 }
 
-#startStopBut {
-  padding: 15px;
-  font-size: larger;
-  cursor: pointer;
-  transition: 50ms ease-in-out;
-}
-
-#startStopBut:hover {
-  color: rgba(108, 92, 231, 1);
-}
-
 .playCircle {
   height: 72px;
   width: 72px;

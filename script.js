@@ -45,7 +45,6 @@ function changeVolume(box) {
 
   // toss the styles in an array
   const beatStyleArray = [vol25, vol50, vol75, vol100];
-  console.log(beatStyleArray);
 
   // if top box is full, clear all boxes
   if (beatStyleArray[3] == "rgba(95, 39, 205, 0.75)") {
@@ -59,7 +58,6 @@ function changeVolume(box) {
       "rgba(95, 39, 205, 0.25)";
     volArray[`${box - 1}`] = 0; // sets desired volume of beat according to which box was clicked
     soundsArray[box - 1].volume = 0; // sets the volume of that beat in the soundsArray
-    console.log(volArray[0]);
     console.log("all clear");
     // if third box is full, fill top box
   } else if (beatStyleArray[2] == "rgba(95, 39, 205, 0.75)") {
@@ -67,7 +65,6 @@ function changeVolume(box) {
       "rgba(95, 39, 205, 0.75)";
     volArray[`${box - 1}`] = 1;
     soundsArray[box - 1].volume = 1;
-    console.log(volArray[0]);
     console.log("4 boxes");
     // if second box is full, fill third box
   } else if (beatStyleArray[1] == "rgba(95, 39, 205, 0.75)") {
@@ -75,7 +72,6 @@ function changeVolume(box) {
       "rgba(95, 39, 205, 0.75)";
     volArray[`${box - 1}`] = 0.75;
     soundsArray[box - 1].volume = 0.75;
-    console.log(volArray[0]);
     console.log("3 boxes");
     // if first box is full, fill second box
   } else if (beatStyleArray[0] == "rgba(95, 39, 205, 0.75)") {
@@ -83,14 +79,12 @@ function changeVolume(box) {
       "rgba(95, 39, 205, 0.75)";
     volArray[`${box - 1}`] = 0.5;
     soundsArray[box - 1].volume = 0.5;
-    console.log(volArray[0]);
     console.log("2 boxes");
   } else {
     document.querySelector(`.vol25-${box}`).style.backgroundColor =
       "rgba(95, 39, 205, 0.75)";
     volArray[`${box - 1}`] = 0.25;
     soundsArray[box - 1].volume = 0.25;
-    console.log(volArray[0]);
     console.log("1 box");
   }
 }
