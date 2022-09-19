@@ -128,10 +128,8 @@ function bpmFunction() {
     if (beatStrength.checked == true) {
       // changes the source of the sound file
       soundsArray[i - 1].src = "sounds/strong.mp3";
-      console.log("strong beat entered!");
     } else {
       soundsArray[i - 1].src = "sounds/weak.mp3";
-      console.log("weak beat entered!");
     }
   }
 
@@ -252,7 +250,6 @@ for (let i = 0; i < 16; i++) {
   } else {
     soundsArray[i] = new Audio("sounds/weak.mp3");
     soundsArray[i].volume = 0.75;
-    console.log(soundsArray);
   }
 }
 
