@@ -106,9 +106,12 @@ function bpmFunction() {
     clearInterval(myInterval);
     clearInterval(myAnimations);
     document.querySelector(".playButton").innerHTML = "play_circle";
+    enableSlider();
     toggle = true;
     return;
   }
+
+  disableSlider();
 
   // main beat production
   let topNumber = document.querySelector("#topNumber").value;
@@ -236,4 +239,11 @@ for (let i = 0; i < 16; i++) {
     soundsArray[i].volume = 0.75;
     console.log(soundsArray);
   }
+}
+
+function disableSlider() {
+  document.querySelector("#tempoSlider").disabled = true;
+}
+function enableSlider() {
+  document.querySelector("#tempoSlider").disabled = false;
 }
