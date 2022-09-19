@@ -126,6 +126,19 @@ function bpmFunction() {
   myInterval = setInterval(playBeats, beatLength); // produces beats by running the playBeats function at each interval
   myAnimations = setInterval(playAnimations, animationLength);
 
+  // this loop checks which strong beats have been chosen and fills it with the appropriate sounds
+  for (let i = 1; i < 17; i++) {
+    beatStrength = document.querySelector(`#strong${i}`); // plays audio if volume set to on
+    if (beatStrength.checked == true) {
+      soundsArray[i - 1] = new Audio("sounds/strong.mp3");
+      console.log("strong beat entered!");
+    } else {
+      soundsArray[i - 1] = new Audio("sounds/weak.mp3");
+      console.log("weak beat entered!");
+      // need to check code  here -- I ran out of time
+    }
+  }
+
   let i = 1;
   function playBeats() {
     topNumber = document.querySelector("#topNumber").value; // grab number of beats
@@ -241,20 +254,22 @@ for (let i = 0; i < 16; i++) {
   }
 }
 
-// need some code which checks the state of the checkboxes for strong or weak
-// it checked, fill the slot with strong
-// if not checked, fill it with weak
-// maybe use if statement to replace or not depending on what's already there
-// then make a listener for each box so that if it's checked it toggles?
-
-// functions to enable/diable inputs while beat is playing
+// functions to enable/disable inputs while beat is playing
 function disableInputs() {
   document.querySelector("#tempoSlider").disabled = true;
   document.querySelector("#topNumber").disabled = true;
   document.querySelector("#botNumber").disabled = true;
+  // disable strong beat selection
+  for (let i = 1; i < 17; i++) {
+    document.querySelector(`#strong${i}`).disabled = true;
+  }
 }
 function enableInputs() {
   document.querySelector("#tempoSlider").disabled = false;
   document.querySelector("#topNumber").disabled = false;
   document.querySelector("#botNumber").disabled = false;
+  // enable strong beat selection
+  for (let i = 1; i < 17; i++) {
+    document.querySelector(`#strong${i}`).disabled = false;
+  }
 }
