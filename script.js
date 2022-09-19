@@ -1,25 +1,3 @@
-/*
-const beatArray = []; // generates the beat options (top number)
-let beatArrayLength = 16;
-for (let i = 0; i < beatArrayLength; i++) {
-  beatArray[i] = `${i + 1}`;
-}
-console.log(beatArray);
-
-let select = document.querySelector("#topNumber");
-
-for (let i = 0; i < 16; i++) {
-  var option = document.createElement("OPTION"),
-    txt = document.createTextNode(beatArray[i]);
-  option.appendChild(txt);
-  option.setAttribute("value", "beatArray[i]");
-  if (i == 3) {
-    option.setAttribute("selected", true);
-  }
-  select.insertBefore(option, select.lastChild);
-}
-*/
-
 let slider = document.querySelector("#tempoSlider");
 let sliderOutput = document.querySelector("#sliderOutput");
 sliderOutput.innerHTML = `${slider.value} bpm`;
@@ -119,6 +97,7 @@ function changeVolume(box) {
 
 let toggle;
 let myInterval;
+let myAnimations;
 
 function bpmFunction() {
   // function converts bpm to ms interval
@@ -135,17 +114,17 @@ function bpmFunction() {
   let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
   let tempo = document.querySelector("#tempoSlider").value;
-  let bpmMessage = (60 / (tempo * (botNumber / 4))) * 1000; // changes beat feel based on bottom number
-  let animationLength = bpmMessage * topNumber;
+  let beatLength = (60 / (tempo * (botNumber / 4))) * 1000; // changes beat feel based on bottom number
+  let animationLength = beatLength * topNumber;
 
   soundsArray[0].play(); // plays first beat immediately on click
   playAnimations(); // plays animations once immediately on click
 
-  myInterval = setInterval(displayMessage, bpmMessage); // produces beats by running the displayMessage function at each interval
+  myInterval = setInterval(playBeats, beatLength); // produces beats by running the playBeats function at each interval
   myAnimations = setInterval(playAnimations, animationLength);
 
   let i = 1;
-  function displayMessage() {
+  function playBeats() {
     topNumber = document.querySelector("#topNumber").value; // grab number of beats
     let beatNumber = i % topNumber; // keeps the range within the sounds array
     soundState = document.querySelector("#volumeToggle"); // plays audio if volume set to on
@@ -194,7 +173,7 @@ function playAnimations() {
   let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
   let tempo = document.querySelector("#tempoSlider").value;
-  let bpmMessage = (60 / tempo) * topNumber * (4 / botNumber) * 1000; //
+  let beatLength = (60 / tempo) * topNumber * (4 / botNumber) * 1000; //
 
   // this process fills an array which sets up keyframes
   // need to learn more about this to be able to make from scratch!
@@ -205,7 +184,7 @@ function playAnimations() {
 
   // sets the timing for how quickly to run through the keyframes
   const rotateTiming = {
-    duration: bpmMessage,
+    duration: beatLength,
     iterations: 1,
   };
 
@@ -223,7 +202,7 @@ function playAnimations() {
   ];
 
   const waveTiming = {
-    duration: bpmMessage / topNumber,
+    duration: beatLength / topNumber,
     iterations: topNumber,
   };
 
@@ -237,7 +216,7 @@ function playAnimations() {
   ];
 
   const pulseTiming = {
-    duration: bpmMessage / topNumber,
+    duration: beatLength / topNumber,
     iterations: topNumber,
   };
 
