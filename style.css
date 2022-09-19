@@ -312,7 +312,7 @@ a {
 .toggleContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   padding: 0 10px 10px 10px;
   background-color: transparent;
@@ -323,6 +323,13 @@ a {
 }
 
 .emphasisToggle {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 10px;
+  max-width: 100px;
+  align-items: stretch;
+  justify-content: center;
+  text-align: center;
   cursor: pointer;
 }
 
