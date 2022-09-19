@@ -120,24 +120,26 @@ function bpmFunction() {
   let beatLength = (60 / (tempo * (botNumber / 4))) * 1000; // changes beat feel based on bottom number
   let animationLength = beatLength * topNumber;
 
+  // this loop checks which strong beats have been chosen
+  // the audio source for each beat is chosen accordingly
+  // could make code more efficient by only running if settings have changed
+  for (let i = 1; i < 17; i++) {
+    beatStrength = document.querySelector(`#strong${i}`); // plays audio if volume set to on
+    if (beatStrength.checked == true) {
+      // changes the source of the sound file
+      soundsArray[i - 1].src = "sounds/strong.mp3";
+      console.log("strong beat entered!");
+    } else {
+      soundsArray[i - 1].src = "sounds/weak.mp3";
+      console.log("weak beat entered!");
+    }
+  }
+
   soundsArray[0].play(); // plays first beat immediately on click
   playAnimations(); // plays animations once immediately on click
 
   myInterval = setInterval(playBeats, beatLength); // produces beats by running the playBeats function at each interval
   myAnimations = setInterval(playAnimations, animationLength);
-
-  // this loop checks which strong beats have been chosen and fills it with the appropriate sounds
-  for (let i = 1; i < 17; i++) {
-    beatStrength = document.querySelector(`#strong${i}`); // plays audio if volume set to on
-    if (beatStrength.checked == true) {
-      soundsArray[i - 1] = new Audio("sounds/strong.mp3");
-      console.log("strong beat entered!");
-    } else {
-      soundsArray[i - 1] = new Audio("sounds/weak.mp3");
-      console.log("weak beat entered!");
-      // need to check code  here -- I ran out of time
-    }
-  }
 
   let i = 1;
   function playBeats() {
@@ -259,7 +261,7 @@ function disableInputs() {
   document.querySelector("#tempoSlider").disabled = true;
   document.querySelector("#topNumber").disabled = true;
   document.querySelector("#botNumber").disabled = true;
-  // disable strong beat selection
+  // disables strong beat selection
   for (let i = 1; i < 17; i++) {
     document.querySelector(`#strong${i}`).disabled = true;
   }
