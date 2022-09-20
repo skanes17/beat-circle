@@ -249,7 +249,11 @@ function playAnimations() {
   const pulse = [
     { transform: "scale(1)" },
     // offset works like keyframe percentage in CSS
-    { transform: "scale(1.02)", offset: 0.2 },
+    {
+      transform: "scale(1.02)",
+      background: "rgba(44, 30, 153, 1)",
+      offset: 0.2,
+    },
     { transform: "scale(1)", offset: 0.4 },
   ];
 
