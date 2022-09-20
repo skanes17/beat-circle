@@ -1,3 +1,13 @@
+// toggles volume on/off
+let soundState = document.querySelector("#volumeToggle");
+soundState.addEventListener("click", () => {
+  if (soundState.checked == true) {
+    document.querySelector("#volumeIcon").textContent = "volume_up";
+  } else {
+    document.querySelector("#volumeIcon").textContent = "volume_off";
+  }
+});
+
 let slider = document.querySelector("#tempoSlider");
 let sliderOutput = document.querySelector("#sliderOutput");
 sliderOutput.innerHTML = `${slider.value} bpm`;

@@ -19,12 +19,6 @@ h1 {
   text-shadow: 0px 3px 2px rgba(0, 0, 0, 1);
 }
 
-a {
-  color: #f3aca1;
-  font-weight: bold;
-  text-decoration: none;
-}
-
 .divStyle {
   padding: 1%;
   border-width: 2px;
@@ -45,33 +39,6 @@ a {
   margin: auto;
   background-color: #c8d6e5;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-.button {
-  background-color: #ced5db;
-  border: none;
-  color: black;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-family: Arial, Helvetica, sans-serif;
-  cursor: pointer;
-}
-
-.centered {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-style: dashed;
-  border-color: transparent;
-}
-
-.right {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  border-style: dashed;
-  border-color: rgb(88, 81, 81);
 }
 
 .flexColumn {
@@ -95,8 +62,6 @@ a {
   justify-content: center;
   align-items: center;
   gap: 2%;
-  border-style: dashed;
-  border-color: transparent;
   position: relative;
 }
 
@@ -106,10 +71,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 2%;
-  border-style: dashed;
-  border-color: transparent;
   position: relative;
-
   width: 70%;
   margin: auto;
   margin-top: 20px;
@@ -117,8 +79,6 @@ a {
 
 .divChild {
   font-size: 125%;
-  border-style: dashed;
-  border-color: transparent;
 }
 
 .divChildHeader {
@@ -126,28 +86,14 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-style: dashed;
-  border-color: transparent;
 }
 
-.divChild2 {
-  position: absolute;
-  right: 0;
-  padding: 0px 5px 0px 5px;
-  margin-right: 2%;
-  color: #f4f4f8;
-  background: white;
-  border-style: solid;
-  border-width: 1px;
-  border-color: white;
-  border-radius: 5px;
+.volumeIcon {
   transition: 100ms ease-in-out;
 }
 
-.divChild2:hover {
-  background: white;
-  border-color: white;
-  border-radius: 10px;
+.volumeIcon:hover {
+  opacity: 0.9;
 }
 
 .inputs {
@@ -162,25 +108,39 @@ a {
   cursor: pointer;
 }
 
-.playCircle {
-  height: 72px;
-  width: 72px;
-  margin: 2% 0 2% 0;
-  border-radius: 50%;
+.playContainer {
+  height: 48px;
+  width: 48px;
+  border-radius: 8px;
   background-color: white;
   display: grid;
-  place-content: center;
   box-shadow: 0px 2px 5px black;
-  transform: 250ms ease-in-out;
   user-select: none; /* won't select on double-click */
 }
 
-.playCircle:active {
-  transform: scale(0.95);
+.playContainer:active {
+  transform: scale(0.9);
 }
 
 .playButton {
   cursor: pointer;
+}
+
+/* styles #volumeIcon living inside .divChild2 */
+.volumeContainer > #volumeIcon {
+  user-select: none;
+}
+
+.volumeButton {
+  cursor: pointer;
+}
+
+.addMargins {
+  padding: 16px 0 16px 0;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
 }
 
 .material-icons.md-48 {
@@ -212,11 +172,6 @@ a {
   justify-content: center;
   align-items: flex-end;
   padding: 10px 10px 0 10px;
-  background-color: transparent;
-  border-style: solid;
-  border-radius: 8px;
-  /* border-color: rgb(117 117 117 / 51%); */
-  border-color: transparent;
 }
 
 .beatEmphasisBoxes {
@@ -247,28 +202,11 @@ a {
   transform: scale(1);
 }
 
-.beatEmphasisText {
-  /* need more practice with vmin concept */
-  padding-top: 10px;
-  font-size: 2vmin;
-  min-width: 5px;
-  background-color: transparent;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  display: none; /* seemed unnecessary" */
-}
-
 .toggleContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0 10px 10px 10px;
-  background-color: transparent;
-  border-style: solid;
-  border-radius: 8px;
-  /* border-color: rgb(117 117 117 / 51%); */
-  border-color: transparent;
 }
 
 .emphasisToggle {
@@ -292,22 +230,6 @@ input[type="checkbox"] {
 /* replaced code above with this class */
 .hidden {
   display: none;
-}
-
-/* label style when NOT checked */
-input[type="checkbox"] + label {
-  background: url("volume-off-64px.png");
-  height: 64px;
-  width: 64px;
-  display: inline-block;
-}
-
-/* label style when checked */
-input[type="checkbox"]:checked + label {
-  background: url("volume-on-64px.png");
-  height: 64px;
-  width: 64px;
-  display: inline-block;
 }
 
 article {

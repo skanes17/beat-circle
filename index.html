@@ -18,17 +18,6 @@
       <div class="divChildHeader">
         <h1>Circular Metronome</h1>
       </div>
-      <div class="divChild2">
-        <input
-          type="checkbox"
-          id="volumeToggle"
-          class="hidden"
-          name="volume"
-          value="volume"
-          checked="true"
-        />
-        <label for="volumeToggle"></label><br />
-      </div>
     </div>
     <div class="divStyle" id="container">
       <div class="flexColumn">
@@ -91,7 +80,7 @@
         </div>
       </div>
 
-      <div id="beatEmphasisContainer" class="beatEmphasisContainer">
+      <div id="beatEmphasisContainer" class="beatEmphasisContainer addMargins">
         <div class="beatEmphasisBoxes" id="box1">
           <div class="beatEmphasisStack vol100-1"></div>
           <div class="beatEmphasisStack vol75-1"></div>
@@ -103,7 +92,6 @@
           <div class="beatEmphasisStack vol75-2"></div>
           <div class="beatEmphasisStack vol50-2"></div>
           <div class="beatEmphasisStack vol25-2"></div>
-          <div class="beatEmphasisText">2</div>
         </div>
         <div class="beatEmphasisBoxes" id="box3">
           <div class="beatEmphasisStack vol100-3"></div>
@@ -246,14 +234,30 @@
         <p id="beats"></p>
       </div>
 
-      <div class="divParent">
-        <div class="playCircle">
-          <span
-            class="playButton material-icons md-48 md-dark"
+      <div class="divParent addMargins">
+        <div class="playContainer">
+          <div
+            class="divChild playButton material-icons md-48 md-dark"
             onclick="bpmFunction()"
           >
             play_arrow
-          </span>
+          </div>
+        </div>
+        <div class="volumeContainer">
+          <input
+            type="checkbox"
+            id="volumeToggle"
+            class="volumeButton hidden"
+            name="volume"
+            value="volume"
+            checked="true"
+          />
+          <label
+            for="volumeToggle"
+            id="volumeIcon"
+            class="volumeButton material-icons md-36 md-dark"
+            >volume_up</label
+          ><br />
         </div>
       </div>
 
