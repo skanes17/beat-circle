@@ -2,6 +2,7 @@ let slider = document.querySelector("#tempoSlider");
 let sliderOutput = document.querySelector("#sliderOutput");
 sliderOutput.innerHTML = `${slider.value} bpm`;
 
+// takes the value of the slider and shows it above the slider
 slider.oninput = function () {
   sliderOutput.innerHTML = `${this.value} bpm`;
 };
@@ -93,13 +94,13 @@ let toggle;
 let myInterval;
 let myAnimations;
 
+// main beat production
 function bpmFunction() {
   // function converts bpm to ms interval
   if (toggle === false) {
     // stop button
     clearInterval(myInterval);
     clearInterval(myAnimations);
-    animationCounter = 0;
     document.querySelector(".playButton").innerHTML = "play_circle";
     enableInputs();
     toggle = true;
@@ -108,7 +109,6 @@ function bpmFunction() {
 
   disableInputs();
 
-  // main beat production
   let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
   let tempo = document.querySelector("#tempoSlider").value;
@@ -123,36 +123,42 @@ function bpmFunction() {
       soundsArray[i - 1].src.match("sounds/weak.mp3")
     ) {
       soundsArray[i - 1].src = "sounds/strong.mp3";
-      console.log(`Beat ${i} was weak, now it's strong`);
     } else if (
       // if a beat is newly chosen to be weak, change its source to weak
       beatStrength.checked == false &&
       soundsArray[i - 1].src.match("sounds/strong.mp3")
     ) {
       soundsArray[i - 1].src = "sounds/weak.mp3";
-      console.log(`Beat ${i} was strong, now it's weak`);
     }
   }
 
-  // plays audio if volume set to on
+  // plays first beat if volume set to on
   let soundState = document.querySelector("#volumeToggle");
   if (soundState.checked == true) {
     soundsArray[0].currentTime = 0; // reset sound timer
     soundsArray[0].play(); // plays first beat immediately on click
   }
-  playAnimations(); // plays animations once immediately on click
 
-  myInterval = setInterval(playBeats, beatLength); // produces beats by running the playBeats function at each interval
+  // plays animations once immediately on click
+  playAnimations();
+
+  // plays beats and animations by running playBeats and playAnimations function at each interval
+  myInterval = setInterval(playBeats, beatLength);
   myAnimations = setInterval(playAnimations, animationLength);
 
   let i = 1;
   function playBeats() {
-    topNumber = document.querySelector("#topNumber").value; // grab number of beats
-    let beatNumber = i % topNumber; // keeps the range within the sounds array
-    soundState = document.querySelector("#volumeToggle"); // plays audio if volume set to on
+    // grab number of beats
+    topNumber = document.querySelector("#topNumber").value;
+    // keeps the range within the sounds array
+    let beatNumber = i % topNumber;
+    soundState = document.querySelector("#volumeToggle");
+    // plays audio if volume set to on
     if (soundState.checked == true) {
-      soundsArray[beatNumber].currentTime = 0; // reset sound timer
-      soundsArray[beatNumber].play(); // plays given beat
+      // reset sound timer
+      soundsArray[beatNumber].currentTime = 0;
+      // plays given beat
+      soundsArray[beatNumber].play();
     }
     i += 1;
   }
@@ -189,27 +195,25 @@ function showBeats() {
   }
 }
 
-// script to run animation for the metronome hand and beat waves
-const handAnimation = document.querySelector(".hand"); // allows easy modifying of this div later
+// script to run animations
+const handAnimation = document.querySelector(".hand");
 const playButton = document.querySelector(".playButton");
 const waveAnimation = document.querySelector(".outer-circle");
 const pulseAnimation = document.querySelector(".outer-circle");
 
-// array to hold animations
+// array to hold beat pulse animations
 const stackAnimation = [];
 for (let i = 0; i < 16; i++) {
   stackAnimation[i] = document.querySelector(`#box${i + 1}`);
 }
 
-var animationCounter = 0; // global variable to keep track of beat number
 function playAnimations() {
   let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
   let tempo = document.querySelector("#tempoSlider").value;
   let beatLength = (60 / tempo) * topNumber * (4 / botNumber) * 1000; //
 
-  // this process fills an array which sets up keyframes
-  // need to learn more about this to be able to make from scratch!
+  // this array defines the animations used along with their keyframes
   const rotateHand = [
     { transform: "rotate(0)" },
     { transform: "rotate(360deg)" },
@@ -222,7 +226,7 @@ function playAnimations() {
   };
 
   // syntax is animate(keyframes, options)
-  // keyframes can be  an array of keyframe objects...
+  // keyframes can be an array of keyframe objects...
   // or a keyframe object whose properties are arrays of values to iterate over
   // options are the animation duration in ms...
   // or an object containing one or more timing properties
@@ -244,7 +248,8 @@ function playAnimations() {
   // makes the circle pulse slightly on beat
   const pulse = [
     { transform: "scale(1)" },
-    { transform: "scale(1.02)", offset: 0.2 }, // offset works like keyframe percentage in CSS
+    // offset works like keyframe percentage in CSS
+    { transform: "scale(1.02)", offset: 0.2 },
     { transform: "scale(1)", offset: 0.4 },
   ];
 
@@ -260,7 +265,7 @@ function playAnimations() {
     { boxShadow: "0 0 0 5px rgba(95, 39, 205, 0)", borderRadius: "8px" },
   ];
 
-  // create an array to hold beat pulse timings
+  // array to hold beat pulse timings, especially delays
   const stackTimingArray = [];
   for (let i = 0; i < topNumber; i++) {
     stackTimingArray[i] = {
@@ -270,7 +275,8 @@ function playAnimations() {
     };
   }
 
-  // play animations once play is clicked
+  // run each beat pulse animation
+  // all beat pulses run at once, but beat delays are invoved
   for (let i = 0; i < 16; i++) {
     stackAnimation[i].animate(stackPulse, stackTimingArray[i]);
   }
