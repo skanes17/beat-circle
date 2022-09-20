@@ -114,16 +114,22 @@ function bpmFunction() {
   let beatLength = (60 / (tempo * (botNumber / 4))) * 1000; // changes beat feel based on bottom number
   let animationLength = beatLength * topNumber;
 
-  // this loop checks which strong beats have been chosen
-  // the audio source for each beat is chosen accordingly
-  // could make code more efficient by only running if settings have changed
   for (let i = 1; i < 17; i++) {
-    beatStrength = document.querySelector(`#strong${i}`); // plays audio if volume set to on
-    if (beatStrength.checked == true) {
-      // changes the source of the sound file
+    beatStrength = document.querySelector(`#strong${i}`);
+    if (
+      // if a beat is newly chosen to be strong, change its source to strong
+      beatStrength.checked == true &&
+      soundsArray[i - 1].src.match("sounds/weak.mp3")
+    ) {
       soundsArray[i - 1].src = "sounds/strong.mp3";
-    } else {
+      console.log(`Beat ${i} was weak, now it's strong`);
+    } else if (
+      // if a beat is newly chosen to be weak, change its source to weak
+      beatStrength.checked == false &&
+      soundsArray[i - 1].src.match("sounds/strong.mp3")
+    ) {
       soundsArray[i - 1].src = "sounds/weak.mp3";
+      console.log(`Beat ${i} was strong, now it's weak`);
     }
   }
 
