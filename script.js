@@ -101,7 +101,7 @@ function bpmFunction() {
     // stop button
     clearInterval(myInterval);
     clearInterval(myAnimations);
-    document.querySelector(".playButton").innerHTML = "play_circle";
+    document.querySelector(".playButton").innerHTML = "play_arrow";
     enableInputs();
     toggle = true;
     return;
@@ -163,7 +163,7 @@ function bpmFunction() {
     i += 1;
   }
 
-  document.querySelector(".playButton").innerHTML = "stop_circle";
+  document.querySelector(".playButton").innerHTML = "stop";
   toggle = false;
 }
 

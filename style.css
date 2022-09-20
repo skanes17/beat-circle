@@ -172,6 +172,7 @@ a {
   place-content: center;
   box-shadow: 0px 2px 5px black;
   transform: 250ms ease-in-out;
+  user-select: none; /* won't select on double-click */
 }
 
 .playCircle:active {
