@@ -99,6 +99,7 @@ function bpmFunction() {
     // stop button
     clearInterval(myInterval);
     clearInterval(myAnimations);
+    animationCounter = 0;
     document.querySelector(".playButton").innerHTML = "play_circle";
     enableInputs();
     toggle = true;
@@ -200,23 +201,12 @@ for (let i = 0; i < 16; i++) {
   stackAnimation[i] = document.querySelector(`#box${i + 1}`);
 }
 
+var animationCounter = 0; // global variable to keep track of beat number
 function playAnimations() {
   let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
   let tempo = document.querySelector("#tempoSlider").value;
   let beatLength = (60 / tempo) * topNumber * (4 / botNumber) * 1000; //
-
-  const stackPulse = [
-    { boxShadow: "0 0 0 0 rgba(95, 39, 205, 1)" },
-    { boxShadow: "0 0 0 10px rgba(95, 39, 205, 0)" },
-  ];
-
-  const stackTiming = {
-    duration: beatLength / topNumber,
-    iterations: 1,
-  };
-
-  stackAnimation[0].animate(stackPulse, stackTiming);
 
   // this process fills an array which sets up keyframes
   // need to learn more about this to be able to make from scratch!
@@ -264,6 +254,26 @@ function playAnimations() {
   };
 
   pulseAnimation.animate(pulse, pulseTiming);
+
+  const stackPulse = [
+    { boxShadow: "0 0 0 0 rgba(95, 39, 205, 1)", borderRadius: "8px" },
+    { boxShadow: "0 0 0 5px rgba(95, 39, 205, 0)", borderRadius: "8px" },
+  ];
+
+  // create an array to hold beat pulse timings
+  const stackTimingArray = [];
+  for (let i = 0; i < topNumber; i++) {
+    stackTimingArray[i] = {
+      duration: beatLength / topNumber,
+      iterations: 1,
+      delay: (beatLength / topNumber) * i,
+    };
+  }
+
+  // play animations once play is clicked
+  for (let i = 0; i < 16; i++) {
+    stackAnimation[i].animate(stackPulse, stackTimingArray[i]);
+  }
 }
 
 // fill an array with sound files
