@@ -188,11 +188,29 @@ const playButton = document.querySelector(".playButton");
 const waveAnimation = document.querySelector(".outer-circle");
 const pulseAnimation = document.querySelector(".outer-circle");
 
+// array to hold animations
+const stackAnimation = [];
+for (let i = 0; i < 16; i++) {
+  stackAnimation[i] = document.querySelector(`#box${i + 1}`);
+}
+
 function playAnimations() {
   let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
   let tempo = document.querySelector("#tempoSlider").value;
   let beatLength = (60 / tempo) * topNumber * (4 / botNumber) * 1000; //
+
+  const stackPulse = [
+    { boxShadow: "0 0 0 0 rgba(95, 39, 205, 1)" },
+    { boxShadow: "0 0 0 10px rgba(95, 39, 205, 0)" },
+  ];
+
+  const stackTiming = {
+    duration: beatLength / topNumber,
+    iterations: 1,
+  };
+
+  stackAnimation[0].animate(stackPulse, stackTiming);
 
   // this process fills an array which sets up keyframes
   // need to learn more about this to be able to make from scratch!
