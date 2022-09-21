@@ -225,7 +225,7 @@ h1 {
   /* box shadow to the left of the circle */
   box-shadow: inset 0px 1px 2.5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
+  transition: background 0.1s ease-in-out;
 }
 
 /* defines label style for checked inputs */
