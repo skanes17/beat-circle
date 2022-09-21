@@ -1,6 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #525252 0%, #323232 100%);
+  background: radial-gradient(#421232 0%, #3d4652 100%);
   color: #222f3e;
   margin: 0;
   padding: 0;
@@ -32,7 +32,7 @@ h1 {
   border-radius: 8px;
   width: 70%;
   margin: auto;
-  background-color: #c8d6e5;
+  background: radial-gradient(#abb9e5 18%, #c8d6e5 159%);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
