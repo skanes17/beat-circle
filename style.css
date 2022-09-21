@@ -11,11 +11,6 @@ h1 {
   color: #f4f4f8;
   margin: 0;
   padding: 1%;
-  border-width: 2px;
-  border-style: solid;
-  /*border-color:#ffe5df; clear comment to reintroduce border*/
-  border-color: transparent;
-  border-radius: 5px;
   text-shadow: 0px 3px 2px rgba(0, 0, 0, 1);
 }
 
@@ -108,33 +103,6 @@ h1 {
   cursor: pointer;
 }
 
-.playContainer {
-  height: 48px;
-  width: 48px;
-  border-radius: 8px;
-  background-color: white;
-  display: grid;
-  box-shadow: 0px 2px 5px black;
-  user-select: none; /* won't select on double-click */
-}
-
-.playContainer:active {
-  transform: scale(0.9);
-}
-
-.playButton {
-  cursor: pointer;
-}
-
-/* styles #volumeIcon living inside .divChild2 */
-.volumeContainer > #volumeIcon {
-  user-select: none;
-}
-
-.volumeButton {
-  cursor: pointer;
-}
-
 .addMargins {
   padding: 16px 0 16px 0;
 }
@@ -151,19 +119,6 @@ h1 {
 }
 .material-icons.md-dark.md-inactive {
   color: rgba(0, 0, 0, 0.26);
-}
-
-#beatSpace {
-  border-color: #f3aca1;
-  border-style: ridge;
-  display: none;
-}
-
-.floatRight {
-  float: right;
-}
-.floatLeft {
-  float: left;
 }
 
 .beatEmphasisContainer {
@@ -202,6 +157,33 @@ h1 {
   transform: scale(1);
 }
 
+.playContainer {
+  height: 48px;
+  width: 48px;
+  border-radius: 8px;
+  background-color: white;
+  display: grid;
+  box-shadow: 0px 2px 5px black;
+  user-select: none; /* won't select on double-click */
+}
+
+.playContainer:active {
+  transform: scale(0.9);
+}
+
+.playButton {
+  cursor: pointer;
+}
+
+/* styles #volumeIcon living inside .divChild2 */
+.volumeContainer > #volumeIcon {
+  user-select: none;
+}
+
+.volumeButton {
+  cursor: pointer;
+}
+
 .toggleContainer {
   display: flex;
   flex-direction: row;
@@ -227,19 +209,6 @@ h1 {
 .emphasisToggle input[type="checkbox"] {
   display: none;
 }
-
-/* old code for toggles to copy from
-.emphasisToggle {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 10px;
-  max-width: 100px;
-  align-items: stretch;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-}
-*/
 
 /* defines label style for unchecked inputs */
 .emphasisToggle input[type="checkbox"] + label {
@@ -270,7 +239,6 @@ h1 {
   opacity: 0.5;
 }
 
-/* replaced code above with this class */
 .hidden {
   display: none;
 }
@@ -288,16 +256,6 @@ article {
   margin: 10px;
   border-radius: 8px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
-}
-
-.tempoDisplay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  color: black;
-  padding: 1%;
-  font-size: large;
 }
 
 .outer-circle {
