@@ -1,3 +1,23 @@
+/* styles taken from https://www.joshwcomeau.com/shadow-palette/ */
+:root {
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevation-low: 0.3px 0.5px 0.8px hsl(var(--shadow-color) / 0.08),
+    0.5px 1px 1.4px -0.7px hsl(var(--shadow-color) / 0.12),
+    1.2px 2.3px 3.3px -1.4px hsl(var(--shadow-color) / 0.16);
+  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.11),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.11),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.11),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.11);
+  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.1),
+    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.1),
+    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.1),
+    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.1),
+    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.1),
+    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.1),
+    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.1),
+    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.1);
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: radial-gradient(#421232 0%, #3d4652 100%);
@@ -11,7 +31,7 @@ h1 {
   color: #f4f4f8;
   margin: 0;
   padding: 1%;
-  text-shadow: 0px 3px 2px rgba(0, 0, 0, 1);
+  text-shadow: 0px 3px 1px rgba(0, 0, 0, 1);
 }
 
 .divStyle {
@@ -27,12 +47,22 @@ h1 {
 }
 
 #container {
-  border-style: dashed;
-  border-color: lightgray;
   border-radius: 8px;
   width: 70%;
   margin: auto;
-  background: radial-gradient(#abb9e5 18%, #c8d6e5 159%);
+  /* made using https://www.joshwcomeau.com/gradient-generator/ */
+  background-image: linear-gradient(
+    350deg,
+    hsl(250deg 53% 78%) 0%,
+    hsl(248deg 53% 79%) 31%,
+    hsl(246deg 52% 79%) 40%,
+    hsl(243deg 52% 79%) 45%,
+    hsl(241deg 52% 79%) 47%,
+    hsl(239deg 52% 79%) 49%,
+    hsl(237deg 52% 79%) 53%,
+    hsl(235deg 52% 79%) 61%,
+    hsl(233deg 53% 78%) 100%
+  );
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -46,7 +76,7 @@ h1 {
 #sliderOutput {
   font-size: 300%;
   /* added shadow while experimenting */
-  text-shadow: 0px 2px 3px whitesmoke;
+  text-shadow: 0px 1px 0px whitesmoke;
   font-weight: bold;
   margin: 5px 0 5px 0;
 }
@@ -147,7 +177,7 @@ h1 {
   background-color: rgba(95, 39, 205, 0.25);
   transition: 125ms ease-in-out;
   border-radius: 3px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-elevation-low);
 }
 
 /* experimented with scaling on hover */
@@ -270,7 +300,8 @@ article {
   border-style: solid;
   margin: 10px;
   border-radius: 8px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+  /* josh comeau styling */
+  box-shadow: var(--shadow-elevation-medium);
 }
 
 .outer-circle {
