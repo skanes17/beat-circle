@@ -100,6 +100,13 @@ function changeVolume(box) {
   }
 }
 
+// added click sound to toggles
+const clickSound = new Audio("sounds/toggle.mp3");
+function playSound() {
+  clickSound.currentTime = 0;
+  clickSound.play();
+}
+
 let toggle;
 let myInterval;
 let myAnimations;
