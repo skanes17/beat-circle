@@ -164,11 +164,16 @@ h1 {
   background-color: white;
   display: grid;
   box-shadow: 0px 2px 5px black;
+  transition: transform 100ms ease-in-out;
   user-select: none; /* won't select on double-click */
 }
 
+.playContainer:hover {
+  transform: scale(1.0625);
+}
+
 .playContainer:active {
-  transform: scale(0.9);
+  transform: scale(1);
 }
 
 .playButton {
@@ -182,6 +187,11 @@ h1 {
 
 .volumeButton {
   cursor: pointer;
+  transition: transform 100ms ease-in-out;
+}
+
+.volumeButton:hover {
+  transform: scale(1.0625);
 }
 
 .toggleContainer {
@@ -203,11 +213,16 @@ h1 {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: transform 100ms ease-in-out;
 }
 
 /* hides default checkboxes */
 .emphasisToggle input[type="checkbox"] {
   display: none;
+}
+
+.emphasisToggle:hover {
+  transform: scale(1.05);
 }
 
 /* defines label style for unchecked inputs */
@@ -292,4 +307,11 @@ article {
   border-radius: 50%;
   transform-origin: bottom;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.outerCircle division {
+  height: 220px;
+  width: 1px;
+  background: red;
+  transform: rotate(90deg);
 }

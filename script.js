@@ -329,3 +329,10 @@ function enableInputs() {
     document.querySelector(`#strong${i}`).disabled = false;
   }
 }
+
+/*
+function circleDivisions() {
+  let divisions = document.querySelector("#topNumber");
+
+}
+*/
