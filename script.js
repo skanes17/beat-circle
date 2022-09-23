@@ -30,55 +30,57 @@ for (let i = 0; i < metres.length; i++) {
   }
 }
 
-// make the beat stacks
+// make the beat stacks and toggles
 const beatContainer = document.querySelector("#beatEmphasisContainer");
-const boxes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-for (let i = 0; i < boxes.length; i++) {
+for (let i = 1; i < 17; i++) {
   let box = document.createElement("div");
   box.classList.add("beatEmphasisBoxes");
-  box.id = `box${i + 1}`;
+  box.id = `box${i}`;
   box.style.display = "none";
   beatContainer.appendChild(box);
 
   // make the individual beats in the stacks
   let beat = document.createElement("div");
-  beat.classList.add("beatEmphasisStack", `vol100-${i + 1}`);
+  beat.classList.add("beatEmphasisStack", `vol100-${i}`);
   box.appendChild(beat);
 
   beat = document.createElement("div");
-  beat.classList.add("beatEmphasisStack", `vol75-${i + 1}`);
+  beat.classList.add("beatEmphasisStack", `vol75-${i}`);
   box.appendChild(beat);
 
   beat = document.createElement("div");
-  beat.classList.add("beatEmphasisStack", `vol50-${i + 1}`);
+  beat.classList.add("beatEmphasisStack", `vol50-${i}`);
   box.appendChild(beat);
 
   beat = document.createElement("div");
-  beat.classList.add("beatEmphasisStack", `vol25-${i + 1}`);
+  beat.classList.add("beatEmphasisStack", `vol25-${i}`);
   box.appendChild(beat);
 }
+/* trying to make the toggles under the beat stacks
+  let toggleBox = document.querySelector(".toggleContainer");
+  let toggle = document.createElement("div");
+  toggle.classList.add("emphasisToggle");
+  toggle.id = `toggle${i}`;
+  toggleBox.appendChild(toggle);
 
-/*let beat = boxes[i];
-  let beatUi = document.createElement("div");
-  beatUi.classList.add(`vol100-${i}`);
-  beatUi.classList.add(`vol75-${i}`);
-  beatUi.classList.add(`vol50-${i}`);
-  beatUi.classList.add(`vol25-${i}`);
-  */
+  let toggleClick = document.querySelector("emphasisToggle");
+  clickMe = document.createElement("input");
+  clickMe.type = "checkbox";
+  clickMe.id = `strong${i}`;
+  clickMe.setAttribute("onchange", "playSound()");
+}
 
-/*
-<div id="beatEmphasisContainer" class="beatEmphasisContainer addMargins">
-<div class="beatEmphasisBoxes" id="box1">
-  <div class="beatEmphasisStack vol100-1"></div>
-  <div class="beatEmphasisStack vol75-1"></div>
-  <div class="beatEmphasisStack vol50-1"></div>
-  <div class="beatEmphasisStack vol25-1"></div>
-</div>
-<div class="beatEmphasisBoxes" id="box2">
-  <div class="beatEmphasisStack vol100-2"></div>
-  <div class="beatEmphasisStack vol75-2"></div>
-  <div class="beatEmphasisStack vol50-2"></div>
-  <div class="beatEmphasisStack vol25-2"></div>
+----------------------------
+    REFERENCE CODE BELOW
+----------------------------
+<div class="emphasisToggle" id="toggle1">
+  <input
+    type="checkbox"
+    id="strong1"
+    checked="true"
+    onchange="playSound()"
+  />
+  <label for="strong1"></label>
 </div>
 */
 
