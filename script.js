@@ -282,8 +282,11 @@ function playAnimations() {
   pulseAnimation.animate(pulse, pulseTiming);
 
   const stackPulse = [
-    { boxShadow: "0 0 0 0 rgba(95, 39, 205, 1)", borderRadius: "8px" },
-    { boxShadow: "0 0 0 5px rgba(95, 39, 205, 0)", borderRadius: "8px" },
+    { boxShadow: "inset 0 0 0 0 rgba(95, 39, 205, 1)", borderRadius: "8px" },
+    {
+      boxShadow: "inset 0 0 0 32px rgba(95, 39, 205, 0)",
+      borderRadius: "8px",
+    },
   ];
 
   // array to hold beat pulse timings, especially delays

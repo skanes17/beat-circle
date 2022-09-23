@@ -32,6 +32,34 @@
           class="inputs"
         />
       </div>
+
+      <div class="divParent addMargins">
+        <div class="playContainer">
+          <div
+            class="divChild playButton material-icons md-48 md-dark"
+            onclick="bpmFunction()"
+          >
+            play_arrow
+          </div>
+        </div>
+        <div class="volumeContainer">
+          <input
+            type="checkbox"
+            id="volumeToggle"
+            class="volumeButton hidden"
+            name="volume"
+            value="volume"
+            checked="true"
+          />
+          <label
+            for="volumeToggle"
+            id="volumeIcon"
+            class="volumeButton material-icons md-36 md-dark"
+            >volume_up</label
+          ><br />
+        </div>
+      </div>
+
       <div class="divParent">
         <div class="divChild">
           <p>
@@ -260,33 +288,6 @@
         <div class="emphasisToggle" id="toggle16">
           <input type="checkbox" id="strong16" onchange="playSound()" />
           <label for="strong16"></label>
-        </div>
-      </div>
-
-      <div class="divParent addMargins">
-        <div class="playContainer">
-          <div
-            class="divChild playButton material-icons md-48 md-dark"
-            onclick="bpmFunction()"
-          >
-            play_arrow
-          </div>
-        </div>
-        <div class="volumeContainer">
-          <input
-            type="checkbox"
-            id="volumeToggle"
-            class="volumeButton hidden"
-            name="volume"
-            value="volume"
-            checked="true"
-          />
-          <label
-            for="volumeToggle"
-            id="volumeIcon"
-            class="volumeButton material-icons md-36 md-dark"
-            >volume_up</label
-          ><br />
         </div>
       </div>
 
