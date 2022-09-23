@@ -48,7 +48,7 @@ h1 {
 
 #container {
   border-radius: 8px;
-  width: 70%;
+  width: 90%;
   margin: auto;
   /* made using https://www.joshwcomeau.com/gradient-generator/ */
   background-image: linear-gradient(
@@ -86,7 +86,7 @@ h1 {
   flex-flow: row;
   justify-content: center;
   align-items: center;
-  gap: 2%;
+  gap: 5%;
   position: relative;
 }
 
@@ -105,6 +105,7 @@ h1 {
 .divChild {
   display: flex;
   font-size: 125%;
+  text-align: center;
 }
 
 .divChildHeader {

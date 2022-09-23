@@ -286,7 +286,7 @@ function playAnimations() {
   const stackPulse = [
     { boxShadow: "inset 0 0 0 0 rgba(95, 39, 205, 1)", borderRadius: "8px" },
     {
-      boxShadow: "inset 0 0 0 32px rgba(95, 39, 205, 0)",
+      boxShadow: "inset 0 0 0 64px rgba(95, 39, 205, 0)",
       borderRadius: "8px",
     },
   ];
