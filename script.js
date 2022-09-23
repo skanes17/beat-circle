@@ -17,6 +17,71 @@ slider.oninput = function () {
   sliderOutput.innerHTML = `${this.value} bpm`;
 };
 
+const dropdown = document.querySelector("#topNumber");
+const metres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+for (let i = 0; i < metres.length; i++) {
+  let metre = metres[i];
+  let metreUi = document.createElement("option");
+  metreUi.textContent = metre;
+  metreUi.value = metre;
+  dropdown.appendChild(metreUi);
+  if (i === 3) {
+    dropdown.selectedIndex = i;
+  }
+}
+
+// make the beat stacks
+const beatContainer = document.querySelector("#beatEmphasisContainer");
+const boxes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+for (let i = 0; i < boxes.length; i++) {
+  let box = document.createElement("div");
+  box.classList.add("beatEmphasisBoxes");
+  box.id = `box${i + 1}`;
+  box.style.display = "none";
+  beatContainer.appendChild(box);
+
+  // make the individual beats in the stacks
+  let beat = document.createElement("div");
+  beat.classList.add("beatEmphasisStack", `vol100-${i + 1}`);
+  box.appendChild(beat);
+
+  beat = document.createElement("div");
+  beat.classList.add("beatEmphasisStack", `vol75-${i + 1}`);
+  box.appendChild(beat);
+
+  beat = document.createElement("div");
+  beat.classList.add("beatEmphasisStack", `vol50-${i + 1}`);
+  box.appendChild(beat);
+
+  beat = document.createElement("div");
+  beat.classList.add("beatEmphasisStack", `vol25-${i + 1}`);
+  box.appendChild(beat);
+}
+
+/*let beat = boxes[i];
+  let beatUi = document.createElement("div");
+  beatUi.classList.add(`vol100-${i}`);
+  beatUi.classList.add(`vol75-${i}`);
+  beatUi.classList.add(`vol50-${i}`);
+  beatUi.classList.add(`vol25-${i}`);
+  */
+
+/*
+<div id="beatEmphasisContainer" class="beatEmphasisContainer addMargins">
+<div class="beatEmphasisBoxes" id="box1">
+  <div class="beatEmphasisStack vol100-1"></div>
+  <div class="beatEmphasisStack vol75-1"></div>
+  <div class="beatEmphasisStack vol50-1"></div>
+  <div class="beatEmphasisStack vol25-1"></div>
+</div>
+<div class="beatEmphasisBoxes" id="box2">
+  <div class="beatEmphasisStack vol100-2"></div>
+  <div class="beatEmphasisStack vol75-2"></div>
+  <div class="beatEmphasisStack vol50-2"></div>
+  <div class="beatEmphasisStack vol25-2"></div>
+</div>
+*/
+
 // sets default styles/volumes to 75% for first beat, 50% for the rest
 for (let i = 1; i < 17; i++) {
   if (i == 1) {
