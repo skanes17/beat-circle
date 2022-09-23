@@ -262,10 +262,6 @@ h1 {
   height: 0.8em;
   margin: auto;
   border-radius: 0.5em;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #cfcaca;
-  border-radius: 0.5em;
   background: #d1cbcb;
   /* box shadow to the left of the circle */
   box-shadow: inset 0px 1px 2.5px rgba(0, 0, 0, 0.3);
@@ -276,7 +272,6 @@ h1 {
 /* defines label style for checked inputs */
 .emphasisToggle input[type="checkbox"]:checked + label {
   background: #47cf73;
-  border-color: #cfcaca;
   box-shadow: inset 0px -1px 2.5px rgba(0, 0, 0, 0.3);
 }
 
