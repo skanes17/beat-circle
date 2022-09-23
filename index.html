@@ -34,15 +34,15 @@
       </div>
 
       <div class="divParent addMargins">
-        <div class="playContainer">
+        <div class="buttonContainer">
           <div
-            class="divChild playButton material-icons md-48 md-dark"
+            class="divChild playButton material-icons md-48 md-play"
             onclick="bpmFunction()"
           >
             play_arrow
           </div>
         </div>
-        <div class="volumeContainer">
+        <div class="buttonContainer">
           <input
             type="checkbox"
             id="volumeToggle"
@@ -50,13 +50,14 @@
             name="volume"
             value="volume"
             checked="true"
+            onchange="playSound()"
           />
           <label
             for="volumeToggle"
             id="volumeIcon"
-            class="volumeButton material-icons md-36 md-dark"
+            class="divChild volumeButton material-icons md-36 md-volOn"
             >volume_up</label
-          ><br />
+          >
         </div>
       </div>
 

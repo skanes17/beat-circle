@@ -103,6 +103,7 @@ h1 {
 }
 
 .divChild {
+  display: flex;
   font-size: 125%;
 }
 
@@ -144,11 +145,16 @@ h1 {
 .material-icons.md-48 {
   font-size: 48px;
 }
-.material-icons.md-dark {
-  color: rgba(0, 0, 0, 0.54);
+.material-icons.md-play {
+  color: rgb(71, 207, 115, 1);
 }
-.material-icons.md-dark.md-inactive {
-  color: rgba(0, 0, 0, 0.26);
+
+.material-icons.md-stop {
+  color: rgba(233, 30, 99, 1);
+}
+
+.material-icons.md-volOn {
+  color: rgba(158, 158, 158, 1);
 }
 
 .beatEmphasisContainer {
@@ -187,7 +193,9 @@ h1 {
   transform: scale(1);
 }
 
-.playContainer {
+.buttonContainer {
+  justify-content: center;
+  align-content: center;
   height: 48px;
   width: 48px;
   border-radius: 8px;
@@ -195,33 +203,25 @@ h1 {
   display: grid;
   box-shadow: 0px 2px 5px black;
   transition: transform 100ms ease-in-out;
+  cursor: pointer;
   user-select: none; /* won't select on double-click */
 }
 
-.playContainer:hover {
-  transform: scale(1.0625);
+.buttonContainer:active {
+  scale: 0.95;
 }
 
-.playContainer:active {
-  transform: scale(1);
+.buttonContainer:hover * {
+  transform: scale(1.2);
 }
 
 .playButton {
-  cursor: pointer;
-}
-
-/* styles #volumeIcon living inside .divChild2 */
-.volumeContainer > #volumeIcon {
-  user-select: none;
+  transition: transform 100ms ease-in-out;
 }
 
 .volumeButton {
   cursor: pointer;
   transition: transform 100ms ease-in-out;
-}
-
-.volumeButton:hover {
-  transform: scale(1.0625);
 }
 
 .toggleContainer {

@@ -119,6 +119,7 @@ function bpmFunction() {
     clearInterval(myInterval);
     clearInterval(myAnimations);
     document.querySelector(".playButton").innerHTML = "play_arrow";
+    document.querySelector(".playButton").classList.toggle("md-stop");
     enableInputs();
     toggle = true;
     return;
@@ -181,6 +182,7 @@ function bpmFunction() {
   }
 
   document.querySelector(".playButton").innerHTML = "stop";
+  document.querySelector(".playButton").classList.toggle("md-stop");
   toggle = false;
 }
 
