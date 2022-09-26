@@ -211,15 +211,33 @@ function bpmFunction() {
     );
 
     switch (true) {
+      // if a beat is newly chosen to be strong, change its source to strong
       case checkedButWeak:
         soundsArray[i - 1].src = "sounds/strong.mp3";
         console.log("changed to strong");
         break;
+      // if a beat is newly chosen to be weak, change its source to weak
       case uncheckedButStrong:
         soundsArray[i - 1].src = "sounds/weak.mp3";
         console.log("changed to weak");
         break;
     }
+
+    /*
+    if (
+      // if a beat is newly chosen to be strong, change its source to strong
+      beatToggle.checked == true &&
+      soundsArray[i - 1].src.match("sounds/weak.mp3")
+    ) {
+      soundsArray[i - 1].src = "sounds/strong.mp3";
+    } else if (
+      // if a beat is newly chosen to be weak, change its source to weak
+      beatToggle.checked == false &&
+      soundsArray[i - 1].src.match("sounds/strong.mp3")
+    ) {
+      soundsArray[i - 1].src = "sounds/weak.mp3";
+    }
+    */
   }
 
   // plays first beat if volume set to on
