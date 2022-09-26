@@ -200,19 +200,25 @@ function bpmFunction() {
   let animationLength = beatLength * topNumber;
 
   for (let i = 1; i < 17; i++) {
-    beatStrength = document.querySelector(`#strong${i}`);
-    if (
-      // if a beat is newly chosen to be strong, change its source to strong
-      beatStrength.checked == true &&
-      soundsArray[i - 1].src.match("sounds/weak.mp3")
-    ) {
-      soundsArray[i - 1].src = "sounds/strong.mp3";
-    } else if (
-      // if a beat is newly chosen to be weak, change its source to weak
-      beatStrength.checked == false &&
-      soundsArray[i - 1].src.match("sounds/strong.mp3")
-    ) {
-      soundsArray[i - 1].src = "sounds/weak.mp3";
+    let beatToggle = document.querySelector(`#strong${i}`);
+    let checkedButWeak = Boolean(
+      beatToggle.checked == true &&
+        soundsArray[i - 1].src.match("sounds/weak.mp3")
+    );
+    let uncheckedButStrong = Boolean(
+      beatToggle.checked == false &&
+        soundsArray[i - 1].src.match("sounds/strong.mp3")
+    );
+
+    switch (true) {
+      case checkedButWeak:
+        soundsArray[i - 1].src = "sounds/strong.mp3";
+        console.log("changed to strong");
+        break;
+      case uncheckedButStrong:
+        soundsArray[i - 1].src = "sounds/weak.mp3";
+        console.log("changed to weak");
+        break;
     }
   }
 
