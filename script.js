@@ -199,30 +199,29 @@ function bpmFunction() {
   let beatLength = (60 / (tempo * (botNumber / 4))) * 1000; // changes beat feel based on bottom number
   let animationLength = beatLength * topNumber;
 
-  for (let i = 1; i < 17; i++) {
-    let beatToggle = document.querySelector(`#strong${i}`);
+  // for every element in the array, do this stuff based on its current index
+  soundsArray.forEach((element, index) => {
+    let beatToggle = document.querySelector(`#strong${index + 1}`);
     let checkedButWeak = Boolean(
-      beatToggle.checked == true &&
-        soundsArray[i - 1].src.match("sounds/weak.mp3")
+      beatToggle.checked == true && element.src.match("sounds/weak.mp3")
     );
     let uncheckedButStrong = Boolean(
-      beatToggle.checked == false &&
-        soundsArray[i - 1].src.match("sounds/strong.mp3")
+      beatToggle.checked == false && element.src.match("sounds/strong.mp3")
     );
 
     switch (true) {
       // if a beat is newly chosen to be strong, change its source to strong
       case checkedButWeak:
-        soundsArray[i - 1].src = "sounds/strong.mp3";
+        element.src = "sounds/strong.mp3";
         console.log("changed to strong");
         break;
       // if a beat is newly chosen to be weak, change its source to weak
       case uncheckedButStrong:
-        soundsArray[i - 1].src = "sounds/weak.mp3";
+        element.src = "sounds/weak.mp3";
         console.log("changed to weak");
         break;
     }
-  }
+  });
 
   // plays first beat if volume set to on
   let soundState = document.querySelector("#volumeToggle");
