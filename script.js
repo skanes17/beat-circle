@@ -200,24 +200,24 @@ function bpmFunction() {
   let animationLength = beatLength * topNumber;
 
   // for every element in the array, do this stuff based on its current index
-  soundsArray.forEach((element, index) => {
-    let beatToggle = document.querySelector(`#strong${index + 1}`);
+  soundsArray.forEach((soundFile, i) => {
+    let beatToggle = document.querySelector(`#strong${i + 1}`);
     let checkedButWeak = Boolean(
-      beatToggle.checked == true && element.src.match("sounds/weak.mp3")
+      beatToggle.checked == true && soundFile.src.match("sounds/weak.mp3")
     );
     let uncheckedButStrong = Boolean(
-      beatToggle.checked == false && element.src.match("sounds/strong.mp3")
+      beatToggle.checked == false && soundFile.src.match("sounds/strong.mp3")
     );
 
     switch (true) {
       // if a beat is newly chosen to be strong, change its source to strong
       case checkedButWeak:
-        element.src = "sounds/strong.mp3";
+        soundFile.src = "sounds/strong.mp3";
         console.log("changed to strong");
         break;
       // if a beat is newly chosen to be weak, change its source to weak
       case uncheckedButStrong:
-        element.src = "sounds/weak.mp3";
+        soundFile.src = "sounds/weak.mp3";
         console.log("changed to weak");
         break;
     }
