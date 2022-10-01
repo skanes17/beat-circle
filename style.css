@@ -18,12 +18,17 @@
     25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.1);
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background: radial-gradient(#421232 0%, #3d4652 100%);
   color: #222f3e;
   margin: 0;
   padding: 0;
+  height: 95%;
 }
 
 h1 {
@@ -49,6 +54,7 @@ h1 {
 #container {
   border-radius: 8px;
   width: 90%;
+  max-width: 700px;
   margin: auto;
   /* made using https://www.joshwcomeau.com/gradient-generator/ */
   background-image: linear-gradient(
@@ -290,11 +296,14 @@ article {
   align-items: center;
   justify-content: center;
   height: 250px;
+  width: 250px;
   position: relative;
   background-color: #f7f2f2;
   border-color: transparent;
   border-style: solid;
-  margin: 10px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
   border-radius: 8px;
   /* josh comeau styling */
   box-shadow: var(--shadow-elevation-medium);
