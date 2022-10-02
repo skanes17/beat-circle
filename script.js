@@ -455,7 +455,32 @@ let bpm = {
 
   displayBpm: function (data, title, name) {
     const { tempo } = data.song;
+    document.querySelector(".fact-text").classList.remove("pulse");
     document.querySelector(".fact-text").innerHTML =
-      title + " by " + name + " has an average tempo of " + tempo + " BPM.";
+      title +
+      " by " +
+      name +
+      " has an average tempo of <b>" +
+      tempo +
+      " BPM</b>.";
+  },
+
+  search: function () {
+    document.querySelector(".fact-text").classList.remove("hidden");
+    document.querySelector(".fact-text").innerHTML = "Searching ...";
+    document.querySelector(".fact-text").classList.add("pulse");
+    this.fetchInfo(document.querySelector(".search-bar").value);
   },
 };
+
+document.querySelector(".search button").addEventListener("click", function () {
+  bpm.search();
+});
+
+document
+  .querySelector(".search-bar")
+  .addEventListener("keyup", function (event) {
+    if (event.key == "Enter") {
+      bpm.search();
+    }
+  });

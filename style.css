@@ -297,7 +297,7 @@ article {
   align-items: center;
   justify-content: center;
   height: 250px;
-  width: 250px;
+  width: 75%;
   position: relative;
   background-color: #f7f2f2;
   border-color: transparent;
@@ -379,10 +379,11 @@ article {
   text-align: left;
   margin: 4px 0 0 0;
   padding: 0.4em 1em;
+  transition: 0.5s ease-in-out;
 }
 
 .api b {
-  color: #6c5ce7;
+  color: #9a8fdf;
 }
 
 .card {
@@ -414,6 +415,10 @@ input.search-bar {
   width: calc(100% - 100px);
 }
 
+input:focus::placeholder {
+  color: transparent;
+}
+
 button {
   margin: 0.5em;
   border-radius: 50%;
@@ -429,4 +434,20 @@ button {
 
 button:hover {
   background: #7c7c7c6b;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 1;
+  }
 }
