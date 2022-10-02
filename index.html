@@ -25,164 +25,167 @@
         <h1>Beat Circle</h1>
       </div>
     </div>
-    <div class="divStyle" id="container">
-      <div class="flexColumn">
-        <p id="sliderOutput"></p>
-        <input
-          type="range"
-          value="120"
-          id="tempoSlider"
-          name="tempoForm"
-          min="20"
-          max="260"
-          class="inputs"
-        />
-      </div>
 
-      <div class="divParent addMargins">
-        <div class="buttonContainer">
-          <div
-            class="divChild playButton material-icons md-48 md-play"
-            onclick="bpmFunction()"
-          >
-            play_arrow
+    <div class="master-container">
+      <div class="divStyle" id="container">
+        <div class="flexColumn">
+          <p id="sliderOutput"></p>
+          <input
+            type="range"
+            value="120"
+            id="tempoSlider"
+            name="tempoForm"
+            min="20"
+            max="260"
+            class="inputs"
+          />
+        </div>
+
+        <div class="divParent addMargins">
+          <div class="buttonContainer">
+            <div
+              class="divChild playButton material-icons md-48 md-play"
+              onclick="bpmFunction()"
+            >
+              play_arrow
+            </div>
+          </div>
+          <div class="buttonContainer">
+            <input
+              type="checkbox"
+              id="volumeToggle"
+              class="volumeButton hidden"
+              name="volume"
+              value="volume"
+              checked="true"
+              onchange="playSound()"
+            />
+            <label
+              for="volumeToggle"
+              id="volumeIcon"
+              class="divChild volumeButton material-icons md-36 md-volOn"
+              >volume_up</label
+            >
           </div>
         </div>
-        <div class="buttonContainer">
-          <input
-            type="checkbox"
-            id="volumeToggle"
-            class="volumeButton hidden"
-            name="volume"
-            value="volume"
-            checked="true"
-            onchange="playSound()"
-          />
-          <label
-            for="volumeToggle"
-            id="volumeIcon"
-            class="divChild volumeButton material-icons md-36 md-volOn"
-            >volume_up</label
-          >
+
+        <div class="divParent">
+          <div class="divChild">
+            <p>
+              <b>Beats</b>
+              <select
+                type="number"
+                id="topNumber"
+                name="topNumberForm"
+                onchange="showBeats()"
+                class="inputs"
+              ></select>
+            </p>
+          </div>
+
+          <div class="divChild">
+            <p>
+              <b>Groove</b>
+              <select
+                type="number"
+                id="botNumber"
+                name="botNumberForm"
+                class="inputs"
+              >
+                <option value="2">Half Time</option>
+                <option value="4" selected>Regular Time</option>
+                <option value="8">Double Time</option>
+              </select>
+            </p>
+          </div>
         </div>
+
+        <div
+          id="beatEmphasisContainer"
+          class="beatEmphasisContainer addMargins"
+        ></div>
+
+        <div class="toggleContainer">
+          <div class="emphasisToggle" id="toggle1">
+            <input
+              type="checkbox"
+              id="strong1"
+              checked="true"
+              onchange="playSound()"
+            />
+            <label for="strong1"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle2">
+            <input type="checkbox" id="strong2" onchange="playSound()" />
+            <label for="strong2"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle3">
+            <input type="checkbox" id="strong3" onchange="playSound()" />
+            <label for="strong3"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle4">
+            <input type="checkbox" id="strong4" onchange="playSound()" />
+            <label for="strong4"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle5">
+            <input type="checkbox" id="strong5" onchange="playSound()" />
+            <label for="strong5"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle6">
+            <input type="checkbox" id="strong6" onchange="playSound()" />
+            <label for="strong6"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle7">
+            <input type="checkbox" id="strong7" onchange="playSound()" />
+            <label for="strong7"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle8">
+            <input type="checkbox" id="strong8" onchange="playSound()" />
+            <label for="strong8"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle9">
+            <input type="checkbox" id="strong9" onchange="playSound()" />
+            <label for="strong9"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle10">
+            <input type="checkbox" id="strong10" onchange="playSound()" />
+            <label for="strong10"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle11">
+            <input type="checkbox" id="strong11" onchange="playSound()" />
+            <label for="strong11"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle12">
+            <input type="checkbox" id="strong12" onchange="playSound()" />
+            <label for="strong12"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle13">
+            <input type="checkbox" id="strong13" onchange="playSound()" />
+            <label for="strong13"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle14">
+            <input type="checkbox" id="strong14" onchange="playSound()" />
+            <label for="strong14"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle15">
+            <input type="checkbox" id="strong15" onchange="playSound()" />
+            <label for="strong15"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle16">
+            <input type="checkbox" id="strong16" onchange="playSound()" />
+            <label for="strong16"></label>
+          </div>
+        </div>
+
+        <article class="container">
+          <div class="outer-circle"></div>
+          <div class="inner-circle"></div>
+          <div class="center-dot"></div>
+          <div id="hand" class="hand"></div>
+        </article>
+
+        <div class="division"></div>
       </div>
-
-      <div class="divParent">
-        <div class="divChild">
-          <p>
-            <b>Beats</b>
-            <select
-              type="number"
-              id="topNumber"
-              name="topNumberForm"
-              onchange="showBeats()"
-              class="inputs"
-            ></select>
-          </p>
-        </div>
-
-        <div class="divChild">
-          <p>
-            <b>Groove</b>
-            <select
-              type="number"
-              id="botNumber"
-              name="botNumberForm"
-              class="inputs"
-            >
-              <option value="2">Half Time</option>
-              <option value="4" selected>Regular Time</option>
-              <option value="8">Double Time</option>
-            </select>
-          </p>
-        </div>
-      </div>
-
-      <div
-        id="beatEmphasisContainer"
-        class="beatEmphasisContainer addMargins"
-      ></div>
-
-      <div class="toggleContainer">
-        <div class="emphasisToggle" id="toggle1">
-          <input
-            type="checkbox"
-            id="strong1"
-            checked="true"
-            onchange="playSound()"
-          />
-          <label for="strong1"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle2">
-          <input type="checkbox" id="strong2" onchange="playSound()" />
-          <label for="strong2"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle3">
-          <input type="checkbox" id="strong3" onchange="playSound()" />
-          <label for="strong3"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle4">
-          <input type="checkbox" id="strong4" onchange="playSound()" />
-          <label for="strong4"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle5">
-          <input type="checkbox" id="strong5" onchange="playSound()" />
-          <label for="strong5"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle6">
-          <input type="checkbox" id="strong6" onchange="playSound()" />
-          <label for="strong6"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle7">
-          <input type="checkbox" id="strong7" onchange="playSound()" />
-          <label for="strong7"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle8">
-          <input type="checkbox" id="strong8" onchange="playSound()" />
-          <label for="strong8"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle9">
-          <input type="checkbox" id="strong9" onchange="playSound()" />
-          <label for="strong9"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle10">
-          <input type="checkbox" id="strong10" onchange="playSound()" />
-          <label for="strong10"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle11">
-          <input type="checkbox" id="strong11" onchange="playSound()" />
-          <label for="strong11"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle12">
-          <input type="checkbox" id="strong12" onchange="playSound()" />
-          <label for="strong12"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle13">
-          <input type="checkbox" id="strong13" onchange="playSound()" />
-          <label for="strong13"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle14">
-          <input type="checkbox" id="strong14" onchange="playSound()" />
-          <label for="strong14"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle15">
-          <input type="checkbox" id="strong15" onchange="playSound()" />
-          <label for="strong15"></label>
-        </div>
-        <div class="emphasisToggle" id="toggle16">
-          <input type="checkbox" id="strong16" onchange="playSound()" />
-          <label for="strong16"></label>
-        </div>
-      </div>
-
-      <article class="container">
-        <div class="outer-circle"></div>
-        <div class="inner-circle"></div>
-        <div class="center-dot"></div>
-        <div id="hand" class="hand"></div>
-      </article>
-
-      <div class="division"></div>
 
       <div class="api">
         <h2 class="fact">Find a BPM</h2>
