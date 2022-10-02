@@ -354,13 +354,12 @@ article {
 }
 
 .api {
-  color: #222f3e;
+  color: white;
   display: flex;
-  border: solid;
-  border-color: #3f384a;
-  border-radius: 4px;
-  background: #f7f2f2f0;
-  padding: 8px;
+  border-radius: 32px;
+  background: #000000d0;
+  box-shadow: 1px 1px 5px #000000d0;
+  padding: 1em;
   margin-top: 32px;
   margin: 32px 10% 0px 10%;
   max-width: 525px;
@@ -368,21 +367,66 @@ article {
 }
 
 .fact {
-  color: #222f3e;
+  color: #f7f2f2;
   font-size: 1.5rem;
-  text-align: center;
+  margin: 0.5rem 0 0.5rem 0;
   margin: 0;
-  padding: 0;
-  /* max-width: 70%; */
+  padding: 0.4em 1em;
 }
 
 .fact-text {
   font-size: 1.25rem;
-  text-align: center;
+  text-align: left;
   margin: 4px 0 0 0;
-  /* max-width: 70%; */
+  padding: 0.4em 1em;
 }
 
 .api b {
   color: #6c5ce7;
+}
+
+.card {
+  background: #000000d0;
+  color: white;
+  padding: 2em;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
+  margin: 1em;
+}
+
+.search {
+  display: flex;
+  margin: 0.5rem 0 0.5rem 0;
+  align-items: center;
+  justify-content: center;
+}
+
+input.search-bar {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background: #7c7c7c2b;
+  color: white;
+  font-family: inherit;
+  font-size: 105%;
+  width: calc(100% - 100px);
+}
+
+button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  height: 44px;
+  width: 46px;
+  background: #7c7c7c2c;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  background: #7c7c7c6b;
 }
