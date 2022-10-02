@@ -352,3 +352,37 @@ article {
   background: red;
   transform: rotate(90deg);
 }
+
+.api {
+  color: #222f3e;
+  display: flex;
+  border: solid;
+  border-color: #3f384a;
+  border-radius: 4px;
+  background: #f7f2f2f0;
+  padding: 8px;
+  margin-top: 32px;
+  margin: 32px 10% 0px 10%;
+  max-width: 525px;
+  flex-direction: column;
+}
+
+.fact {
+  color: #222f3e;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  /* max-width: 70%; */
+}
+
+.fact-text {
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 4px 0 0 0;
+  /* max-width: 70%; */
+}
+
+.api b {
+  color: #6c5ce7;
+}
