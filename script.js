@@ -421,3 +421,46 @@ function circleDivisions() {
 
 }
 */
+
+/* --------------
+   GetSongBPM API
+   -------------- */
+
+let bpm = {
+  apiKey: "0af15d9b4fa3f2417c0017662b453715",
+  song: "free bird",
+
+  fetchInfo: function (song) {
+    fetch(
+      "https://api.getsongbpm.com/search/?api_key=" +
+        this.apiKey +
+        "&type=song&lookup=" +
+        song
+    )
+      .then((response) => response.json())
+      .then((data) => this.grabBpm(data));
+  },
+
+  grabBpm: function (data) {
+    const { id, title } = data.search[0];
+    const { name } = data.search[0].artist;
+
+    fetch(
+      "https://api.getsongbpm.com/song/?api_key=" + this.apiKey + "&id=" + id
+    )
+      .then((response) => response.json())
+      .then((data) => this.displayBpm(data, title, name));
+  },
+
+  displayBpm: function (data, title, name) {
+    const { tempo } = data.song;
+    document.querySelector(".temp").innerText =
+      "The average tempo of " +
+      title +
+      " by " +
+      name +
+      " is " +
+      tempo +
+      " bpm.";
+  },
+};
