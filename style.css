@@ -32,10 +32,12 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #f4f4f8;
   margin: 0;
   padding: 1%;
+  /* max-width: 700px; */
+  /* width: 90%; */
   text-shadow: 0px 3px 1px rgba(0, 0, 0, 1);
 }
 
@@ -51,11 +53,21 @@ h1 {
   border-radius: 10px;
 }
 
+.master-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+
 #container {
   border-radius: 8px;
   width: 90%;
   max-width: 700px;
-  margin: auto;
+  /* margin: auto; */
   /* made using https://www.joshwcomeau.com/gradient-generator/ */
   background-image: linear-gradient(
     350deg,
@@ -98,13 +110,16 @@ h1 {
 .divParent2 {
   display: flex;
   flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  gap: 2%;
-  position: relative;
-  width: 70%;
-  margin: auto;
-  margin-top: 20px;
+  margin: 0 0 0 1%;
+  /* align-items: center; */
+  /* gap: 2%; */
+  /* position: relative; */
+  /* width: 70%; */
+  /* max-width: 700px; */
+  /* margin: 20px 0 0 50px; */
+  /* margin-top: 20px; */
+  /* text-align: center; */
+  justify-content: flex-start;
 }
 
 .divChild {
@@ -115,9 +130,11 @@ h1 {
 
 .divChildHeader {
   flex: auto;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   text-align: center;
+  /* margin: 0; */
+  /* padding: 0; */
 }
 
 .volumeIcon {
@@ -356,13 +373,17 @@ article {
 .api {
   color: white;
   display: flex;
+  flex: 1;
   border-radius: 32px;
   background: #000000d0;
   box-shadow: 1px 1px 5px #000000d0;
   padding: 1em;
-  margin-top: 32px;
-  margin: 32px 10% 0px 10%;
-  max-width: 525px;
+  /* margin-top: 32px; */
+  /* margin: 32px 10% 0px 10%; */
+  /* max-width: 525px; */
+  /* width: 525px; */
+  min-width: 250px;
+  max-width: 300px;
   flex-direction: column;
 }
 
