@@ -20,24 +20,24 @@
 
 html {
   height: 100%;
+  background: #080718;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   background: radial-gradient(#421232 0%, #3d4652 100%);
-  color: #222f3e;
+  background: #080718;
+  color: #d6b1ff;
   margin: 0;
   padding: 0;
   height: 95%;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #f4f4f8;
   margin: 0;
   padding: 1%;
-  /* max-width: 700px; */
-  /* width: 90%; */
   text-shadow: 0px 3px 1px rgba(0, 0, 0, 1);
 }
 
@@ -66,21 +66,8 @@ h1 {
 #container {
   border-radius: 8px;
   width: 90%;
-  max-width: 700px;
-  /* margin: auto; */
-  /* made using https://www.joshwcomeau.com/gradient-generator/ */
-  background-image: linear-gradient(
-    350deg,
-    hsl(250deg 53% 78%) 0%,
-    hsl(248deg 53% 79%) 31%,
-    hsl(246deg 52% 79%) 40%,
-    hsl(243deg 52% 79%) 45%,
-    hsl(241deg 52% 79%) 47%,
-    hsl(239deg 52% 79%) 49%,
-    hsl(237deg 52% 79%) 53%,
-    hsl(235deg 52% 79%) 61%,
-    hsl(233deg 53% 78%) 100%
-  );
+  max-width: 900px;
+  background: #30303e;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -92,8 +79,9 @@ h1 {
 }
 
 #sliderOutput {
-  font-size: 3rem;
-  text-shadow: 0px 0px 4px whitesmoke;
+  font-size: 3.5rem;
+  color: #ffffff;
+  text-shadow: 0px 0px 36px #d6b1ff94;
   font-weight: bold;
   margin: 5px 0 5px 0;
 }
@@ -110,15 +98,12 @@ h1 {
 .divParent2 {
   display: flex;
   flex-flow: row;
-  margin: 0 0 0 1%;
-  /* align-items: center; */
-  /* gap: 2%; */
-  /* position: relative; */
-  /* width: 70%; */
-  /* max-width: 700px; */
-  /* margin: 20px 0 0 50px; */
-  /* margin-top: 20px; */
-  /* text-align: center; */
+  padding: 0 0 0 1%;
+  border: 1px solid #595969;
+  box-shadow: inset 0 -7px 9px -4px #595969;
+  border-width: 0 0 2px 0;
+  margin: 0 0 8px 0;
+  background: #080718;
   justify-content: flex-start;
 }
 
@@ -204,17 +189,20 @@ h1 {
 
 .beatEmphasisStack {
   height: 25px;
-  border: 1px solid rgba(49, 27, 146, 1);
-  background-color: rgba(95, 39, 205, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.64);
   transition: 125ms ease-in-out;
   border-radius: 3px;
-  box-shadow: var(--shadow-elevation-low);
+  box-shadow: inset 0 0 3px rgba(108, 92, 231, 1);
+
+  /*     background-color: #6c5ce7bf;
+    box-shadow: 0 0 4px #6c5ce7;
+    */
 }
 
 /* experimented with scaling on hover */
 /* this method styles all children */
 .beatEmphasisBoxes:hover .beatEmphasisStack {
-  background-color: rgba(95, 39, 205, 0.5);
+  background-color: rgba(108, 92, 231, 0.15);
   transform: scale(1);
 }
 
@@ -317,8 +305,8 @@ article {
   width: 75%;
   position: relative;
   background-color: #f7f2f2;
-  border-color: transparent;
-  border-style: solid;
+  border: 2px solid #595969;
+  border-radius: 8px;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -354,9 +342,9 @@ article {
 
 .hand {
   background: black;
-  height: 125px;
+  height: 120px;
   width: 5px;
-  top: 0%;
+  top: 5px;
   position: absolute;
   border-radius: 50%;
   transform-origin: bottom;
@@ -373,15 +361,11 @@ article {
 .api {
   color: white;
   display: flex;
-  flex: 1;
+  flex: 1 1 0%;
   border-radius: 32px;
-  background: #000000d0;
-  box-shadow: 1px 1px 5px #000000d0;
+  background: rgb(2, 2, 6);
+  box-shadow: rgb(89 89 105) 0px 0px 4px inset;
   padding: 1em;
-  /* margin-top: 32px; */
-  /* margin: 32px 10% 0px 10%; */
-  /* max-width: 525px; */
-  /* width: 525px; */
   min-width: 250px;
   max-width: 300px;
   flex-direction: column;

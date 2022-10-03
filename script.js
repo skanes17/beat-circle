@@ -88,16 +88,16 @@ for (let i = 1; i < 17; i++) {
 for (let i = 1; i < 17; i++) {
   if (i == 1) {
     document.querySelector(`.vol25-${i}`).style.backgroundColor =
-      "rgba(95, 39, 205, 0.75)";
+      "rgba(108, 92, 231, 0.75)";
     document.querySelector(`.vol50-${i}`).style.backgroundColor =
-      "rgba(95, 39, 205, 0.75)";
+      "rgba(108, 92, 231, 0.75)";
     document.querySelector(`.vol75-${i}`).style.backgroundColor =
-      "rgba(95, 39, 205, 0.75)";
+      "rgba(108, 92, 231, 0.75)";
   } else {
     document.querySelector(`.vol25-${i}`).style.backgroundColor =
-      "rgba(95, 39, 205, 0.75)";
+      "rgba(108, 92, 231, 0.75)";
     document.querySelector(`.vol50-${i}`).style.backgroundColor =
-      "rgba(95, 39, 205, 0.75)";
+      "rgba(108, 92, 231, 0.75)";
   }
 }
 
@@ -123,11 +123,11 @@ function changeVolume(box) {
 
   // toss the styles in an array
   const beatStyleArray = [vol25, vol50, vol75, vol100];
-  const offColor = "rgba(95, 39, 205, 0.25)";
-  const onColor = "rgba(95, 39, 205, 0.75)";
+  const offColor = "rgba(108, 92, 231, 0.25)";
+  const onColor = "rgba(108, 92, 231, 0.75)";
 
   // if top box is full, clear all boxes
-  switch ("rgba(95, 39, 205, 0.75)") {
+  switch ("rgba(108, 92, 231, 0.75)") {
     case beatStyleArray[3]:
       document.querySelector(`.vol25-${box}`).style.backgroundColor = offColor;
       document.querySelector(`.vol50-${box}`).style.backgroundColor = offColor;
@@ -357,9 +357,9 @@ function playAnimations() {
   pulseAnimation.animate(pulse, pulseTiming);
 
   const stackPulse = [
-    { boxShadow: "inset 0 0 0 0 rgba(95, 39, 205, 1)", borderRadius: "8px" },
+    { background: "rgba(108, 92, 231, .75)", borderRadius: "8px" },
     {
-      boxShadow: "inset 0 0 0 64px rgba(95, 39, 205, 0)",
+      background: "rgba(108, 92, 231, 0)",
       borderRadius: "8px",
     },
   ];
