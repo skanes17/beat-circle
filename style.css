@@ -67,6 +67,7 @@ h1 {
   border-radius: 8px;
   width: 90%;
   max-width: 900px;
+  margin: 1%;
   background: #30303e;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
