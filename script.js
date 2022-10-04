@@ -429,47 +429,70 @@ function circleDivisions() {
 let bpm = {
   apiKey: "0af15d9b4fa3f2417c0017662b453715",
 
-  fetchInfo: function (song) {
+  fetchInfo: function (song, artist) {
+    console.log(
+      "https://api.getsongbpm.com/search/?api_key=" +
+        this.apiKey +
+        "&type=both&lookup=song:" +
+        song.toString() +
+        "artist:" +
+        artist.toString() +
+        "&limit=1"
+    );
     fetch(
       "https://api.getsongbpm.com/search/?api_key=" +
         this.apiKey +
-        "&type=song&lookup=" +
+        "&type=both&lookup=song:" +
         song +
-        "&limit=5"
+        "artist:" +
+        artist +
+        "&limit=1"
     )
       .then((response) => response.json())
+
       .then((data) => this.grabBpm(data));
   },
 
   grabBpm: function (data) {
-    const { id, title } = data.search[0];
+    const { song_id, song_title } = data.search[0];
     const { name } = data.search[0].artist;
+    const { img } = data.search[0].album;
 
     fetch(
-      "https://api.getsongbpm.com/song/?api_key=" + this.apiKey + "&id=" + id
+      "https://api.getsongbpm.com/song/?api_key=" +
+        this.apiKey +
+        "&id=" +
+        song_id
     )
       .then((response) => response.json())
-      //  .then((data) => console.log(data, title, name));
-      .then((data) => this.displayBpm(data, title, name));
+      .then((data) => this.displayBpm(data, song_title, name, img));
   },
 
-  displayBpm: function (data, title, name) {
+  displayBpm: function (data, song_title, name, img) {
     const { tempo } = data.song;
     document.querySelector(".fact-text").classList.remove("pulse");
     document.querySelector(".fact-text").innerHTML =
-      title +
+      song_title +
       " by " +
       name +
       " has an average tempo of <b>" +
       tempo +
       " BPM</b>.";
+    document.querySelector(".cover-art").classList.remove("hidden");
+    document.querySelector(".cover-art").src = img;
   },
 
   search: function () {
+    document.querySelector(".cover-art").classList.add("hidden");
     document.querySelector(".fact-text").classList.remove("hidden");
     document.querySelector(".fact-text").innerHTML = "Searching ...";
     document.querySelector(".fact-text").classList.add("pulse");
-    this.fetchInfo(document.querySelector(".search-bar").value);
+    let search = document.querySelector(".search-bar").value;
+    let song = search.split(" by ")[0];
+    song = song.replace(/ /g, "+");
+    let artist = search.split(" by ")[1];
+    artist = artist.replace(/ /g, "+");
+    this.fetchInfo(song, artist);
   },
 };
 

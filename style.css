@@ -457,3 +457,10 @@ button:hover {
     opacity: 1;
   }
 }
+
+img {
+  width: 75%;
+  min-width: 150px;
+  margin: auto;
+  padding: 10px;
+}
