@@ -454,6 +454,13 @@ let bpm = {
   },
 
   grabBpm: function (data) {
+    if (data.search[0] === undefined) {
+      document.querySelector(".fact-text").classList.remove("pulse");
+      document.querySelector(".fact-text").classList.add("error");
+      document.querySelector(".fact-text").innerHTML =
+        "This song is too fresh to be found. Try another!";
+      return;
+    }
     const { song_id, song_title } = data.search[0];
     const { name } = data.search[0].artist;
     const { img } = data.search[0].album;
@@ -483,6 +490,7 @@ let bpm = {
   },
 
   search: function () {
+    document.querySelector(".fact-text").classList.remove("error");
     document.querySelector(".cover-art").classList.add("hidden");
     document.querySelector(".fact-text").classList.remove("hidden");
     document.querySelector(".fact-text").innerHTML = "Searching ...";
