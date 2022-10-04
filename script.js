@@ -496,6 +496,13 @@ let bpm = {
     document.querySelector(".fact-text").innerHTML = "Searching ...";
     document.querySelector(".fact-text").classList.add("pulse");
     let search = document.querySelector(".search-bar").value;
+    if (search.includes("by") === false) {
+      document.querySelector(".fact-text").classList.remove("pulse");
+      document.querySelector(".fact-text").classList.add("error");
+      document.querySelector(".fact-text").innerHTML =
+        'Make sure to search song <strong>and</strong> artist. For example, "Purple Haze <strong>by</strong> Jimi Hendrix."';
+      return;
+    }
     let song = search.split(" by ")[0];
     song = song.replace(/ /g, "+");
     let artist = search.split(" by ")[1];
