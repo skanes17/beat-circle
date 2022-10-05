@@ -35,6 +35,7 @@ const beatContainer = document.querySelector("#beatEmphasisContainer");
 for (let i = 1; i < 17; i++) {
   let box = document.createElement("div");
   box.classList.add("beatEmphasisBoxes");
+  box.setAttribute("onclick", "playSound()");
   box.id = `box${i}`;
   box.style.display = "none";
   beatContainer.appendChild(box);
