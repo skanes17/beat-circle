@@ -327,12 +327,10 @@ function playAnimations() {
   // to make waves on beat
   const wave = [
     {
-      boxShadow:
-        "0 0 16px 8px rgba(247, 242, 242, .75), inset 0 0 8px 0px rgba(247, 242, 242, 1)",
+      boxShadow: "0 0 16px 8px rgba(247, 242, 242, .75)",
     },
     {
-      boxShadow:
-        "0 0 24px 16px rgba(247, 242, 242, 0), inset 0 0 12px 5px rgba(247, 242, 242, 0)",
+      boxShadow: "0 0 24px 16px rgba(247, 242, 242, 0)",
     },
   ];
 
