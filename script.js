@@ -123,7 +123,7 @@ function changeVolume(box) {
 
   // toss the styles in an array
   const beatStyleArray = [vol25, vol50, vol75, vol100];
-  const offColor = "rgba(108, 92, 231, 0.25)";
+  const offColor = "transparent";
   const onColor = "rgba(108, 92, 231, 0.75)";
 
   // if top box is full, clear all boxes

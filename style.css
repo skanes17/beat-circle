@@ -200,11 +200,9 @@ h1 {
     */
 }
 
-/* experimented with scaling on hover */
 /* this method styles all children */
 .beatEmphasisBoxes:hover .beatEmphasisStack {
   background-color: rgba(108, 92, 231, 0.15);
-  transform: scale(1);
 }
 
 .buttonContainer {
