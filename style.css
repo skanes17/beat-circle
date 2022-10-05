@@ -142,10 +142,33 @@ h1 {
   font-size: 1.5rem;
 }
 
-#tempoSlider {
-  margin: 5px 0 5px 0;
+input[type="range"] {
+  appearance: none;
+  margin: 24px 0 24px 0;
   width: 75%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: rgb(255 235 164);
   cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 40px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  background: rgb(255, 196, 0);
+  transition: 100ms ease-in-out;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: #ffab00;
+}
+
+#tempoSlider:disabled {
+  opacity: 0.5;
 }
 
 .addMargins {
