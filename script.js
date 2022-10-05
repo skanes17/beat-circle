@@ -326,8 +326,14 @@ function playAnimations() {
 
   // to make waves on beat
   const wave = [
-    { boxShadow: "0 0 0 0px rgba(108, 92, 231, 1)" },
-    { boxShadow: "0 0 0 10px rgba(108, 92, 231, 0)" },
+    {
+      boxShadow:
+        "0 0 16px 8px rgba(247, 242, 242, .75), inset 0 0 8px 0px rgba(247, 242, 242, 1)",
+    },
+    {
+      boxShadow:
+        "0 0 24px 16px rgba(247, 242, 242, 0), inset 0 0 12px 5px rgba(247, 242, 242, 0)",
+    },
   ];
 
   const waveTiming = {
@@ -339,11 +345,12 @@ function playAnimations() {
 
   // makes the circle pulse slightly on beat
   const pulse = [
-    { transform: "scale(1)" },
+    { border: "5px solid " },
     // offset works like keyframe percentage in CSS
     {
-      transform: "scale(1.03)",
-      borderColor: "rgba(44, 30, 153, 1)",
+      border: "10px solid rgba(255, 224, 112, 1)",
+      height: "175px",
+      width: "175px",
       offset: 0.2,
     },
     { transform: "scale(1)", offset: 0.4 },
@@ -357,9 +364,9 @@ function playAnimations() {
   pulseAnimation.animate(pulse, pulseTiming);
 
   const stackPulse = [
-    { background: "rgba(108, 92, 231, .75)", borderRadius: "8px" },
+    { background: "rgba(247, 242, 242, .75)", borderRadius: "8px" },
     {
-      background: "rgba(108, 92, 231, 0)",
+      background: "rgba(247, 242, 242, 0)",
       borderRadius: "8px",
     },
   ];
