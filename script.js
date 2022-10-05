@@ -527,3 +527,11 @@ document
       bpm.search();
     }
   });
+
+// toggle advanced options
+document.querySelector("#adv-toggle").addEventListener("click", () => {
+  const advancedOptionsArray = document.querySelectorAll(".advanced");
+  advancedOptionsArray.forEach((element) => {
+    element.classList.toggle("hidden");
+  });
+});

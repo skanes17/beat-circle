@@ -16,6 +16,10 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
@@ -68,6 +72,18 @@
         </div>
 
         <div class="divParent">
+          <div class="advanced-options">
+            Advanced Options
+            <span class="adv emphasisToggle">
+              <input type="checkbox" id="adv-toggle" onchange="playSound()" />
+              <label for="adv-toggle"></label>
+            </span>
+          </div>
+        </div>
+
+        <!--<span class="emphasisToggle2 adv-on"> toggle_on</span>-->
+
+        <div class="divParent advanced">
           <div class="divChild">
             <p class="input-labels">
               <b>Beats</b>
@@ -100,10 +116,10 @@
 
         <div
           id="beatEmphasisContainer"
-          class="beatEmphasisContainer addMargins"
+          class="beatEmphasisContainer addMargins advanced"
         ></div>
 
-        <div class="toggleContainer">
+        <div class="toggleContainer advanced">
           <div class="emphasisToggle" id="toggle1">
             <input
               type="checkbox"

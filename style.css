@@ -20,10 +20,14 @@ body {
   font-family: "Open Sans", sans-serif;
   background: radial-gradient(#421232 0%, #3d4652 100%);
   background: #080718;
-  color: #d6b1ff;
+  color: #ffffff;
   margin: 0;
   padding: 0;
   height: 95%;
+}
+
+b {
+  color: #d6b1ff;
 }
 
 h1 {
@@ -129,6 +133,20 @@ h1 {
   opacity: 0.9;
 }
 
+.advanced-options {
+  font-size: 1.25rem;
+  display: inline;
+  text-align: center;
+}
+
+.adv.emphasisToggle {
+  display: inline;
+}
+
+.adv.emphasisToggle input[type="checkbox"] + label {
+  width: 30%;
+}
+
 .inputs {
   font-size: 1.25rem;
   font-family: inherit;
@@ -197,6 +215,16 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 .material-icons.md-volOn {
   color: rgba(158, 158, 158, 1);
+}
+
+.material-symbols-outlined {
+  font-size: 36px;
+  color: rgba(233, 30, 99, 1);
+  transition: 250ms ease-in-out;
+}
+
+.adv-on {
+  color: rgb(71, 207, 115, 1);
 }
 
 .beatEmphasisContainer {
