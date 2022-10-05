@@ -290,8 +290,8 @@ function showBeats() {
 // script to run animations
 const handAnimation = document.querySelector(".hand");
 const playButton = document.querySelector(".playButton");
-const waveAnimation = document.querySelector(".outer-circle");
-const pulseAnimation = document.querySelector(".outer-circle");
+const waveAnimation = document.querySelector(".circle");
+const pulseAnimation = document.querySelector(".circle");
 
 // array to hold beat pulse animations
 const stackAnimation = [];
@@ -342,8 +342,8 @@ function playAnimations() {
     { transform: "scale(1)" },
     // offset works like keyframe percentage in CSS
     {
-      transform: "scale(1.02)",
-      background: "rgba(44, 30, 153, 1)",
+      transform: "scale(1.03)",
+      borderColor: "rgba(44, 30, 153, 1)",
       offset: 0.2,
     },
     { transform: "scale(1)", offset: 0.4 },
