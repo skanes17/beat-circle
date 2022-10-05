@@ -136,6 +136,7 @@ h1 {
   margin-left: 5px;
   border-radius: 8px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   display: block;
 }
 
@@ -217,6 +218,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   align-items: stretch;
   justify-content: end;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .beatEmphasisStack {
@@ -243,6 +245,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   box-shadow: 0px 2px 5px black;
   transition: transform 100ms ease-in-out;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   user-select: none; /* won't select on double-click */
 }
 
@@ -269,7 +272,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
   justify-content: center;
   align-items: flex-start;
   padding: 0 10px 0 10px;
-  cursor: pointer;
 }
 
 .emphasisToggle {
@@ -281,7 +283,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
   border-color: transparent;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   transition: transform 100ms ease-in-out;
 }
 
@@ -305,6 +306,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   /* box shadow to the left of the circle */
   box-shadow: inset 0px 1px 2.5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition: background 0.1s ease-in-out;
 }
 
@@ -375,7 +377,7 @@ article {
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
-.outerCircle division {
+.outerCircle {
   height: 220px;
   width: 1px;
   background: red;
@@ -462,6 +464,7 @@ button {
   background: #7c7c7c2c;
   color: white;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition: 0.2s ease-in-out;
 }
 

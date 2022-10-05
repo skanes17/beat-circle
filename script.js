@@ -289,7 +289,6 @@ function showBeats() {
 
 // script to run animations
 const handAnimation = document.querySelector(".hand");
-const playButton = document.querySelector(".playButton");
 const waveAnimation = document.querySelector(".circle");
 const pulseAnimation = document.querySelector(".circle");
 
