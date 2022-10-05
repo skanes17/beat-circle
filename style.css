@@ -134,8 +134,13 @@ h1 {
   font-family: inherit;
   text-align: center;
   margin-left: 5px;
+  border-radius: 8px;
   cursor: pointer;
   display: block;
+}
+
+select.inputs {
+  padding: 4px;
 }
 
 .input-labels {
