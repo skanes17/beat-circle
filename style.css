@@ -182,8 +182,9 @@ h1 {
 }
 
 .adv.emphasisToggle {
-  max-width: 75px;
+  max-width: 50px;
   min-width: 25px;
+  height: 0.75rem;
 }
 
 .inputs {
@@ -274,16 +275,17 @@ input[type="range"]::-webkit-slider-thumb:hover {
   display: flex;
   flex-direction: column;
   flex: 1 1 10px;
-  max-width: 100px;
+  max-width: 92px;
   border-style: dashed;
   border-color: transparent;
   align-items: stretch;
   justify-content: end;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .beatEmphasisStack {
-  height: 25px;
+  height: 23px;
   border: 1px solid rgba(0, 0, 0, 0.64);
   transition: 125ms ease-in-out;
   border-radius: 3px;
@@ -339,7 +341,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   display: flex;
   flex-direction: column;
   flex: 1 1 10px;
-  max-width: 100px;
+  max-width: 92px;
   border-style: dashed;
   border-color: transparent;
   align-items: center;
@@ -360,7 +362,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 /* defines label style for unchecked inputs */
 .emphasisToggle input[type="checkbox"] + label {
   display: flex;
-  width: 75%;
+  width: 62%;
   height: 0.8em;
   margin: auto;
   border-radius: 0.5em;
@@ -368,6 +370,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   /* box shadow to the left of the circle */
   box-shadow: inset 0px 1px 2.5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition: background 0.1s ease-in-out;
 }
 
