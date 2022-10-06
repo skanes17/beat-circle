@@ -303,6 +303,58 @@ input[type="range"]::-webkit-slider-thumb:hover {
   transition: 250ms ease-in-out;
 }
 
+.slider-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px 10px 5px 10px;
+}
+
+.slider-container input[type="range"] {
+  appearance: none;
+
+  margin: 24px 0 24px 0;
+  width: 8px;
+  height: 100px;
+  border-radius: 4px;
+  background-color: rgb(164, 237, 255);
+  cursor: pointer;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  transform: rotate(90deg);
+  width: 16px;
+  height: 40px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  background: rgb(255, 196, 0);
+  transition: 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb:hover {
+  background: #ffab00;
+}
+
+/*
+.volume-sliders {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 10px;
+  max-width: 92px;
+  border-style: dashed;
+  border-color: transparent;
+  align-items: stretch;
+  justify-content: end;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+*/
+
+/* need another child here for sliders */
+
 .beatEmphasisContainer {
   display: flex;
   flex-direction: row;
@@ -478,13 +530,6 @@ article {
   border-radius: 50%;
   transform-origin: bottom;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
-}
-
-.outerCircle {
-  height: 220px;
-  width: 1px;
-  background: red;
-  transform: rotate(90deg);
 }
 
 .api {
