@@ -255,6 +255,10 @@ input[type="range"] {
   cursor: pointer;
 }
 
+input[type="range"]:hover {
+  background-color: rgba(255, 235, 164, 0.75);
+}
+
 input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 16px;
@@ -311,49 +315,52 @@ input[type="range"]::-webkit-slider-thumb:hover {
   padding: 10px 10px 5px 10px;
 }
 
-.slider-container input[type="range"] {
-  appearance: none;
-
-  margin: 24px 0 24px 0;
-  width: 8px;
-  height: 100px;
-  border-radius: 4px;
-  background-color: rgb(164, 237, 255);
-  cursor: pointer;
-}
-
-.slider-container input[type="range"]::-webkit-slider-thumb {
-  appearance: none;
-  transform: rotate(90deg);
-  width: 16px;
-  height: 40px;
-  border: 2px solid #ffffff;
-  border-radius: 8px;
-  background: rgb(255, 196, 0);
-  transition: 100ms ease-in-out;
-  cursor: pointer;
-}
-
-.slider-container input[type="range"]::-webkit-slider-thumb:hover {
-  background: #ffab00;
-}
-
-/*
-.volume-sliders {
+.volume-wrapper {
   display: flex;
   flex-direction: column;
-  flex: 1 1 10px;
   max-width: 92px;
+  height: 100px;
   border-style: dashed;
   border-color: transparent;
-  align-items: stretch;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
-*/
 
-/* need another child here for sliders */
+.volume-wrapper input {
+  margin: 0;
+}
+
+.volume-wrapper input[type="range"] {
+  appearance: none;
+  transform: rotate(-90deg);
+  min-width: 100px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: rgb(93, 81, 189);
+  cursor: pointer;
+}
+
+.volume-wrapper input[type="range"]:hover {
+  background-color: rgba(93, 81, 189, 0.75);
+}
+
+.volume-wrapper input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  transform: rotate(-90deg);
+  width: 30px;
+  height: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  background: #d6b1ff;
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+}
+
+.volume-wrapper input[type="range"]::-webkit-slider-thumb:hover {
+  background: rgb(255, 235, 164);
+}
 
 .beatEmphasisContainer {
   display: flex;
