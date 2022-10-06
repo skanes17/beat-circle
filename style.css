@@ -46,6 +46,42 @@ h1 {
   }
 }
 
+/* extra options at top right */
+.advanced-options {
+  display: flex;
+  flex: 1;
+  font-size: 1.25rem;
+  padding: 1%;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+.advanced-options b {
+  color: #f4f4f8;
+}
+
+.advanced-options .text {
+  margin-right: 2%;
+  text-align: right;
+  animation: colorPulse 10s 1;
+}
+
+/* styling for the extra options */
+.advanced {
+  animation: fade-in 500ms 1;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .divStyle {
   padding: 1%;
   border-width: 2px;
@@ -142,27 +178,6 @@ h1 {
   opacity: 0.9;
 }
 
-.advanced-options {
-  display: flex;
-  flex: 1;
-  font-size: 1.25rem;
-  padding: 1%;
-  text-align: center;
-  align-items: center;
-  justify-content: flex-end;
-  align-content: center;
-}
-
-.advanced-options b {
-  color: #f4f4f8;
-}
-
-.advanced-options .text {
-  margin-right: 2%;
-  text-align: right;
-  animation: colorPulse 10s 1;
-}
-
 @keyframes colorPulse {
   70% {
     opacity: 1;
@@ -209,9 +224,6 @@ h1 {
   max-width: 50px;
   min-width: 25px;
   height: 0.75rem;
-}
-
-.text {
 }
 
 .inputs {
