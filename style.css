@@ -41,6 +41,8 @@ h1 {
 @media screen and (max-width: 430px) {
   h1 {
     border-right: 1px solid rgba(244, 244, 248, 0.5);
+    padding-right: 3%;
+    margin-right: 3%;
   }
 }
 
