@@ -151,13 +151,35 @@ h1 {
   align-content: center;
 }
 
+.advanced-options b {
+  color: #f4f4f8;
+}
+
 .advanced-options .text {
   margin-right: 2%;
   text-align: right;
+  animation: colorPulse 10s 1;
 }
 
-.advanced-options b {
-  color: #f4f4f8;
+@keyframes colorPulse {
+  70% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.25;
+    scale: 1;
+  }
+  80% {
+    opacity: 1;
+    scale: 1.05;
+  }
+  85% {
+    scale: 1;
+  }
+  90% {
+    scale: 1;
+    color: #f4f4f8;
+  }
 }
 
 .adv-off,
@@ -185,6 +207,9 @@ h1 {
   max-width: 50px;
   min-width: 25px;
   height: 0.75rem;
+}
+
+.text {
 }
 
 .inputs {
