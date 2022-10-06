@@ -26,6 +26,20 @@
   <body>
     <div class="divParent2">
       <h1>Beat Circle</h1>
+      <div class="advanced-options">
+        <div class="text"><b>Extra Options</b></div>
+        <div class="adv-off disabled">OFF</div>
+        <div class="adv emphasisToggle">
+          <input
+            type="checkbox"
+            id="adv-toggle"
+            checked="true"
+            onchange="playSound()"
+          />
+          <label for="adv-toggle"></label>
+        </div>
+        <div class="adv-on">ON</div>
+      </div>
     </div>
 
     <div class="master-container">
@@ -71,15 +85,7 @@
           </div>
         </div>
 
-        <div class="divParent">
-          <div class="advanced-options">
-            Advanced Options
-            <span class="adv emphasisToggle">
-              <input type="checkbox" id="adv-toggle" onchange="playSound()" />
-              <label for="adv-toggle"></label>
-            </span>
-          </div>
-        </div>
+        <div class="divParent"></div>
 
         <!--<span class="emphasisToggle2 adv-on"> toggle_on</span>-->
 

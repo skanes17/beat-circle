@@ -530,6 +530,9 @@ document
 
 // toggle advanced options
 document.querySelector("#adv-toggle").addEventListener("click", () => {
+  document.querySelector(".adv-on").classList.toggle("disabled");
+  document.querySelector(".adv-off").classList.toggle("disabled");
+
   const advancedOptionsArray = document.querySelectorAll(".advanced");
   advancedOptionsArray.forEach((element) => {
     element.classList.toggle("hidden");
