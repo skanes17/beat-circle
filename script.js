@@ -1,3 +1,14 @@
+// toggle advanced options
+document.querySelector("#adv-toggle").addEventListener("click", () => {
+  document.querySelector(".adv-on").classList.toggle("disabled");
+  document.querySelector(".adv-off").classList.toggle("disabled");
+
+  const advancedOptionsArray = document.querySelectorAll(".advanced");
+  advancedOptionsArray.forEach((element) => {
+    element.classList.toggle("hidden");
+  });
+});
+
 // toggles volume on/off
 let soundState = document.querySelector("#volumeToggle");
 soundState.addEventListener("click", () => {
@@ -462,10 +473,46 @@ let bpm = {
     if (data.search[0] === undefined) {
       document.querySelector(".fact-text").classList.remove("pulse");
       document.querySelector(".fact-text").classList.add("error");
-      document.querySelector(".fact-text").innerHTML =
-        "This song is too fresh to be found. Try another!";
-      return;
+
+      // generate a random number between 1 and 8
+      let random = Math.floor(Math.random() * 8) + 1;
+      switch (random) {
+        case 1:
+          errorText = "This song is too fresh to be found. Try another!";
+          break;
+        case 2:
+          errorText = "I can't find your song. Try again!";
+          break;
+        case 3:
+          errorText =
+            "I'm having trouble finding that one... Try something else?";
+          break;
+        case 4:
+          errorText =
+            "Well, this is awkward... I don't know that one. Could you try one... less fancy?";
+          break;
+        case 5:
+          errorText =
+            "That one's not in here yet. Maybe wait a month or two and try that one again.";
+          break;
+        case 6:
+          errorText =
+            "I gave it a shot but couldn't track that one down. Try another one?";
+          break;
+        case 7:
+          errorText =
+            "OK, you stumped me. Try again but go easy on me this time.";
+          break;
+        case 8:
+          errorText =
+            "I've honestly never heard of that song. Is it new? I should check it out. Maybe check back later for it. Try another one for now!";
+          break;
+        default:
+          errorText = "This song is too fresh to be found. Try another!";
+      }
+      document.querySelector(".fact-text").innerHTML = errorText;
     }
+
     const { song_id, song_title } = data.search[0];
     const { name } = data.search[0].artist;
     const { img } = data.search[0].album;
@@ -527,14 +574,3 @@ document
       bpm.search();
     }
   });
-
-// toggle advanced options
-document.querySelector("#adv-toggle").addEventListener("click", () => {
-  document.querySelector(".adv-on").classList.toggle("disabled");
-  document.querySelector(".adv-off").classList.toggle("disabled");
-
-  const advancedOptionsArray = document.querySelectorAll(".advanced");
-  advancedOptionsArray.forEach((element) => {
-    element.classList.toggle("hidden");
-  });
-});
