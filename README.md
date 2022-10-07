@@ -1,6 +1,6 @@
 # Beat Circle
 > This app takes a tempo in beats per minute (BPM) and plays a beat, along with a neat little circle animation that repeats at the start of every bar.
-> Live demo [_here_](https://skanes17](https://skanes17.github.io/beat-circle/).
+> Live demo [_here_](https://skanes17.github.io/beat-circle/).
 
 ## Table of Contents
 * [General Info](#general-information)
