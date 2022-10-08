@@ -68,33 +68,6 @@ for (let i = 1; i < 17; i++) {
   beat.classList.add("beatEmphasisStack", `vol25-${i}`);
   box.appendChild(beat);
 }
-/* trying to make the toggles under the beat stacks
-  let toggleBox = document.querySelector(".toggleContainer");
-  let toggle = document.createElement("div");
-  toggle.classList.add("emphasisToggle");
-  toggle.id = `toggle${i}`;
-  toggleBox.appendChild(toggle);
-
-  let toggleClick = document.querySelector("emphasisToggle");
-  clickMe = document.createElement("input");
-  clickMe.type = "checkbox";
-  clickMe.id = `strong${i}`;
-  clickMe.setAttribute("onchange", "playSound()");
-}
-
-----------------------------
-    REFERENCE CODE BELOW
-----------------------------
-<div class="emphasisToggle" id="toggle1">
-  <input
-    type="checkbox"
-    id="strong1"
-    checked="true"
-    onchange="playSound()"
-  />
-  <label for="strong1"></label>
-</div>
-*/
 
 // sets default styles/volumes to 75% for first beat, 50% for the rest
 for (let i = 1; i < 17; i++) {
@@ -430,13 +403,6 @@ function enableInputs() {
     document.querySelector(`#strong${i}`).disabled = false;
   }
 }
-
-/*
-function circleDivisions() {
-  let divisions = document.querySelector("#topNumber");
-
-}
-*/
 
 /* --------------
    GetSongBPM API
