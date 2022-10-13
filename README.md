@@ -1,7 +1,7 @@
 # Beat Circle
 
+## [Live Demo Here](https://skanes17.github.io/beat-circle/)
 > Select a tempo and hit play to see and hear beats. The beats can be customized, and a circle is used to help visualize the rhythm.
-> Live demo [_here_](https://skanes17.github.io/beat-circle/).
 
 ## General Info
 
