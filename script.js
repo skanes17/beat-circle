@@ -90,7 +90,7 @@ for (let i = 1; i < 17; i++) {
 
   slider.setAttribute("min", "0");
   slider.setAttribute("max", "100");
-  slider.setAttribute("step", "5");
+  slider.setAttribute("step", "10");
   wrapper.appendChild(slider);
 }
 
