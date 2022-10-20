@@ -57,33 +57,41 @@ for (let i = 1; i < 17; i++) {
   beat.classList.add("beatEmphasisStack", `vol25-${i}`);
   box.appendChild(beat);
 }
-/* trying to make the toggles under the beat stacks
-  let toggleBox = document.querySelector(".toggleContainer");
-  let toggle = document.createElement("div");
-  toggle.classList.add("emphasisToggle");
-  toggle.id = `toggle${i}`;
-  toggleBox.appendChild(toggle);
 
-  let toggleClick = document.querySelector("emphasisToggle");
-  clickMe = document.createElement("input");
-  clickMe.type = "checkbox";
-  clickMe.id = `strong${i}`;
-  clickMe.setAttribute("onchange", "playSound()");
+const sliderContainer = document.querySelector(".slider-container");
+for (let i = 1; i < 17; i++) {
+  console.log(`making slider ${i}`);
+  let wrapper = document.createElement("div");
+  wrapper.classList.add("volume-wrapper");
+  wrapper.classList.add(`wrapper-${i}`);
+  sliderContainer.appendChild(wrapper);
+  let slider = document.createElement("input");
+  slider.classList.add(`volume-wrapper`);
+  slider.classList.add(`vol-${i}`);
+  slider.setAttribute("type", "range");
+
+  // set initial volumes
+  if (i == 1) {
+    slider.setAttribute("value", "75");
+  } else {
+    slider.setAttribute("value", "50");
+  }
+
+  slider.setAttribute("min", "0");
+  slider.setAttribute("max", "100");
+  slider.setAttribute("step", "5");
+  wrapper.appendChild(slider);
 }
 
-----------------------------
-    REFERENCE CODE BELOW
-----------------------------
-<div class="emphasisToggle" id="toggle1">
-  <input
-    type="checkbox"
-    id="strong1"
-    checked="true"
-    onchange="playSound()"
-  />
-  <label for="strong1"></label>
-</div>
-*/
+// slider values change volumes
+for (let i = 1; i < 17; i++) {
+  let slider = document.querySelector(`.vol-${i}`);
+  slider.oninput = function () {
+    soundsArray[i - 1].volume = this.value / 100;
+    console.log(soundsArray[i - 1].volume);
+    console.log(`changed slider ${i}`);
+  };
+}
 
 // sets default styles/volumes to 75% for first beat, 50% for the rest
 for (let i = 1; i < 17; i++) {
@@ -271,16 +279,20 @@ function showBeats() {
   for (i = 1; i <= 16; i++) {
     let x = document.getElementById(`box${i}`);
     let y = document.getElementById(`toggle${i}`);
+    let z = document.querySelector(`.wrapper-${i}`);
     x.style.display = "none";
     y.style.display = "none";
+    z.style.display = "none";
   }
   // shows only as many beat containers and toggles as the top number
   for (i = 1; i <= topNumber; i++) {
     let x = document.getElementById(`box${i}`);
     let y = document.getElementById(`toggle${i}`);
+    let z = document.querySelector(`.wrapper-${i}`);
     if (x.style.display === "none") {
       x.style.display = "block";
       y.style.display = "block";
+      z.style.display = "flex";
     } else {
       x.style.display = "none";
       y.style.display = "none";
