@@ -69,9 +69,9 @@ for (let i = 1; i < 17; i++) {
   box.appendChild(beat);
 }
 
+// make the volume sliders
 const sliderContainer = document.querySelector(".slider-container");
 for (let i = 1; i < 17; i++) {
-  console.log(`making slider ${i}`);
   let wrapper = document.createElement("div");
   wrapper.classList.add("volume-wrapper");
   wrapper.classList.add(`wrapper-${i}`);
@@ -103,6 +103,43 @@ for (let i = 1; i < 17; i++) {
     console.log(`changed slider ${i}`);
   };
 }
+
+// make the emphasis toggles
+const toggleContainer = document.querySelector(".toggleContainer");
+for (let i = 1; i < 17; i++) {
+  let toggleWrapper = document.createElement("div");
+  toggleWrapper.classList.add("emphasisToggle");
+  toggleWrapper.setAttribute("id", `toggle${i}`);
+  toggleContainer.appendChild(toggleWrapper);
+  let togglePill = document.createElement("input");
+  togglePill.setAttribute("type", "checkbox");
+  togglePill.setAttribute("id", `strong${i}`);
+  togglePill.setAttribute("onchange", "playSound()");
+  if (i == 1) {
+    togglePill.setAttribute("checked", "true");
+  }
+  toggleWrapper.appendChild(togglePill);
+  let pillLabel = document.createElement("label");
+  pillLabel.setAttribute("for", `strong${i}`);
+  toggleWrapper.appendChild(pillLabel);
+}
+
+/*
+<div class="toggleContainer advanced">
+          <div class="emphasisToggle" id="toggle1">
+            <input
+              type="checkbox"
+              id="strong1"
+              checked="true"
+              onchange="playSound()"
+            />
+            <label for="strong1"></label>
+          </div>
+          <div class="emphasisToggle" id="toggle2">
+            <input type="checkbox" id="strong2" onchange="playSound()" />
+            <label for="strong2"></label>
+          </div>
+*/
 
 // sets default styles/volumes to 75% for first beat, 50% for the rest
 for (let i = 1; i < 17; i++) {
