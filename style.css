@@ -260,6 +260,8 @@ input[type="range"]:hover {
   background-color: rgba(255, 235, 164, 0.75);
 }
 
+/* TODO: Fix weird endpoint behaviour for smaller widths */
+
 input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 16px;
@@ -354,7 +356,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
   transform: rotate(-90deg);
   width: 30px;
   height: 8px;
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 8px;
   background: #d6b1ff;
   cursor: pointer;

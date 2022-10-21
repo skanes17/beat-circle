@@ -28,6 +28,7 @@ slider.oninput = function () {
   sliderOutput.innerHTML = `${this.value} bpm`;
 };
 
+// build beats dropdown
 const dropdown = document.querySelector("#topNumber");
 const metres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 for (let i = 0; i < metres.length; i++) {
@@ -41,9 +42,18 @@ for (let i = 0; i < metres.length; i++) {
   }
 }
 
-// make the beat stacks and toggles
 const beatContainer = document.querySelector("#beatEmphasisContainer");
+const sliderContainer = document.querySelector(".slider-container");
+const toggleContainer = document.querySelector(".toggleContainer");
+
 for (let i = 1; i < 17; i++) {
+  buildStacks(i);
+  buildSliders(i);
+  buildToggles(i);
+  sliderVolumes(i);
+}
+
+function buildStacks(i) {
   let box = document.createElement("div");
   box.classList.add("beatEmphasisBoxes");
   box.setAttribute("onclick", "playSound()");
@@ -69,9 +79,7 @@ for (let i = 1; i < 17; i++) {
   box.appendChild(beat);
 }
 
-// make the volume sliders
-const sliderContainer = document.querySelector(".slider-container");
-for (let i = 1; i < 17; i++) {
+function buildSliders(i) {
   let wrapper = document.createElement("div");
   wrapper.classList.add("volume-wrapper");
   wrapper.classList.add(`wrapper-${i}`);
@@ -94,8 +102,8 @@ for (let i = 1; i < 17; i++) {
   wrapper.appendChild(slider);
 }
 
-// slider values change volumes
-for (let i = 1; i < 17; i++) {
+// allow sliders to change volumes
+function sliderVolumes(i) {
   let slider = document.querySelector(`.vol-${i}`);
   slider.oninput = function () {
     soundsArray[i - 1].volume = this.value / 100;
@@ -104,9 +112,7 @@ for (let i = 1; i < 17; i++) {
   };
 }
 
-// make the emphasis toggles
-const toggleContainer = document.querySelector(".toggleContainer");
-for (let i = 1; i < 17; i++) {
+function buildToggles(i) {
   let toggleWrapper = document.createElement("div");
   toggleWrapper.classList.add("emphasisToggle");
   toggleWrapper.setAttribute("id", `toggle${i}`);
@@ -123,23 +129,6 @@ for (let i = 1; i < 17; i++) {
   pillLabel.setAttribute("for", `strong${i}`);
   toggleWrapper.appendChild(pillLabel);
 }
-
-/*
-<div class="toggleContainer advanced">
-          <div class="emphasisToggle" id="toggle1">
-            <input
-              type="checkbox"
-              id="strong1"
-              checked="true"
-              onchange="playSound()"
-            />
-            <label for="strong1"></label>
-          </div>
-          <div class="emphasisToggle" id="toggle2">
-            <input type="checkbox" id="strong2" onchange="playSound()" />
-            <label for="strong2"></label>
-          </div>
-*/
 
 // sets default styles/volumes to 75% for first beat, 50% for the rest
 for (let i = 1; i < 17; i++) {
