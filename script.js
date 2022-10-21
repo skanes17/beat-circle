@@ -42,41 +42,13 @@ for (let i = 0; i < metres.length; i++) {
   }
 }
 
-const beatContainer = document.querySelector("#beatEmphasisContainer");
 const sliderContainer = document.querySelector(".slider-container");
 const toggleContainer = document.querySelector(".toggleContainer");
 
 for (let i = 1; i < 17; i++) {
-  buildStacks(i);
   buildSliders(i);
   buildToggles(i);
   sliderVolumes(i);
-}
-
-function buildStacks(i) {
-  let box = document.createElement("div");
-  box.classList.add("beatEmphasisBoxes");
-  box.setAttribute("onclick", "playSound()");
-  box.id = `box${i}`;
-  box.style.display = "none";
-  beatContainer.appendChild(box);
-
-  // make the individual beats in the stacks
-  let beat = document.createElement("div");
-  beat.classList.add("beatEmphasisStack", `vol100-${i}`);
-  box.appendChild(beat);
-
-  beat = document.createElement("div");
-  beat.classList.add("beatEmphasisStack", `vol75-${i}`);
-  box.appendChild(beat);
-
-  beat = document.createElement("div");
-  beat.classList.add("beatEmphasisStack", `vol50-${i}`);
-  box.appendChild(beat);
-
-  beat = document.createElement("div");
-  beat.classList.add("beatEmphasisStack", `vol25-${i}`);
-  box.appendChild(beat);
 }
 
 function buildSliders(i) {
@@ -130,88 +102,6 @@ function buildToggles(i) {
   toggleWrapper.appendChild(pillLabel);
 }
 
-// sets default styles/volumes to 75% for first beat, 50% for the rest
-for (let i = 1; i < 17; i++) {
-  if (i == 1) {
-    document.querySelector(`.vol25-${i}`).style.backgroundColor =
-      "rgba(108, 92, 231, 0.75)";
-    document.querySelector(`.vol50-${i}`).style.backgroundColor =
-      "rgba(108, 92, 231, 0.75)";
-    document.querySelector(`.vol75-${i}`).style.backgroundColor =
-      "rgba(108, 92, 231, 0.75)";
-  } else {
-    document.querySelector(`.vol25-${i}`).style.backgroundColor =
-      "rgba(108, 92, 231, 0.75)";
-    document.querySelector(`.vol50-${i}`).style.backgroundColor =
-      "rgba(108, 92, 231, 0.75)";
-  }
-}
-
-// loop to generate event listeners for each box/stack
-// these determine which box was clicked, and the function runs accordingly
-for (let i = 1; i < 17; i++) {
-  document.getElementById(`box${i}`).addEventListener("click", () => {
-    let box = i;
-    changeVolume(box);
-  });
-}
-
-// volume array is used to set volume of beats, used in changeVolume function
-const volArray = [];
-
-// this function activates on click to style the boxes and set volume of individual beats
-function changeVolume(box) {
-  // grab all styles
-  let vol25 = document.querySelector(`.vol25-${box}`).style.backgroundColor;
-  let vol50 = document.querySelector(`.vol50-${box}`).style.backgroundColor;
-  let vol75 = document.querySelector(`.vol75-${box}`).style.backgroundColor;
-  let vol100 = document.querySelector(`.vol100-${box}`).style.backgroundColor;
-
-  // toss the styles in an array
-  const beatStyleArray = [vol25, vol50, vol75, vol100];
-  const offColor = "transparent";
-  const onColor = "rgba(108, 92, 231, 0.75)";
-
-  // if top box is full, clear all boxes
-  switch ("rgba(108, 92, 231, 0.75)") {
-    case beatStyleArray[3]:
-      document.querySelector(`.vol25-${box}`).style.backgroundColor = offColor;
-      document.querySelector(`.vol50-${box}`).style.backgroundColor = offColor;
-      document.querySelector(`.vol75-${box}`).style.backgroundColor = offColor;
-      document.querySelector(`.vol100-${box}`).style.backgroundColor = offColor;
-      volArray[box - 1] = 0; // sets desired volume of beat according to which box was clicked
-      soundsArray[box - 1].volume = 0; // sets the volume of that beat in the soundsArray
-      console.log("all clear");
-      break;
-    // if third box is full, fill top box
-    case beatStyleArray[2]:
-      document.querySelector(`.vol100-${box}`).style.backgroundColor = onColor;
-      volArray[box - 1] = 1;
-      soundsArray[box - 1].volume = 1;
-      console.log("4 boxes");
-      break;
-    // if second box is full, fill third box
-    case beatStyleArray[1]:
-      document.querySelector(`.vol75-${box}`).style.backgroundColor = onColor;
-      volArray[box - 1] = 0.75;
-      soundsArray[box - 1].volume = 0.75;
-      console.log("3 boxes");
-      break;
-    // if first box is full, fill second box
-    case beatStyleArray[0]:
-      document.querySelector(`.vol50-${box}`).style.backgroundColor = onColor;
-      volArray[box - 1] = 0.5;
-      soundsArray[box - 1].volume = 0.5;
-      console.log("2 boxes");
-      break;
-    default:
-      document.querySelector(`.vol25-${box}`).style.backgroundColor = onColor;
-      volArray[box - 1] = 0.25;
-      soundsArray[box - 1].volume = 0.25;
-      console.log("1 box");
-  }
-}
-
 // added click sound to toggles
 const clickSound = new Audio("sounds/toggle.mp3");
 function playSound() {
@@ -242,7 +132,8 @@ function bpmFunction() {
   let topNumber = document.querySelector("#topNumber").value;
   let botNumber = document.querySelector("#botNumber").value;
   let tempo = document.querySelector("#tempoSlider").value;
-  let beatLength = (60 / (tempo * (botNumber / 4))) * 1000; // changes beat feel based on bottom number
+  // changes beat feel based on bottom number
+  let beatLength = (60 / (tempo * (botNumber / 4))) * 1000;
   let animationLength = beatLength * topNumber;
 
   // for every element in the array, do this stuff based on its current index
@@ -312,24 +203,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function showBeats() {
   let topNumber = document.querySelector("#topNumber").value;
-  // hides all beat containers and toggles
+  // hides all sliders and toggles
   for (i = 1; i <= 16; i++) {
-    let x = document.getElementById(`box${i}`);
+    // let x = document.getElementById(`box${i}`);
+    let x = document.querySelector(`.wrapper-${i}`);
     let y = document.getElementById(`toggle${i}`);
-    let z = document.querySelector(`.wrapper-${i}`);
+    // x.style.display = "none";
     x.style.display = "none";
     y.style.display = "none";
-    z.style.display = "none";
   }
-  // shows only as many beat containers and toggles as the top number
+  // shows only as many sliders and toggles as the top number
   for (i = 1; i <= topNumber; i++) {
-    let x = document.getElementById(`box${i}`);
+    let x = document.querySelector(`.wrapper-${i}`);
     let y = document.getElementById(`toggle${i}`);
-    let z = document.querySelector(`.wrapper-${i}`);
     if (x.style.display === "none") {
-      x.style.display = "block";
+      x.style.display = "flex";
       y.style.display = "block";
-      z.style.display = "flex";
     } else {
       x.style.display = "none";
       y.style.display = "none";
@@ -342,10 +231,10 @@ const handAnimation = document.querySelector(".hand");
 const waveAnimation = document.querySelector(".circle");
 const pulseAnimation = document.querySelector(".circle");
 
-// array to hold beat pulse animations
-const stackAnimation = [];
+// array to hold slider pulse animations
+const sliderAnimation = [];
 for (let i = 0; i < 16; i++) {
-  stackAnimation[i] = document.querySelector(`#box${i + 1}`);
+  sliderAnimation[i] = document.querySelector(`.vol-${i + 1}`);
 }
 
 function playAnimations() {
@@ -353,6 +242,34 @@ function playAnimations() {
   let botNumber = document.querySelector("#botNumber").value;
   let tempo = document.querySelector("#tempoSlider").value;
   let beatLength = (60 / tempo) * topNumber * (4 / botNumber) * 1000; //
+
+  const sliderPulse = [
+    {
+      background: "rgb(255, 235, 164)",
+      borderRadius: "4px",
+      boxShadow: "0 0 10px rgb(255, 235, 164)",
+    },
+    {
+      background: "rgb(93, 81, 189)",
+      borderRadius: "12px",
+    },
+  ];
+
+  // array to hold beat pulse timings, especially delays
+  const timingArray = [];
+  for (let i = 0; i < topNumber; i++) {
+    timingArray[i] = {
+      duration: beatLength / topNumber,
+      iterations: 1,
+      delay: (beatLength / topNumber) * i,
+    };
+  }
+
+  // run each slider pulse animation
+  // all sliders pulses run at once, but beat delays are invoved
+  for (let i = 0; i < 16; i++) {
+    sliderAnimation[i].animate(sliderPulse, timingArray[i]);
+  }
 
   // this array defines the animations used along with their keyframes
   const rotateHand = [
@@ -409,30 +326,6 @@ function playAnimations() {
   };
 
   pulseAnimation.animate(pulse, pulseTiming);
-
-  const stackPulse = [
-    { background: "rgba(247, 242, 242, .75)", borderRadius: "8px" },
-    {
-      background: "rgba(247, 242, 242, 0)",
-      borderRadius: "8px",
-    },
-  ];
-
-  // array to hold beat pulse timings, especially delays
-  const stackTimingArray = [];
-  for (let i = 0; i < topNumber; i++) {
-    stackTimingArray[i] = {
-      duration: beatLength / topNumber,
-      iterations: 1,
-      delay: (beatLength / topNumber) * i,
-    };
-  }
-
-  // run each beat pulse animation
-  // all beat pulses run at once, but beat delays are invoved
-  for (let i = 0; i < 16; i++) {
-    stackAnimation[i].animate(stackPulse, stackTimingArray[i]);
-  }
 }
 
 // fill an array with sound files
