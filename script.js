@@ -79,8 +79,8 @@ function sliderVolumes(i) {
   let slider = document.querySelector(`.vol-${i}`);
   slider.oninput = function () {
     soundsArray[i - 1].volume = this.value / 100;
-    console.log(soundsArray[i - 1].volume);
-    console.log(`changed slider ${i}`);
+    // console.log(soundsArray[i - 1].volume);
+    // console.log(`changed slider ${i}`);
   };
 }
 
@@ -150,12 +150,12 @@ function bpmFunction() {
       // if a beat is newly chosen to be strong, change its source to strong
       case checkedButWeak:
         soundFile.src = "sounds/strong.mp3";
-        console.log("changed to strong");
+        // console.log("changed to strong");
         break;
       // if a beat is newly chosen to be weak, change its source to weak
       case uncheckedButStrong:
         soundFile.src = "sounds/weak.mp3";
-        console.log("changed to weak");
+        // console.log("changed to weak");
         break;
     }
   });
@@ -370,7 +370,7 @@ let bpm = {
   apiKey: "0af15d9b4fa3f2417c0017662b453715",
 
   fetchInfo: function (song, artist) {
-    console.log(
+    /* console.log(
       "https://api.getsongbpm.com/search/?api_key=" +
         this.apiKey +
         "&type=both&lookup=song:" +
@@ -378,7 +378,7 @@ let bpm = {
         "artist:" +
         artist.toString() +
         "&limit=1"
-    );
+    ); */
     fetch(
       "https://api.getsongbpm.com/search/?api_key=" +
         this.apiKey +
